@@ -19,7 +19,7 @@ export default function intiative() {
             <div className={inticss.image}>
               <img src={jvmlogo} alt="" />
             </div>
-            <div className={inticss.discr}>
+            <div className={inticss.discr} style={{fontStyle: "italic"}}>
               {" "}
               To educate each and every child for a better tomorrow.
             </div>
@@ -49,7 +49,7 @@ export default function intiative() {
             <div className={inticss.image}>
               <img src={covidlogo} alt="" />
             </div>
-            <div className={inticss.discr}>
+            <div className={inticss.discr} style={{fontStyle: "italic"}}>
               Door to door distribution of basic amenities to the rural
               households.
             </div>
@@ -69,7 +69,7 @@ export default function intiative() {
             <div className={inticss.image}>
               <img src={lightlogo} alt="" />
             </div>
-            <div className={inticss.discr}>
+            <div className={inticss.discr} style={{fontStyle: "italic"}}>
               Expansion Initiative - forming a PAN India network of socially
               motivated youth.
             </div>
