@@ -5,6 +5,7 @@
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    margin-bottom: 4rem;
 }
 
 
@@ -37,8 +38,9 @@
 }
 
 .newsletter_card .newsletter_card_image {
-    width: 160px;
-    max-height: 200px;
+    max-width: 160px;
+    width: 100%;
+    max-height: 225px;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -61,7 +63,7 @@
     align-items: center;
     height: 100%;
     max-width: 900px;
-
+    width: 100%;
 }
 
 .newsletter_card_content h2 {
@@ -96,8 +98,18 @@
     transform: translateY(-5px);
 }
 
+@media screen and (max-width: 968px) {
+    .newsletter_card_content h2 {
+        margin: 0 0 0rem 0;
+    }
+
+    .newsletter_card_content p {
+        margin: 0.5rem 0;
+    }
+}
+
 @media (max-width: 520px) {
- 
+
     .newsletter_card {
         width: 100%;
         margin: 1rem;

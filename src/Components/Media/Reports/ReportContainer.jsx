@@ -2,6 +2,7 @@ import Card from './Card';
 import './Report.css';
 import data from './reportData';
 import HCard from '../../HeaderCard/HCard';
+
 export default function ReportContainer() {
     
     return (
