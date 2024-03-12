@@ -28,6 +28,7 @@ export default function Impact() {
             </div>
           </div>
         </div>
+        
         <div className={impcss.mycontainer}>
           <div className={impcss.mainbox} id={impcss.third}>
             <div>
