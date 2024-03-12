@@ -1,48 +1,28 @@
-
 .timeline-container .timeline-heading {
     display: grid;
     place-items: center;
 }
 
-.timeline-container .timeline-heading h1 {
-    margin: 10px 0;
-    font-weight: 900;
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 0px;
-}
-
-.timeline-container .timeline-heading .heading-underline {
-    border: solid #fed136;
-    width: 10rem;
-    background-color: #fed136;
-    height: 0.3rem;
-    margin: 0 auto;
-    margin-bottom: 2rem
-}
-
-
-.main-timeline:after {
-    content: '';
-    display: block;
-    clear: both;
-}
 
 .timeline-container {
-    width: 65%;
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1190px;
     margin: auto;
+    padding: 10px;
+}
+
+.main-timeline {
+    margin-bottom: 2rem;
 }
 
 .main-timeline .timeline {
-    width: 500px;
-    margin-bottom: 20px !important;
-    /* padding: 0 40px 0 0; */
+    max-width: 600px;
+    width: 100%;
     float: left;
+    margin-bottom: 1rem;
 }
 
 .main-timeline .timeline-content {
-    background: #fff;
     padding: 25px 25px 15px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
     border-radius: 0 80px;
@@ -60,38 +40,36 @@
     font-weight: 600;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    padding: 15px 15px 15px 30px;
 
+    text-align: center;
+    padding: 1rem 0;
     border-radius: 0 50px;
     position: relative;
     z-index: 1;
 }
 
 .main-timeline .description {
-    color: black;
-    font-size: 17px;
-    letter-spacing: 1px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    color: #202020;
+    font-size: 1rem;
+    font-weight: 500;
+
+    padding: 10px 20px;
 }
 
 .main-timeline .timeline-year {
     font-size: 18px;
     font-weight: 700;
     color: #fff;
-    background-color: rgb(4, 163, 195) ;
+    background-color: rgb(4, 163, 195);
     text-align: center;
     width: 100px;
-    margin: 1rem auto 0;
+    margin: 0.5rem auto;
     padding: 5px 0;
     border-radius: 50px;
 }
 
 .main-timeline .timeline:nth-child(even) {
     float: right;
-    margin: 0 0 0 10px;
 }
 
 .main-timeline .timeline:nth-child(even) .timeline-content {
@@ -99,7 +77,9 @@
 }
 
 .main-timeline .timeline:nth-child(even) .title {
-    padding: 15px 15px 15px 100px;
+
+    text-align: center;
+    padding: 1rem 0;
     border-radius: 50px 0;
 }
 
@@ -111,15 +91,11 @@
         width: 100%;
         margin: 0 0 30px;
     }
-    .timeline-container{
-        width: 90% !important;
-         
-      }
 }
 
 @media screen and (max-width:479px) {
-    
-   
+
+
 
     .main-timeline .timeline-content {
         padding: 15px;
@@ -127,7 +103,7 @@
 
 
     .main-timeline .timeline:nth-child(even) .title {
-        padding-left: 75px;
+        /* padding-left: 75px; */
     }
-   
+
 }
