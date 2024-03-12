@@ -9,7 +9,7 @@ const jvmData = [
   {
     imgPath: "./images/school_logo-removebg-preview.png",
     content:
-      "JVM was established in April, 2008. It's an Initiative of Gopali Youth Welfare Society. Its main motto is to educate each and every child for a better tommorow .",
+      "JVM was established in April, 2008. It's an Initiative of Gopali Youth Welfare Society. It's main motto is to educate each and every child for a better tommorow .",
   },
   {
     imgPath: "./images/child_logo-removebg-preview.png",
@@ -195,7 +195,7 @@ export default function JVM() {
           <HCard head={"Future Plan"}></HCard>
 
 
-          <div className="lecture-container">
+          <div className="lecture-container-jvm">
             <div className="lecture-img">
               <img src="./images/futureplan.png" alt="#" />
             </div>
