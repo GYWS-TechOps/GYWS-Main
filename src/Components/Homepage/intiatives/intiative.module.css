@@ -55,14 +55,17 @@
 }
 
 .mainbox button {
-    padding: 0.4rem 0.8rem;
-    font-size: 1rem;
+    padding: 0.7rem 2.2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 0.8rem;
     background-color: #fed136;
-    border: 2px solid #fed136;
     border-radius: 2rem;
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.4);
     transition: all 0.2s ease-in-out;
 }
-
 
 .mainbox button:hover {
     transform: scale(1.08);

@@ -30,18 +30,14 @@ export default function intiative() {
             <button
               style={{
                 backgroundColor: "#05A1C7",
-                borderColor: "#05A1C7",
-                marginTop: '10px'
               }}
             >
-              <b>
-                <Link
-                  style={{ textDecoration: "none", color: "#fff" }}
-                  to="/jvm"
-                >
-                  Read More{" "}
-                </Link>{" "}
-              </b>
+              <Link
+                style={{ textDecoration: "none", color: "#fff" }}
+                to="/jvm"
+              >
+                Read More{" "}
+              </Link>{" "}
             </button>
           </div>
         </div>
@@ -80,19 +76,13 @@ export default function intiative() {
             <div className={inticss.discr}>
               <span className={inticss.number}>12+ </span>
               Student run centers</div>
-            <button
-              style={{
-                marginTop: '10px'
-              }}
-            >
-              <b>
-                <a
-                  style={{ textDecoration: "none", color: "#070707" }}
-                  href="https://light.org.in/"
-                >
-                  Read More{" "}
-                </a>{" "}
-              </b>
+            <button>
+              <a
+                style={{ textDecoration: "none", color: "#070707" }}
+                href="https://light.org.in/"
+              >
+                Read More{" "}
+              </a>{" "}
             </button>
           </div>
         </div>
