@@ -65,22 +65,25 @@
 
 
 
-@media (min-width:450px) and (max-width: 769px) {
+@media screen and (max-width: 769px) {
 
 
     .TestiMonial-card {
         flex-direction: column;
-
+        justify-content: flex-start;
         font-size: small;
-        height:370px;
+        height: 370px;
+    }
+
+    .TestiMonial-card-para {
+        text-align: justify;
     }
 }
 
-@media (max-width: 450px) {
+@media screen and (max-width: 450px) {
 
     .container-TestiMonial {
-
-        width: 98%;
+        padding: 10px;
         margin-left: auto;
         margin-right: auto;
     }
