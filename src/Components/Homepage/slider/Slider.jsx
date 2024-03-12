@@ -4,7 +4,6 @@ import { Carousel } from 'react-responsive-carousel';
 import carouselData from "./carouselData";
 import Typewriter from './Typewriter';
 
-
 function Slider() {
 
 
@@ -19,6 +18,7 @@ function Slider() {
           timeInterval={5000}
           autoPlay={true}
           interval={4000}
+          swipeable={false}
           infiniteLoop={true}
           stopOnHover={true}
           animationHandler={'fade'}
