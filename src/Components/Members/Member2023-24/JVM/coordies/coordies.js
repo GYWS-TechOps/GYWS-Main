@@ -11,9 +11,9 @@ const Data = [
         name: "Shivam Yadav",
         position: "UG Coordinator",
         imageUrl: "/assets/images/members/Heads23/ShivamYadav.jpg",
-        facebookLink: "",
-        linkedinLink: "",
-        email: ""
+        facebookLink: "https://www.facebook.com/Shivam.satmanju",
+        linkedinLink: "https://www.linkedin.com/in/shivamyadav1710/",
+        email: "shivam.yadav@gyws.org"
     },
     {
         name: "Virat Dwivedi",
@@ -21,7 +21,7 @@ const Data = [
         imageUrl: "/assets/images/members/Heads23/ViratDwivedi.jpg",
         facebookLink: "https://www.facebook.com/profile.php?id=100006798225731",
         linkedinLink: "https://www.linkedin.com/in/virat-dwivedi-55912a202/",
-        email: "avirat.dwivedi@gyws.org"
+        email: "virat.dwivedi@gyws.org"
     },
 ]
 

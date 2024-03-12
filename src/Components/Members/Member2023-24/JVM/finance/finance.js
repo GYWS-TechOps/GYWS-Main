@@ -11,9 +11,9 @@ const Data = [
         name: "Adicherla Vaibhav",
         position: "Finance Head",
         imageUrl: "/assets/images/members/Heads23/AdicherlaVaibhav.JPG",
-        facebookLink: "",
-        linkedinLink: "",
-        email: ""
+        facebookLink: "https://www.facebook.com/profile.php?id=100075255438778",
+        linkedinLink: "https://www.linkedin.com/in/vaibhav-adicherla-076780188/",
+        email: "adicherla.vaibhav@gyws.org"
     },
     {
         name: "Ishika Modi",
@@ -21,7 +21,7 @@ const Data = [
         imageUrl: "/assets/images/members/Heads23/Ishika Modi.jpg",
         facebookLink: "https://www.facebook.com/profile.php?id=100075462040432&mibextid=ZbWKwL",
         linkedinLink: "https://www.linkedin.com/in/ishika-modi-117354227?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        email: ""
+        email: "ishika.modi@gyws.org"
     },
 ]
 
