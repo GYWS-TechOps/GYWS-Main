@@ -1,15 +1,15 @@
-export default function Card(props) {
+export default function Card({ data }) {
 
-    let button_array = props.button;
+    const button_array = data.button;
 
     return (
         <>
-            <div className="card">
+            <div className={`card ${data.class}`}>
                 <div className="card_header">
-                    <h2>{props.title}</h2>
+                    <h2>{data.title}</h2>
                 </div>
                 <div className="card_body">
-                    <p>{props.summary} </p>
+                    <p>{data.summary} </p>
                 </div>
                 <div className="button_container">
                     {button_array.map((button, index) => (

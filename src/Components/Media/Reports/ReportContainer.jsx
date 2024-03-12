@@ -12,7 +12,7 @@ export default function ReportContainer() {
 
                 <div className="report_cards_container">
                     {data.map((data, index) => (
-                        <Card key={index} title={data.title} summary={data.summary} button={data.button} />
+                        <Card key={index} data={data} />
                     ))}
                 </div>
             </div>

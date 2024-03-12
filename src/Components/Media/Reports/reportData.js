@@ -1,6 +1,7 @@
 const reportData = [
     {
         title: "Annual Report",
+        class: "annual-report",
         summary: "Here is the summary of the activities that gyws carried in the year",
         button: [
             {
@@ -35,6 +36,7 @@ const reportData = [
     },
     {
         title: "Impact Report",
+        class: "impact-report",
         summary: "It represents our final performance update on our annual targets and their impact",
         button: [
             {
@@ -69,6 +71,7 @@ const reportData = [
     },
     {
         title: "Quaterly Finance Reports",
+        class: "quaterly-finance-report",
         summary: "Statement of expenses and donations received for Quarterly Finance Reports",
         button: [
             {
