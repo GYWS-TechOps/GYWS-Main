@@ -93,9 +93,9 @@ function Footer() {
               <h2>CONTACT US</h2>
               <ul className="footer_info">
                 <li>
-                  <p>Gopali (No-shooting Area),</p>
-                  <p><strong>P.O.:</strong> Salua &nbsp; <strong>Dist.:</strong> Paschim Medinipur</p>
-                  <p>West Bengal, 721145.</p>
+                  <p>Gopali (No-shooting Area)</p>
+                  <p><strong>P.O.:</strong> Salua <br /><strong>Dist.:</strong> Paschim Medinipur</p>
+                  <p>West Bengal, 721145</p>
                 </li>
                 <a href="tel:+918158878735">
                   <li>
