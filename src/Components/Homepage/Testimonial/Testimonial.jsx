@@ -3,8 +3,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Testimonial.css";
 import HCard from "../../HeaderCard/HCard";
-
-
 function ArrowTest(props) {
   const { className, style, onClick } = props;
   return (
@@ -16,12 +14,11 @@ function ArrowTest(props) {
   );
 }
 
-
 export default function TestiMonial() {
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 2,
+    slidesToShow: 1,
     slidesToScroll: 1,
     initialSlide: 0,
 
@@ -78,59 +75,63 @@ export default function TestiMonial() {
       name: "Mr. Roy Da Silva",
       post: "IIT Kharagpur, '74 batch Former President, IIT foundation",
       img: "assets/images/home/testimg/roy.jpg",
-      statement: " I would like to recognize Gopali Youth Welfare Society at  IIT Kharagpur at which I found out about when I visited PAN IIT GLOBAL CONFERENCE 2012 and what I said was about, you have got to establish a cause you would like to give back to  and I'm extremely happy this organisation exists within IIT  Kharagpur campus.",
+      statement:
+        " I would like to recognize Gopali Youth Welfare Society at  IIT Kharagpur at which I found out about when I visited PAN IIT GLOBAL CONFERENCE 2012 and what I said was about, you have got to establish a cause you would like to give back to  and I'm extremely happy this organisation exists within IIT  Kharagpur campus.",
     },
     {
       name: "Ms. Suparna Mondal",
       post: "Former President, GYWS",
       img: "assets/images/home/testimg/suparna.png",
-      statement: " Since its establishment in 2002, Gopali Youth Welfare Society has successfully launched and carried out several training and development activities in and around the Gopali. In the past we have established rural libraries providing vocational training to the people from under-privileged section of society beside carrying out several awareness generation programs. We express our gratitude to them and our well wishes.",
+      statement:
+        " Since its establishment in 2002, Gopali Youth Welfare Society has successfully launched and carried out several training and development activities in and around the Gopali. In the past we have established rural libraries providing vocational training to the people from under-privileged section of society beside carrying out several awareness generation programs. We express our gratitude to them and our well wishes.",
     },
     {
       name: "Prof. H R Tiwari",
       post: "  Ex-Professor, Department of Humanities and Social Science, IIT Kharagpur",
       img: "assets/images/home/testimg/HR.png",
-      statement: " Society is purely the extension of ourselves. Though we stepped in 21st century there are still several bleak aspects remain in our society especially in the developing countries like India. Illiteracy, poverty, lack of health consciousness, lack of social consciousness, lack of worldly  knowledge are major arnong them.Out of these sacred some of  the educated youth grouped together to do something in the field ."
+      statement:
+        " Society is purely the extension of ourselves. Though we stepped in 21st century there are still several bleak aspects remain in our society especially in the developing countries like India. Illiteracy, poverty, lack of health consciousness, lack of social consciousness, lack of worldly  knowledge are major arnong them.Out of these sacred some of  the educated youth grouped together to do something in the field .",
     },
     {
       name: "Prof. Madhusudan Chakraborty",
       post: "Former Director, IIT Bhubaneshwar",
       img: "assets/images/home/testimg/madhu.jpg",
-      statement: " The society is fortunate to have some young Samaritans who have always committed themselves for the humanitarian cause of uplifting the condition of the poor and enlightening the future generation, let all of us join our hands together to make this endeavour, envisaged to help the needy aspire for a better future, a success."
+      statement:
+        " The society is fortunate to have some young Samaritans who have always committed themselves for the humanitarian cause of uplifting the condition of the poor and enlightening the future generation, let all of us join our hands together to make this endeavour, envisaged to help the needy aspire for a better future, a success.",
     },
-
   ];
+
+ 
 
   const Testimonials = ({ name, img, statement, post }) => {
     return (
-      <div className="TestiMonial-card">
-        <div className="TestiMonial-card-image">
-          <img src={img} alt="#" />
-        </div>
+      <>
+        <div className="blog-item">
+          <div className="linkshere">
+            <div className="icon">
+              <img src={img} alt="" />
+            </div>
+            <div className="content">
+              <div className="title">{name}</div>
+              <div className="title">{post}</div>
+              <div className="rounded"></div>
 
-        <div className="TestiMonial-card-content">
-          <div className="TestiMonial-card-heading">
-            <h2>{name}</h2>
-            <h3>{post}</h3>
-          </div>
+              <p>{statement}</p>
+            </div>
 
-          <div className="TestiMonial-card-para">
-            <p>{statement}</p>
           </div>
         </div>
-      </div>
+      </>
     );
   };
 
-  
   return (
     <>
       <div className="container-TestiMonial">
         <HCard head={"TESTIMONIALS"}></HCard>
         <Slider {...settings}>
-
           {testiMonialData.map((content, index) => (
-            <div key={index} >
+            <div key={index}>
               <Testimonials
                 img={content.img}
                 name={content.name}
@@ -141,7 +142,6 @@ export default function TestiMonial() {
           ))}
         </Slider>
       </div>
-
     </>
   );
 }
