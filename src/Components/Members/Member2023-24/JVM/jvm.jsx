@@ -15,12 +15,12 @@ function jvm() {
         </div>
           <br /><hr /><br />
             <Coordie />
-            <br />
-            <Src/><br />
-            <Finance/><br />
-            <Spons/><br />
-            <Tech/> <br />
-            <Design></Design> <br />
+            <br /><br />
+            <Src/><br /><br />
+            <Finance/><br /><br />
+            <Spons/><br /><br />
+            <Tech/> <br /><br />
+            <Design></Design> <br /><br />
             {/* <Media></Media> <br /> */}
         </>
     )

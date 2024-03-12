@@ -21,7 +21,7 @@ export default function intiative() {
             </div>
             <div className={inticss.discr}>
               {" "}
-              "To educate each and every child for a better tomorrow."
+              To educate each and every child for a better tomorrow.
             </div>
             <div className={inticss.discr}>
               <span className={inticss.number}>500+ </span>  Student's life got
@@ -54,8 +54,8 @@ export default function intiative() {
               <img src={covidlogo} alt="" />
             </div>
             <div className={inticss.discr}>
-              "Door to door distribution of basic amenities to the rural
-              households."
+              Door to door distribution of basic amenities to the rural
+              households.
             </div>
             <div className={inticss.discr}>
               <span className={inticss.number}>5000+ </span>
@@ -74,8 +74,8 @@ export default function intiative() {
               <img src={lightlogo} alt="" />
             </div>
             <div className={inticss.discr}>
-              "Expansion Initiative - forming a PAN India network of socially
-              motivated youth."
+              Expansion Initiative - forming a PAN India network of socially
+              motivated youth.
             </div>
             <div className={inticss.discr}>
               <span className={inticss.number}>12+ </span>

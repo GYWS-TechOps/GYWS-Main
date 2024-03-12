@@ -13,18 +13,27 @@ function jvm() {
       <div className="chlna">
         <h1> JAGRITI VIDHYA MANDIR</h1>
       </div>{" "}
-      <br /><hr /><br />
+      <br />
+      <hr />
+      <br />
       <Coordie />
+      <br />
       <br />
       <Src />
       <br />
+      <br />
       <Finance />
+      <br />
       <br />
       <Spons />
       <br />
+      <br />
       <Tech /> <br />
-      <Design /> <br />
+      <br />
+      <Design></Design> <br />
+      <br />
       <Media /> <br />
+      <br />
     </>
   );
 }

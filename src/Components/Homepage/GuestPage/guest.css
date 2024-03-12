@@ -5,6 +5,7 @@
     max-width: 1200px;
     margin: 10px auto;
     text-align: justify;
+    background-color: #c5bde352;
 }
 
 .infoGuest {
@@ -69,7 +70,7 @@
 @media (max-width:1200px) {
     .guestPage {
         padding: 10px;
-        margin: 5px;
+        margin: 5px 0px;
     }
 }
 

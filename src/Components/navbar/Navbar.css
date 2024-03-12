@@ -85,12 +85,16 @@ nav .logo img {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 3px solid #f26a36;
 }
 
 .nav-links li:hover {
   color: #fed136;
 }
 
+.active{
+  border-bottom: 3px solid #fed136 !important;
+}
 #donatebtn {
   transition: all 0.2s ease-out;
 }
@@ -168,7 +172,13 @@ nav .logo img {
     border-radius: 0px 0px 5px 5px;
     opacity: 0.5;
   }
-
+  .active{
+    border: 3px solid #f26a36 !important;
+  }
+  .active li{
+    
+    color: #fed136 !important;
+  }
   .nav_space {
     height: 90px;
   }
@@ -209,6 +219,9 @@ nav .logo img {
   #donatebtn:hover {
     box-shadow: none;
   }
+  #donatebtn{
+    height: 50px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -242,6 +255,3 @@ nav .logo img {
   }
 }
 
-.active{
-  border-bottom: 3px solid #fed136;
-}

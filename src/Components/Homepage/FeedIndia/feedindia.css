@@ -16,7 +16,7 @@
 }
 
 .infofeed h2 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 700;
     color: #202020;
 }
@@ -61,8 +61,8 @@
     .image img {
         width: 95%;
         border-radius: 2vmax;
-        padding-top: 10px;
-        margin: 10px 0px;
+        padding-top: 2px;
+        margin: 5px 0px;
         display: flex;
         justify-content: space-evenly;
     }
@@ -70,27 +70,27 @@
 
 @media (max-width:1200px) {
     .feedindiapage {
-        padding: 10px;
-        margin: 5px;
+        padding: 5px;
+        margin: 3px;
     }
 }
 
 @media (max-width:500px) {
     .feedindiapage {
-        padding: 0px;
+        padding: 2px;
         flex-direction: column-reverse;
     }
 
     .image img {
         max-width: 100%;
         border-radius: 2vmax;
-        padding-top: 10px;
-        margin: 10px 0px;
+        padding-top: 6px;
+        margin: 5px 0px;
         display: flex;
         justify-content: space-evenly;
     }
 
     .infofeed {
-        padding: 10px;
+        padding: 2px;
     }
 }

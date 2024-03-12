@@ -9,16 +9,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 350px;
+    height: 360px;
     padding: 1rem;
     margin: 1rem 5px;
-    background-color: #73C48F;
+    background-color: #695e9152;
     border-radius: 1rem;
     box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.4);
 }
-
-
-
 
 .TestiMonial-card-image {
     width: 150px;
@@ -27,8 +24,6 @@
     border: 3px solid #202020;
     overflow: hidden;
 }
-
-
 
 .TestiMonial-card-image img {
     width: 100%;
@@ -64,7 +59,8 @@
 .TestiMonial-card-para {
     text-align: left;
     margin-top: 1rem;
-    color: #000000dd;
+    font-weight: 420;
+    color: black;
 }
 
 
@@ -76,7 +72,7 @@
         flex-direction: column;
 
         font-size: small;
-        height: 380px;
+        height:370px;
     }
 }
 

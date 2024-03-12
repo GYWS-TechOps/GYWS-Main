@@ -9,7 +9,7 @@ const jvmData = [
   {
     imgPath: "./images/school_logo-removebg-preview.png",
     content:
-      "JVM was established in April, 2008. It's Initiative of Gopali Youth Walefare Society. Its Main motto is To educate each and every child for a better tommorow .",
+      "JVM was established in April, 2008. It's an Initiative of Gopali Youth Welfare Society. Its main motto is to educate each and every child for a better tommorow .",
   },
   {
     imgPath: "./images/child_logo-removebg-preview.png",

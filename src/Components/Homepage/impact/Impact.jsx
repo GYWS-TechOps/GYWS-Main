@@ -4,9 +4,8 @@ import HCard from "../../HeaderCard/HCard";
 export default function Impact() {
   return (
     <>
+      <HCard head={"IMPACT"}></HCard>
       <div className={impcss.container}>
-        <HCard head={"IMPACT"}></HCard>
-
         <div className={impcss.mycontainer}>
           <div className={impcss.mainbox} id={impcss.first}>
             <div>
@@ -28,7 +27,8 @@ export default function Impact() {
               GYWS run LiGHT centers in different part of India.
             </div>
           </div>
-
+        </div>
+        <div className={impcss.mycontainer}>
           <div className={impcss.mainbox} id={impcss.third}>
             <div>
               <img src="./images/child1.jpg" alt="" />
@@ -42,9 +42,7 @@ export default function Impact() {
               <img src="./images/DSC_0159.JPG" alt="" />
             </div>
             <h2>2000+</h2>
-            <div className={impcss.discr}>
-              Needy families got food kits
-            </div>
+            <div className={impcss.discr}>Needy families got food kits</div>
           </div>
         </div>
       </div>
