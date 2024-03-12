@@ -153,28 +153,6 @@ function ContactUs() {
                 </span>
                 <a href="tel:+918158878735">  +91 8158878735</a>
               </div>
-              <ul className="sci">
-                <li>
-                  <a href="/">
-                    <ion-icon name="logo-facebook"></ion-icon>
-                  </a>
-                </li>
-                <li>
-                  <a href="/">
-                    <ion-icon name="logo-twitter"></ion-icon>
-                  </a>
-                </li>
-                <li>
-                  <a href="/">
-                    <ion-icon name="logo-linkedin"></ion-icon>
-                  </a>
-                </li>
-                <li>
-                  <a href="/">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                  </a>
-                </li>
-              </ul>
             </div>
           </div>
 
