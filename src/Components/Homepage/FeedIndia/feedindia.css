@@ -12,11 +12,10 @@
     padding: 1rem;
     margin: 10px;
     width: 100%;
-
 }
 
 .infofeed h2 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 700;
     color: #202020;
 }
@@ -24,6 +23,7 @@
 .descriptionfeed {
     padding-top: 1rem;
     color: #202020;
+    font-size: 1.1rem;
 }
 
 .namefeed {
