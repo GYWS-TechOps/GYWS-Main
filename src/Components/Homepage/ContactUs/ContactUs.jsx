@@ -13,6 +13,9 @@ function ContactUs() {
     message: ""
   });
 
+  const [loading, setLoading] = useState(false);
+  const [sent, setSent] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -20,13 +23,21 @@ function ContactUs() {
       ...formData,
       [name]: value
     });
+
+    setSent(false);
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    setLoading(true);
+
     try {
-      const response = await fetch("https://gyws-backend.onrender.com/api/contactUs",
+
+      let url = "https://gyws-backend.onrender.com/api/contactUs";
+      // url = "http://localhost:5000/api/contactUs";
+
+      const response = await fetch(url,
         {
           method: "POST",
           headers: {
@@ -38,14 +49,24 @@ function ContactUs() {
 
       const data = await response.json();
 
-      if (data.success === true) {
-        console.log(data.message);
-      } else {  
-        console.log(data.message);
+      if (data.status === true) {
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          message: ""
+        });
+        setLoading(false);
+        setSent(true);
+      } else {
+        console.log("In error", data.message);
+        setLoading(false);
       }
 
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   }
 
@@ -80,12 +101,12 @@ function ContactUs() {
                 <div className="row50">
                   <div className="inputBox">
                     <span></span>
-                    <input type="text" placeholder="Email Address" id="email" name="email" value={formData.email} onChange={handleChange} />
+                    <input type="email" placeholder="Email Address" id="email" name="email" value={formData.email} onChange={handleChange} />
                   </div>
 
                   <div className="inputBox">
                     <span></span>
-                    <input type="text" placeholder="Mobile" id="mobile" name="mobile" value={formData.mobile} onChange={handleChange} />
+                    <input type="text" placeholder="Mobile" id="phone" name="phone" value={formData.phone} onChange={handleChange} />
                   </div>
                 </div>
 
@@ -99,7 +120,9 @@ function ContactUs() {
                 <div className="row100">
                   <div className="inputBox">
                     {/* <input id="submitbutton" type="submit" value="SEND" /> */}
-                    <button id="submitbutton" type="submit">SEND</button>
+                    <button id="submitbutton" type="submit">
+                      {loading ? "Sending..." : (sent ? "Message Sent" : "SEND")}
+                    </button>
                   </div>
                 </div>
               </div>
