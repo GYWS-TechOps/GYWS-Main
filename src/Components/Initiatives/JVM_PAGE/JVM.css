@@ -144,6 +144,22 @@
     min-height: 330px;
     box-shadow: 0 0 10px #000000bb;
 }
+.lecture-container-jvm {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    margin: 10px auto;
+    padding: 1rem;
+    border-radius: 1rem;
+    /* background-color: #131921; */
+    background-color:#695e91;
+    color: white;
+    min-height: 330px;
+    box-shadow: 0 0 10px #000000bb;
+}
 
 .lecture-img {
     height: 100%;
@@ -179,6 +195,15 @@
         flex-direction: column-reverse;
     }
     
+    .lecture-container-jvm {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 1rem;
+        display: flex;
+        /* flex-direction: column-reverse; */
+    }
+    
 
     .lecture-img {
         width: 100%;
@@ -201,6 +226,9 @@
         text-align: justify;
     }
 }
+
+
+
 
 .LiGHT {
     width: 100%;
