@@ -95,3 +95,12 @@
         min-height: auto;
     }
 }
+
+@media (max-width:1160px) {
+    .report_container{
+        margin: 20px;
+    }
+    .report_cards_container{
+        flex-direction: column;
+    }
+}
