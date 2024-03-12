@@ -15,7 +15,7 @@
 }
 
 .infoGuest h2 {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     font-weight: 700;
     color: #202020;
 }
@@ -23,6 +23,7 @@
 .descriptionGuest {
     padding-top: 1rem;
     color: #202020;
+    font-size: 1.1rem;
 }
 
 .nameGuest {
@@ -55,6 +56,14 @@
     .guestPage {
         display: flex;
         flex-direction: column;
+        max-width: 700px;
+        margin: 10px auto;
+    }
+
+    .infoGuest {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .image img {
@@ -70,7 +79,6 @@
 @media (max-width:1200px) {
     .guestPage {
         padding: 10px;
-        margin: 5px 0px;
     }
 }
 

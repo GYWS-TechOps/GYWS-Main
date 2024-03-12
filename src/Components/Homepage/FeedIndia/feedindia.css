@@ -12,11 +12,10 @@
     padding: 1rem;
     margin: 10px;
     width: 100%;
-    
 }
 
 .infofeed h2 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 700;
     color: #202020;
 }
@@ -24,18 +23,23 @@
 .descriptionfeed {
     padding-top: 1rem;
     color: #202020;
+    font-size: 1.1rem;
 }
 
 .namefeed {
     color: #695E91;
 }
 
-.feed-image {
+.guest-image {
     max-width: 450px;
     margin: 1rem;
 }
 
-.feed-image img {
+.hide-image {
+    display: none;
+}
+
+.guest-image img {
     width: 100%;
     border-radius: 2rem;
     text-align: center;
@@ -56,6 +60,23 @@
     .feedindiapage {
         display: flex;
         flex-direction: column;
+        max-width: 700px;
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    .infofeed {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .guest-image {
+        display: none;
+    }
+
+    .hide-image {
+        display: block;
     }
 
     .image img {
@@ -71,7 +92,7 @@
 @media (max-width:1200px) {
     .feedindiapage {
         padding: 5px;
-        margin: 3px;
+
     }
 }
 
@@ -93,4 +114,5 @@
     .infofeed {
         padding: 2px;
     }
+
 }
