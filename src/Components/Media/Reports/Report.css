@@ -79,7 +79,7 @@
 }
 
 .quaterly-finance-report .button_container .button {
-    width: 200px;
+    max-width: 200px;
 }
 
 .button_container .button:hover {

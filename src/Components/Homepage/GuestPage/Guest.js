@@ -14,6 +14,10 @@ export default function Guest() {
             <span className="nameGuest"> Mr. Azmal Hossain </span>
             as one of its advisors!
           </h2>
+
+          <div className="guest-image hide-image">
+            <img src={guestPhoto} alt="" />
+          </div>
           <div className="descriptionGuest">
             Mr Hossain was one of our Chief Guests for Aashayein 2022! Impressed
             by the initiatives undertaken by us to uplift the people of Gopali,
