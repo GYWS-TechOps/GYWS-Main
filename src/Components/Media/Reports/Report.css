@@ -23,7 +23,7 @@
 }
 
 .report_cards_container .card {
-    width: 350px;
+    max-width: 350px;
     min-height: 450px;
     margin: 1rem;
     padding: 1rem;
@@ -90,17 +90,27 @@
         font-size: 1.2rem;
         margin: 1rem;
     }
-
-    .report_cards_container .card {
-        min-height: auto;
-    }
 }
 
 @media (max-width:1160px) {
-    .report_container{
+    .report_container {
         margin: 20px;
     }
-    .report_cards_container{
+
+    .report_cards_container {
         flex-direction: column;
     }
+
+    .report_cards_container .card {
+        min-height: auto;
+
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .report_cards_container .card {
+        padding: 0.5rem;
+        margin: 1rem 0rem;
+    }
+
 }
