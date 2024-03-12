@@ -108,6 +108,8 @@
 }
 
 
+
+
 .inputBox button[type="submit"] {
     background: #ffc107;
     color: #fff;
@@ -219,6 +221,8 @@
 
     .contact {
         padding: 25px;
+        padding-top: 1px;
+        padding-bottom: 0px;
     }
 
     .map {
@@ -226,6 +230,8 @@
         padding: 0px;
     }
 }
+
+
 
 @media screen and (max-width: 768px) {
     .contactUs .box {
@@ -240,11 +246,13 @@
         grid-template-columns: 1fr;
     }
 
-    /* .contact.info {
-        display: none;
+    /* .inputBox{
+        height: 50px;
     } */
+    .inputBox textarea {
+        height: 50px;
+    }
 
-    /* .contact.map {
-        display: none;
-    } */
+
+
 }
