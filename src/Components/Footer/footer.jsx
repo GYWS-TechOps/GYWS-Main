@@ -97,9 +97,9 @@ function Footer() {
                   <p><strong>P.O.:</strong> Salua &nbsp; <strong>Dist.:</strong> Paschim Medinipur</p>
                   <p>West Bengal, 721145.</p>
                 </li>
-                <a href="tel:8815655639">
+                <a href="tel:+918158878735">
                   <li>
-                    <TelephoneFill className='logo-footercontact'/> 8815655639
+                    <TelephoneFill className='logo-footercontact'/> +91 8158878735
                   </li>
                 </a>
                 <a href="mailto:gywsociety@gmail.com">

@@ -151,7 +151,7 @@ function ContactUs() {
                 <span>
                   <TelephoneFill />
                 </span>
-                <a href="tel:+918815655639"> +91 8815655639</a>
+                <a href="tel:+918158878735">  +91 8158878735</a>
               </div>
               <ul className="sci">
                 <li>
