@@ -151,7 +151,7 @@
     }
 
     .mainbox {
-        height: 400px;
+        min-height: 100px;
     }
 }
 
@@ -179,13 +179,11 @@
 
     .mainbox {
         width: 450px !important;
-        height: 500px !important;
     }
 }
 
 @media (max-width: 467px) {
     .mainbox {
         width: 300px !important;
-        height: 450px !important;
     }
 }
