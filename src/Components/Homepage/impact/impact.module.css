@@ -13,15 +13,15 @@
     max-width: 1200px;
     align-items: center;
     width: 100%;
-    gap: 1rem;
-    justify-content: space-evenly;
+    /* gap: 1rem; */
+    justify-content: space-around;
 }
 
-@media (max-width:1200px) {
-    .mycontainer{
+/* @media (max-width:1200px) {
+    .mycontainer {
         margin: 20px;
     }
-}
+} */
 
 .mainbox {
     display: flex;
