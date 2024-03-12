@@ -27,8 +27,7 @@ export default function Impact() {
               GYWS run LiGHT centers in different part of India.
             </div>
           </div>
-        </div>
-        
+        </div> 
         <div className={impcss.mycontainer}>
           <div className={impcss.mainbox} id={impcss.third}>
             <div>
