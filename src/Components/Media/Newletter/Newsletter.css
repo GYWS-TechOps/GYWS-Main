@@ -52,7 +52,7 @@
 }
 
 .newsletter_card_content {
-    text-align: left;
+    text-align: center;
     font-size: 1rem;
     margin: 1rem;
     display: flex;
@@ -67,13 +67,13 @@
 .newsletter_card_content h2 {
     font-size: 1.2rem;
     margin: 0 0 1rem 0;
-    text-align: left;
+    text-align: center;
     color: #33236c;
     letter-spacing: 0.5px;
 }
 
 .newsletter_card_content p {
-    text-align: left;
+    text-align: center;
     font-size: 1rem;
     color: #444;
     margin: 1rem 0;
