@@ -81,7 +81,7 @@ export default function intiative() {
                 style={{ textDecoration: "none", color: "#070707" }}
                 href="https://light.org.in/"
               >
-                Read More{" "}
+                Visit Now{" "}
               </a>{" "}
             </button>
           </div>
