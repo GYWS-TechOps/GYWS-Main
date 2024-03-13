@@ -65,6 +65,10 @@
         margin: 10px auto;
     }
 
+    .descriptionfeed {
+        padding-top: 0;
+    }
+
     .infofeed {
         display: flex;
         flex-direction: column;
