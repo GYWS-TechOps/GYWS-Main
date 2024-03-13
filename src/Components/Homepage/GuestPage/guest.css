@@ -60,6 +60,10 @@
         margin: 10px auto;
     }
 
+    .descriptionGuest {
+        padding-top: 0;
+    }
+
     .infoGuest {
         display: flex;
         flex-direction: column;

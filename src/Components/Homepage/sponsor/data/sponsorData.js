@@ -8,7 +8,7 @@ const sponsorsData = [
     {
         name: "CEL",
         logoUrl: "assets/images/home/sponsImages/CEL.png",
-        websiteLink: "#",
+        websiteLink: "/",
     },
     {
         name: "Gangesjute",
@@ -18,7 +18,7 @@ const sponsorsData = [
     {
         name: "IFEC",
         logoUrl: "assets/images/home/sponsImages/IFEC.JPG",
-        websiteLink: "#",
+        websiteLink: "/",
     },
     {
         name: "Ketex",
@@ -28,12 +28,12 @@ const sponsorsData = [
     {
         name: "Lepton",
         logoUrl: "assets/images/home/sponsImages/lepton.jpg",
-        websiteLink: "#",
+        websiteLink: "/",
     },
     {
         name: "Telcon",
         logoUrl: "assets/images/home/sponsImages/Telcon.jpg",
-        websiteLink: "#",
+        websiteLink: "/",
     },
 ];
 
@@ -51,27 +51,27 @@ const affiliationsData = [
     {
         name: "IIC",
         logoUrl: "assets/images/home/sponsImages/IIC.jpg",
-        websiteLink: "#",
+        websiteLink: "/",
     },
     {
         name: "TISS",
         logoUrl: "assets/images/home/sponsImages/TISS.png",
-        websiteLink: "#",
+        websiteLink: "/",
     },
     {
         name: "NCC",
         logoUrl: "assets/images/home/sponsImages/NCC.png",
-        websiteLink: "#",
+        websiteLink: "/",
     },
     {
         name: "NYKS",
         logoUrl: "assets/images/home/sponsImages/NYKS.jpg",
-        websiteLink: "#",
+        websiteLink: "/",
     },
     {
         name: "Tiara",
         logoUrl: "assets/images/home/sponsImages/tiara.png",
-        websiteLink: "#",
+        websiteLink: "/",
     },
 ];
 
