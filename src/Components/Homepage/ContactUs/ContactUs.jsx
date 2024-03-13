@@ -34,7 +34,7 @@ function ContactUs() {
 
     try {
 
-      let url = "https://gyws-backend-ptg5.onrender.com/api/contactUs";
+      let url = "/api/contactUs";
       // url = "http://localhost:5000/api/contactUs";
 
       const response = await fetch(url,
