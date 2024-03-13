@@ -184,7 +184,7 @@
     }
 }
 
-@media (max-width: 467px) {
+@media (max-width: 400px) {
     .mainbox {
         width: 300px !important;
     }
