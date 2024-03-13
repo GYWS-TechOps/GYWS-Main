@@ -240,3 +240,11 @@
     min-height: 640px;
   }
 }
+
+@media screen and (max-width: 450px) {
+  .blog-item .linkshere {
+    display: block;
+    padding: 30px;
+    min-height: 720px;
+  }
+}
