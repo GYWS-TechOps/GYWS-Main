@@ -237,6 +237,6 @@
   .blog-item .linkshere {
     display: block;
     padding: 30px;
-    height: 640px;
+    min-height: 640px;
   }
 }
