@@ -17,7 +17,6 @@ function ContactUs() {
   });
 
   const [loading, setLoading] = useState(false);
-  const [sent, setSent] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,7 +26,6 @@ function ContactUs() {
       [name]: value
     });
 
-    setSent(false);
   }
 
   const handleSubmit = async (e) => {
@@ -61,7 +59,6 @@ function ContactUs() {
           message: ""
         });
         setLoading(false);
-        setSent(true);
         openSnackbar("Message Sent");
       } else {
         console.log("In error", data.message);
@@ -127,7 +124,7 @@ function ContactUs() {
                   <div className="inputBox">
                     {/* <input id="submitbutton" type="submit" value="SEND" /> */}
                     <button id="submitbutton" type="submit">
-                      {loading ? "Sending..." : (sent ? "Message Sent" : "SEND")}
+                      {loading ? "Sending..." : "Message Sent"}
                     </button>
                   </div>
                 </div>
