@@ -2,8 +2,11 @@ import "./Contact.css";
 import { useState } from "react";
 import { GeoAltFill, EnvelopeFill, TelephoneFill } from "react-bootstrap-icons";
 import HCard from "../../HeaderCard/HCard";
+import { useSnackbar } from "react-simple-snackbar";
 
 function ContactUs() {
+
+  const [openSnackbar] = useSnackbar();
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -59,14 +62,17 @@ function ContactUs() {
         });
         setLoading(false);
         setSent(true);
+        openSnackbar("Message Sent");
       } else {
         console.log("In error", data.message);
         setLoading(false);
+        openSnackbar(data.message);
       }
 
     } catch (error) {
       console.log(error);
       setLoading(false);
+      openSnackbar("Error sending message");
     }
   }
 

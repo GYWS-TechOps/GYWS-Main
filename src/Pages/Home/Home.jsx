@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import MissionVision from "../../Components/Homepage/mission_vision/MissionVision";
 import Intiative from "../../Components/Homepage/intiatives/Intiative";
 import Slider from "../../Components/Homepage/slider/Slider";
@@ -7,7 +8,7 @@ import Impact from "../../Components/Homepage/impact/Impact";
 import ContactUs from "../../Components/Homepage/ContactUs/ContactUs";
 import Carousel from "../../Components/Homepage/sponsor/SponsorSlider"
 import TestiMonial from "../../Components/Homepage/Testimonial/Testimonial";
-import { useEffect } from "react";
+// import SomeChildComponent from "../../utils/someChildComponent/SomeChildComponent";
 
 function Home() {
 
@@ -27,10 +28,9 @@ function Home() {
         <TestiMonial />
         <FeedIndia />
         <GuestPage />
-
-        {/* <br /> */}
         <Carousel />
         <ContactUs />
+        {/* <SomeChildComponent /> */}
       </div>
     </>
   );
