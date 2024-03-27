@@ -24,7 +24,7 @@ const jvmData = [
 
 const eventsData = [
   {
-    name: "Aashayien",
+    name: "Aashayein",
     imgPath: "./images/aashayein.JPG",
   },
   {
