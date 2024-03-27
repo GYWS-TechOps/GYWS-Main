@@ -37,7 +37,7 @@ const eventsData = [
     imgPath: "./images/republicday.jpeg",
   },
   {
-    name: "KTJ Visit",
+    name: "Kshitij Visit",
     imgPath: "./images/ktjvisit.jpeg",
   },
 ];
