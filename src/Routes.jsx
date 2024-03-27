@@ -21,19 +21,19 @@ export default function NavRoutes() {
         <>
             <Routes>
                 <Route path="/*" element={<Home />} />
-                <Route path="/#/media" element={<Media />} />
-                <Route path="/#/member/*" element={<Member />} />
-                <Route path="/#/member/members2022-23/*" element={<Members2223 />} />
-                <Route path="/#/member/members2021-22/*" element={<Members2122 />} />
-                <Route path="/#/member/members2020-21/*" element={<Members2021 />} />
-                <Route path="/#/member/members2019-20/*" element={<Members2020 />} />
-                <Route path="/#/jvm" element={<JVM />} />
-                <Route path="/#/about" element={<About />} />
-                <Route path="/#/donate" element={<Donate />} />
-                <Route path="/#/donate/each" element={<Each />} />
-                <Route path="/#/donate/hostel_construction" element={<HostelCons />} />
-                <Route path="/#/donate/hostel_sustainability" element={<HostelSus />} />
-                <Route path="/#/donate/LiGHT" element={<LightDonate />} />
+                <Route path="/media" element={<Media />} />
+                <Route path="/member/*" element={<Member />} />
+                <Route path="/member/members2022-23/*" element={<Members2223 />} />
+                <Route path="/member/members2021-22/*" element={<Members2122 />} />
+                <Route path="/member/members2020-21/*" element={<Members2021 />} />
+                <Route path="/member/members2019-20/*" element={<Members2020 />} />
+                <Route path="/jvm" element={<JVM />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/donate" element={<Donate />} />
+                <Route path="/donate/each" element={<Each />} />
+                <Route path="/donate/hostel_construction" element={<HostelCons />} />
+                <Route path="/donate/hostel_sustainability" element={<HostelSus />} />
+                <Route path="/donate/LiGHT" element={<LightDonate />} />
                 <Route path="*" element={<h1 style={{ height: "100vh" }} >404: Page Not Found</h1>} />
             </Routes>
         </>
