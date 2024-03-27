@@ -11,7 +11,7 @@ function ContactUs() {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
-    email: "gywsociety@gmail.com",
+    email: "",
     mobile: "",
     message: ""
   });
