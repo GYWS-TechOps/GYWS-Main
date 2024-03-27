@@ -4,18 +4,24 @@
     width: 100%;
     overflow: clip;
 }
-.jvm-header{
+
+.jvm-header {
     position: relative;
 }
-.bgImg{
+
+.bgImg {
     width: 100%;
-    height: 80vh;
+    height: 85vh;
+    overflow: hidden;
+    filter: brightness(70%);
 }
-.bgImg img{
+
+.bgImg img {
     width: 100%;
-    height: 80vh;
+    height: 100%;
     object-fit: cover;
 }
+
 .jvm-header-content {
     position: absolute;
     top: 0;
@@ -31,23 +37,26 @@
 .jvm-header-content h2 {
     font-size: 42px;
     font-weight: 600;
-    color: #ffcc00;
-    text-shadow: 0px 0px 10px #000000;
+    color: #eee;
+    text-shadow: 0px 0px 10px #000000ae;
 }
 
 
-@media (max-width:420px) { 
+@media (max-width:420px) {
     .jvm-header-content {
         height: 60vh;
     }
+
     .jvm-header-content h2 {
         font-size: 26px;
     }
 }
+
 @media (min-width:420px) and (max-width:680px) {
     .jvm-header-content {
         height: 70vh;
     }
+
     .jvm-header-content h2 {
         font-size: 32px;
     }
@@ -93,9 +102,9 @@
 
 .jvm-section-content-card {
     width: 400px;
-    background-color:#695e91;
+    background-color: #695e91;
     /* background-color: #131921; */
-    color:white;
+    color: white;
     margin: 10px;
     padding: 1rem;
     height: auto;
@@ -139,11 +148,12 @@
     padding: 1rem;
     border-radius: 1rem;
     /* background-color: #131921; */
-    background-color:#695e91;
+    background-color: #695e91;
     color: white;
     min-height: 330px;
     box-shadow: 0 0 10px #000000bb;
 }
+
 .lecture-container-jvm {
     width: 100%;
     max-width: 1200px;
@@ -155,7 +165,7 @@
     padding: 1rem;
     border-radius: 1rem;
     /* background-color: #131921; */
-    background-color:#695e91;
+    background-color: #695e91;
     color: white;
     min-height: 330px;
     box-shadow: 0 0 10px #000000bb;
@@ -172,7 +182,7 @@
     max-height: 250px;
     background-color: white;
     padding: 5px;
-    border-radius:10px;
+    border-radius: 10px;
 }
 
 .lecture-content {
@@ -194,7 +204,7 @@
         display: flex;
         flex-direction: column-reverse;
     }
-    
+
     .lecture-container-jvm {
         flex-direction: column;
         justify-content: center;
@@ -203,13 +213,13 @@
         display: flex;
         /* flex-direction: column-reverse; */
     }
-    
+
 
     .lecture-img {
         width: 100%;
         height: 100%;
         background-color: white;
-      
+
     }
 
     .lecture-img img {
@@ -241,29 +251,29 @@
 }
 
 
-.LiGHT-button{
-/*            
+.LiGHT-button {
+    /*            
         display: flex;
         align-items: center;
         text-align: center;
         justify-content: center; */
-         margin: 2.5px;
+    margin: 2.5px;
 
-      
-        
 
-     }
 
- 
 
-  @media screen and (max-width:870px) {
-    .LiGHT-button{
-      margin-bottom: 4px;
-
-      
-     }
 }
-     
+
+
+
+@media screen and (max-width:870px) {
+    .LiGHT-button {
+        margin-bottom: 4px;
+
+
+    }
+}
+
 
 
 .LiGHT-button a {
@@ -279,10 +289,10 @@
     background-color: #000000bb;
     border-radius: 15px;
     font-size: large;
-    
-   
-   
-    
+
+
+
+
 }
 
 
@@ -307,7 +317,7 @@
     display: flex;
     width: 100%;
     height: auto;
-   justify-content: space-evenly;
+    justify-content: space-evenly;
 }
 
 @media screen and (max-width:1230px) {
@@ -321,12 +331,13 @@
     }
 
 }
+
 .event-gallery-card {
     width: 380px;
     margin: 10px;
     /* background-color: #131921; */
     /* background-color:#2596be; */
-    color:white;
+    color: white;
     padding: 1rem;
     height: auto;
     border-radius: 1rem;
@@ -388,21 +399,21 @@
 }
 
 @media (min-width:1027px) and (max-width:1300px) {
-  
-    .stats {
-    border-radius: 1rem;
-    margin: 1rem;
-    padding: 1rem;
-    width: 215px;
-    height: 130px;
-    color: #131921;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content:center;
-    box-shadow: 0 0 5px #00000097;
-}
+    .stats {
+        border-radius: 1rem;
+        margin: 1rem;
+        padding: 1rem;
+        width: 215px;
+        height: 130px;
+        color: #131921;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 5px #00000097;
+    }
 }
 
 
