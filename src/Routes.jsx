@@ -20,7 +20,7 @@ export default function NavRoutes() {
     return (
         <>
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/*" element={<Home />} />
                 <Route path="/media" element={<Media />} />
                 <Route path="/member/*" element={<Member />} />
                 <Route path="/member/members2022-23/*" element={<Members2223 />} />
