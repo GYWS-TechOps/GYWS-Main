@@ -50,7 +50,7 @@ const affiliationsData = [
     },
     {
         name: "IIC",
-        logoUrl: "assets/images/home/sponsImages/IIC.jpg",
+        logoUrl: "assets/images/home/sponsImages/IIC.JPG",
         websiteLink: "/",
     },
     {

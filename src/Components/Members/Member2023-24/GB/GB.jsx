@@ -19,6 +19,7 @@ export default function GB() {
             facebookLink={data.facebookLink}
             email={data.email}
             linkedinLink={data.linkedinLink}
+            data={data}
           />
         ))}
       </div>

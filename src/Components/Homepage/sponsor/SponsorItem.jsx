@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 
 
-export default function SponsorItem({ name, logoUrl, websiteLink }) {
+export default function SponsorItem({ sponsor }) {
   return (
-    <Link to={websiteLink} className="slider-card">
+    <Link to={sponsor.websiteLink} className="slider-card">
       <div className="slider-card-image">
-        <img src={logoUrl} alt="sponsorImage" />
+        <img src={sponsor.logoUrl} alt="sponsorImage" />
       </div>
       <div className="slider-card-heading">
-        <h3>{name}</h3>
+        <h3>{sponsor.name}</h3>
       </div>
     </Link>
   );
