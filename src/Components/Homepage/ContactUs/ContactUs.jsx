@@ -35,7 +35,7 @@ function ContactUs() {
 
     try {
 
-      let url = "/api/contactUs";
+      let url = "https://gyws-backend-ptg5.onrender.com/api/contactUs";
       // url = "http://localhost:5000/api/contactUs";
 
       const response = await fetch(url,
@@ -124,7 +124,7 @@ function ContactUs() {
                   <div className="inputBox">
                     {/* <input id="submitbutton" type="submit" value="SEND" /> */}
                     <button id="submitbutton" type="submit">
-                      {loading ? "Sending..." : "Message Sent"}
+                      {loading ? "Sending..." : "Send"}
                     </button>
                   </div>
                 </div>

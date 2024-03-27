@@ -7,7 +7,7 @@ function card(props) {
       <div className="members_card">
         <div className="members_card_image">
           <img src={props.imageUrl} alt="member" srcset="" />
-         
+
         </div>
         <div className="members_card_info">
           <h3 className="members_name">{props.name}</h3>
@@ -26,8 +26,8 @@ function card(props) {
               className=""
               target="_blank"
               rel="noreferrer"
-            >              <EnvelopeFill />
-
+            >
+              <EnvelopeFill />
             </a>
             <a
               href={props.linkedinLink}
