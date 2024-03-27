@@ -11,9 +11,9 @@ const Data = [
         name: "Yash Mate",
         position: "Design Head",
         imageUrl: "/images/profile.png",
-        facebookLink: "",
-        linkedinLink: "",
-        email: ""
+        facebookLink: "https://www.facebook.com/gyws.iitkgp",
+        linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
+        email: "gywsociety@gmail.com"
     },
     {
         name: "Divyanshu Singh",
