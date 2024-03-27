@@ -13,25 +13,25 @@ const Data = [
         name: "Kopal Jain",
         position: "SRC Head",
         imageUrl: "/assets/images/members/Heads23/Kopal Jain.jpg",
-        facebookLink: "",
-        linkedinLink: "",
-        email: ""
+        facebookLink: "https://www.facebook.com/gyws.iitkgp",
+        linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
+        email: "gywsociety@gmail.com"
     },
     {
         name: "Shruti Srivatsava",
         position: "SRC Head",
         imageUrl: "/images/profile.png",
-        facebookLink: "",
-        linkedinLink: "",
-        email: ""
+        facebookLink: "https://www.facebook.com/gyws.iitkgp",
+        linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
+        email: "gywsociety@gmail.com"
     },
     {
         name: "Vishal Kumar Lal",
         position: "SRC Head",
         imageUrl: "/assets/images/members/Heads23/VishalKumar.jpg",
-        facebookLink: "",
-        linkedinLink: "",
-        email: ""
+        facebookLink: "https://www.facebook.com/gyws.iitkgp",
+        linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
+        email: "gywsociety@gmail.com"
     },
 ]
 

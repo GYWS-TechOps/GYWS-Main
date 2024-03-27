@@ -18,7 +18,7 @@ const HowWeStarted = () => {
           </div>
         </div>
         <div className="how-we-started-img">
-          <img src="./images/childimage.jpeg" alt="Child" />
+          <img src="\assets\images\aboutus\runningboy.jpg" alt="Child" />
         </div>
       </div>
     </div>

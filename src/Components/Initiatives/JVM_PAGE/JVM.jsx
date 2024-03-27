@@ -1,5 +1,4 @@
 import "./JVM.css";
-import bgImg from "./bgImg.jpg";
 import LiGHTImg from "./LiGHT-img.png";
 import { useEffect } from "react";
 import HCard from "../../HeaderCard/HCard";
@@ -25,8 +24,8 @@ const jvmData = [
 
 const eventsData = [
   {
-    name: "Aashayien",
-    imgPath: "./images/aashayein.jpeg",
+    name: "Aashayein",
+    imgPath: "./images/aashayein.JPG",
   },
   {
     name: "Sports Day",
@@ -98,7 +97,7 @@ const EventCard = ({ name, imgPath }) => {
         <p>{name}</p>
       </div>
     </>
-  ); 
+  );
 
 };
 
@@ -128,7 +127,9 @@ export default function JVM() {
       <div className="jvm-container">
         <div className="jvm-header">
           <div className="bgImg">
-            <img src={bgImg} alt="" />
+            {/* <img src={"/assets/images/initiative/bgImg.jpg"} alt="" /> */}
+            <img src={"/assets/images/initiative/main.jpg"} alt="" />
+            {/* <img src={bgImg} alt="" /> */}
           </div>
           <div className="jvm-header-content">
             <h2> Jagriti Vidya Mandir</h2>
@@ -237,7 +238,7 @@ export default function JVM() {
             })}
           </div>
 
-          
+
         </div>
       </div>
     </>

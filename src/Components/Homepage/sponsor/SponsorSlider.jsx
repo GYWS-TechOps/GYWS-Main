@@ -29,9 +29,7 @@ function SponsorsSlider() {
               {sponsorsData.map((sponsor, index) => (
                 <SponsorItem
                   key={index}
-                  name={sponsor.name}
-                  logoUrl={sponsor.logoUrl}
-                  websiteLink={sponsor.websiteLink}
+                  sponsor={sponsor}
                 />
               ))}
             </Slider>
@@ -45,9 +43,7 @@ function SponsorsSlider() {
               {affiliationsData.map((sponsor, index) => (
                 <SponsorItem
                   key={index}
-                  name={sponsor.name}
-                  logoUrl={sponsor.logoUrl}
-                  websiteLink={sponsor.websiteLink}
+                  sponsor={sponsor}
                 />
               ))}
             </Slider>

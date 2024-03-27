@@ -109,80 +109,80 @@ const allData = [
                 name: "Prof. Adrijit Goswami",
                 position: "",
                 imageUrl: "/assets/images/members/Prof. Adrijit Goswami.jpg",
-                facebookLink: "",
-                linkedinLink: ""
+                facebookLink: "https://www.facebook.com/gyws.iitkgp",
+                linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/"
             },
             {
                 srNo: 2,
                 name: "Prof. Amit Patra",
                 position: "",
                 imageUrl: "/assets/images/members/Prof. Amit Patra.jpg",
-                facebookLink: "",
-                linkedinLink: ""
+                facebookLink: "https://www.facebook.com/gyws.iitkgp",
+                linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/"
             },
             {
                 srNo: 3,
                 name: "Dr. Bhaskar Bhowmik",
                 position: "",
                 imageUrl: "/assets/images/members/Dr. Bhaskar Bhowmik.jpg",
-                facebookLink: "",
-                linkedinLink: ""
+                facebookLink: "https://www.facebook.com/gyws.iitkgp",
+                linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/"
             },
             {
                 srNo: 4,
                 name: "Prof. Damodar Maiti",
                 position: "",
                 imageUrl: "/assets/images/members/Prof. Damodar Maiti.jpg",
-                facebookLink: "",
-                linkedinLink: ""
+                facebookLink: "https://www.facebook.com/gyws.iitkgp",
+                linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/"
             },
             {
                 srNo: 5,
                 name: "Prof. D.K. Maiti",
                 position: "",
                 imageUrl: "/assets/images/members/Prof. D.K. Maiti.jpg",
-                facebookLink: "",
-                linkedinLink: ""
+                facebookLink: "https://www.facebook.com/gyws.iitkgp",
+                linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/"
             },
             {
                 srNo: 6,
                 name: "Prof. Dilip Swain",
                 position: "",
                 imageUrl: "/assets/images/members/Prof. Dilip Swain.jpg",
-                facebookLink: "",
-                linkedinLink: ""
+                facebookLink: "https://www.facebook.com/gyws.iitkgp",
+                linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/"
             },
             {
                 srNo: 7,
                 name: "Retd. Prof. H.R. Tiwari",
                 position: "",
                 imageUrl: "/images/profile.png",
-                facebookLink: "",
-                linkedinLink: ""
+                facebookLink: "https://www.facebook.com/gyws.iitkgp",
+                linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/"
             },
             {
                 srNo: 8,
                 name: "Prof. Sasmita Mohakud",
                 position: "",
                 imageUrl: "/images/profile.png",
-                facebookLink: "",
-                linkedinLink: ""
+                facebookLink: "https://www.facebook.com/gyws.iitkgp",
+                linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/"
             },
             {
                 srNo: 9,
                 name: "Prof. Sudipta Datta",
                 position: "",
                 imageUrl: "/images/profile.png",
-                facebookLink: "",
-                linkedinLink: ""
+                facebookLink: "https://www.facebook.com/gyws.iitkgp",
+                linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/"
             },
             {
                 srNo: 10,
                 name: "Prof. Sudipto Chakraborty",
                 position: "",
                 imageUrl: "/assets/images/members/Prof. Sudipto Chakraborty.jpg",
-                facebookLink: "",
-                linkedinLink: ""
+                facebookLink: "https://www.facebook.com/gyws.iitkgp",
+                linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/"
             },
         ],
         jagritiVidyaMandir: [
@@ -353,80 +353,80 @@ const allData = [
                 name: "Prof. Adrijit Goswami",
                 position: "",
                 imageUrl: "/assets/images/members/Prof. Adrijit Goswami.jpg",
-                facebookLink: "",
-                linkedinLink: ""
+                facebookLink: "https://www.facebook.com/gyws.iitkgp",
+                linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/"
             },
             {
                 srNo: 2,
                 name: "Prof. Amit Patra",
                 position: "",
                 imageUrl: "/assets/images/members/Prof. Amit Patra.jpg",
-                facebookLink: "",
-                linkedinLink: ""
+                facebookLink: "https://www.facebook.com/gyws.iitkgp",
+                linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/"
             },
             {
                 srNo: 3,
                 name: "Dr. Bhaskar Bhowmik",
                 position: "",
                 imageUrl: "/assets/images/members/Dr. Bhaskar Bhowmik.jpg",
-                facebookLink: "",
-                linkedinLink: ""
+                facebookLink: "https://www.facebook.com/gyws.iitkgp",
+                linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/"
             },
             {
                 srNo: 4,
                 name: "Prof. Damodar Maiti",
                 position: "",
                 imageUrl: "/assets/images/members/Prof. Damodar Maiti.jpg",
-                facebookLink: "",
-                linkedinLink: ""
+                facebookLink: "https://www.facebook.com/gyws.iitkgp",
+                linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/"
             },
             {
                 srNo: 5,
                 name: "Prof. D.K. Maiti",
                 position: "",
                 imageUrl: "/assets/images/members/Prof. D.K. Maiti.jpg",
-                facebookLink: "",
-                linkedinLink: ""
+                facebookLink: "https://www.facebook.com/gyws.iitkgp",
+                linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/"
             },
             {
                 srNo: 6,
                 name: "Prof. Dilip Swain",
                 position: "",
                 imageUrl: "/assets/images/members/Prof. Dilip Swain.jpg",
-                facebookLink: "",
-                linkedinLink: ""
+                facebookLink: "https://www.facebook.com/gyws.iitkgp",
+                linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/"
             },
             {
                 srNo: 7,
                 name: "Retd. Prof. H.R. Tiwari",
                 position: "",
                 imageUrl: "/images/profile.png",
-                facebookLink: "",
-                linkedinLink: ""
+                facebookLink: "https://www.facebook.com/gyws.iitkgp",
+                linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/"
             },
             {
                 srNo: 8,
                 name: "Prof. Sasmita Mohakud",
                 position: "",
                 imageUrl: "/images/profile.png",
-                facebookLink: "",
-                linkedinLink: ""
+                facebookLink: "https://www.facebook.com/gyws.iitkgp",
+                linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/"
             },
             {
                 srNo: 9,
                 name: "Prof. Sudipta Datta",
                 position: "",
                 imageUrl: "/images/profile.png",
-                facebookLink: "",
-                linkedinLink: ""
+                facebookLink: "https://www.facebook.com/gyws.iitkgp",
+                linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/"
             },
             {
                 srNo: 10,
                 name: "Prof. Sudipto Chakraborty",
                 position: "",
                 imageUrl: "/assets/images/members/Prof. Sudipto Chakraborty.jpg",
-                facebookLink: "",
-                linkedinLink: ""
+                facebookLink: "https://www.facebook.com/gyws.iitkgp",
+                linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/"
             },
         ],
         jagritiVidyaMandir: [
