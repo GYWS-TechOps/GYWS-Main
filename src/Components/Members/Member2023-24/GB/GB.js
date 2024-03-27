@@ -10,7 +10,7 @@ const Data = [
     {
         name: "K Nikhil Sathwik",
         position: "General Secretary",
-        imageUrl: "/assets/images/members/gb23/K Nikhil Sathwik.jpg",
+        imageUrl: "/assets/images/members/GB23/K Nikhil Sathwik.jpg",
         facebookLink: "https://www.facebook.com/nikhil.sathwik.35",
         linkedinLink: "https://www.linkedin.com/in/kandregula-nikhil-sathwik-979a571b6/",
         email: "k.nikhil@gyws.org"
@@ -18,7 +18,7 @@ const Data = [
     {
         name: "Priyam Goenka",
         position: "Vice President",
-        imageUrl: "/assets/images/members/gb23/priyam goenka.jpg",
+        imageUrl: "/assets/images/members/GB23/priyam goenka.jpg",
         facebookLink: "https://www.facebook.com/profile.php?id=100011134831377",
         linkedinLink: "https://www.linkedin.com/in/priyam-goenka-221b371bb/",
         email: "priyam.goenka@gyws.org"
@@ -26,7 +26,7 @@ const Data = [
     {
         name: "Vinay Siwach",
         position: "Assistance Secretary ",
-        imageUrl: "/assets/images/members/gb23/Vinay Siwach.jpg",
+        imageUrl: "/assets/images/members/GB23/Vinay Siwach.jpg",
         facebookLink: "https://www.facebook.com/vinay.siwach.142/",
         linkedinLink: "https://www.linkedin.com/in/vinaysiwach7/",
         email: "vinay.siwach@gyws.org"
@@ -34,7 +34,7 @@ const Data = [
     {
         name: "Vageesh Tiwari",
         position: "Human Resource Manager",
-        imageUrl: "/assets/images/members/gb23/Vageesh Tiwari.jpg",
+        imageUrl: "/assets/images/members/GB23/Vageesh Tiwari.jpg",
         facebookLink: "https://www.facebook.com/vageesh.tiwari.712",
         linkedinLink: "https://www.linkedin.com/in/vageesh-tiwari-5940711b9/",
         email: "vageesh.tiwari@gyws.org"
@@ -42,7 +42,7 @@ const Data = [
     {
         name: "Debasish Tudu",
         position: "Treasurer",
-        imageUrl: "/assets/images/members/gb23/Debasish T.jpg",
+        imageUrl: "/assets/images/members/GB23/Debasish T.jpg",
         facebookLink: "https://www.facebook.com/debasish.tudu.102",
         linkedinLink: "https://www.linkedin.com/in/debasishtudufinance/", email: "debasish.tudu@gyws.org"
     },
@@ -57,7 +57,7 @@ const Data = [
     {
         name: "Rudransh Agrawal",
         position: "Chief Fundraising Officer",
-        imageUrl: "/assets/images/members/gb23/Rudransh Agrawal.jpeg",
+        imageUrl: "/assets/images/members/GB23/Rudransh Agrawal.jpeg",
         facebookLink: "https://www.facebook.com/rudransh.agrawal.3",
         linkedinLink: "https://www.linkedin.com/in/rudransh-agrawal-57a136202/",
         email: "rudransh.agrawal@gyws.org"
@@ -105,7 +105,7 @@ const Data = [
     {
         name: "Tanishq Agrawal",
         position: "Foreign and Corporate Relation Officer",
-        imageUrl: "/assets/images/members/gb23/Tanishq Agrawal.jpg",
+        imageUrl: "/assets/images/members/GB23/Tanishq Agrawal.jpg",
         facebookLink: "https://www.facebook.com/profile.php?id=100007165620906",
         linkedinLink: "https://www.linkedin.com/in/tanishq-agrawal-3921b5205/",
         email: "rudransh.agrawal@gyws.org"
