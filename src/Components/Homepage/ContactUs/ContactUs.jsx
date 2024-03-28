@@ -54,7 +54,7 @@ function ContactUs() {
         setFormData({
           firstName: "",
           lastName: "",
-          email: "gywsociety@gmail.com",
+          email: "",
           phone: "",
           message: ""
         });
