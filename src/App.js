@@ -3,7 +3,7 @@ import Navbar from './Components/navbar/Navbar';
 import NavRoutes from './Routes';
 import ScrollToTop from './Components/scrollToTop/scrollToTop';
 import Footer from './Components/Footer/footer'
-import SnackbarProvider from 'react-simple-snackbar'
+// import SnackbarProvider from 'react-simple-snackbar'
 
 
 export default function App() {
@@ -11,9 +11,9 @@ export default function App() {
   return (
     <>
       <Navbar />  
-      <SnackbarProvider>
+      {/* <SnackbarProvider> */}
         <NavRoutes />
-      </SnackbarProvider>
+      {/* </SnackbarProvider> */}
       <ScrollToTop />
       <Footer />
     </>
