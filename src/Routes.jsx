@@ -15,7 +15,6 @@ import HostelCons from './Components/Donation/Hostel_Contruction.jsx'
 import HostelSus from './Components/Donation/Hostel_Sustainability.jsx'
 import Donate from './Pages/Donate/Donate.jsx'
 
-
 export default function NavRoutes() {
     return (
         <>
