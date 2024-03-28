@@ -179,7 +179,7 @@ export default function JVM() {
               <div className="LiGHT-button">
 
 
-                <a href="https://light.gyws.org/index.php" className="button">Visit Page</a>
+                <a href="https://light.org.in" className="button">Visit Page</a>
 
 
               </div>
