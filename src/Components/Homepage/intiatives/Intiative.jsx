@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 export default function intiative() {
   return (
     <div className={inticss.outerContainer}>
-      <HCard head={"OUR INTIATIVES"}></HCard>
+      <HCard head={"OUR INITIATIVES"}></HCard>
       <div className={inticss.container}>
         <div className={inticss.box}>
           <div className={inticss.name}>

@@ -1,24 +1,21 @@
 const carouselData = [
     {
-        // legend: "Do something today that your future self will thank you for",
-        legend: "IITians empowering youth for better tomorrow",
+        legend: "IITians Empowering Youth For a Better Tomorrow",
         img: "/images/DSC_0110.JPG",
         alt: 'Aashayein',
     },
     {
-        // legend: "Do something today that your future self will thank you for",
-        legend: "IITians empowering youth for better tomorrow",
+        legend: "IITians Empowering Youth For a Better Tomorrow",
         img: "/images/DSC_0046.JPG",
         alt: 'Aashayein',
     },
     {
-        legend: "IITians empowering youth for better tomorrow",
+        legend: "IITians Empowering Youth For a Better Tomorrow",
         img: "/images/header_bg_1.jpg",
         alt: 'Students at Jagriti Vidya Mandir(JVM)',
     },
     {
-        // legend: "Do something today that your future self will thank you for",
-        legend: "IITians empowering youth for better tomorrow",
+        legend: "IITians Empowering Youth For a Better Tomorrow",
         img: "/images/JVM2.jpg",
         alt: 'We with the students',
     },

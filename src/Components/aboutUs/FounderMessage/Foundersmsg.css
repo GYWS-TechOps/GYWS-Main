@@ -31,6 +31,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -123,24 +124,25 @@
     background-color: #555;
 }
 
-
 .description {
     display: flex;
     align-items: center;
     width: 100%;
-
 }
 
 .content {
     padding-left: 20px;
     padding-right: 20px;
-  
-
 }
 
-.content p{
+.content p {
     text-align: justify;
 }
+
+.content p:nth-child(2) {
+    margin: 8px 0;
+}
+
 .description h2 {
     margin: 6%;
     text-align: center;
@@ -158,16 +160,14 @@
     }
 
     .msg-container-about {
+        gap: 15px;
         flex-direction: column;
-
     }
 
     .msg-container-about .description {
         max-width: 700px;
         text-align: justify;
     }
-
-
 }
 
 @media(max-width:768px) {

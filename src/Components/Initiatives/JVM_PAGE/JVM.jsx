@@ -8,17 +8,17 @@ const jvmData = [
   {
     imgPath: "./images/school_logo-removebg-preview.png",
     content:
-      "JVM was established in April, 2008. It's an Initiative of Gopali Youth Welfare Society. It's main motto is to educate each and every child for a better tommorow .",
+      "JVM was established in April, 2008. It's an initiative of Gopali Youth Welfare Society. It's main motto is to educate each and every child for a better tomorrow.",
   },
   {
     imgPath: "./images/child_logo-removebg-preview.png",
     content:
-      "It is located in Tangasool village, 1.5 kilometers from Salua Air Force Station which in turn is 5 kilometers away from IIT campus.",
+      "It is located in Tangasool village, 1.5 kilometers from Salua Air Force Station which in turn is 5 kilometers away from IIT Kharagpur campus.",
   },
   {
     imgPath: "./images/teachers_logo-removebg-preview.png",
     content:
-      "At present, school is up to 5th standard and 240+ students are enrolled from nursery to 5th standard and 11+ teachers.",
+      "At present, our school provides English Medium education up to 5th standard and 240+ students are enrolled from nursery to 5th standard and 11+ teachers.",
   },
 ];
 
@@ -177,11 +177,7 @@ export default function JVM() {
                 before they leave.
               </div>
               <div className="LiGHT-button">
-
-
                 <a href="https://light.org.in" className="button">Visit Page</a>
-
-
               </div>
             </div>
 
@@ -193,7 +189,7 @@ export default function JVM() {
 
         <div className="jvm-lecture">
 
-          <HCard head={"Future Plan"}></HCard>
+          <HCard head={"Future Plans"}></HCard>
 
 
           <div className="lecture-container-jvm">

@@ -32,7 +32,7 @@ function Slider() {
                     <img src={item.img} alt={item.alt} className='carousel_image' />
                     <div className='message'>
                       <div>
-                        <Typewriter text={item.legend.toUpperCase()} delay={100} />
+                        <Typewriter text={item.legend} delay={100} />
                       </div>
                     </div>
                   </div>

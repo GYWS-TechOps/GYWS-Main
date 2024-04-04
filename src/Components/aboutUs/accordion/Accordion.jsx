@@ -48,7 +48,7 @@ const FAQs = [
     answer: 'You can reach out to us by email: gywsociety@gmail.com or call us at: 03222296537.',
   },
   {
-    question: 'Why is the society named \'Gopali\' Youth Welfare Society?',
+    question: 'Why is the society named \'Gopali Youth Welfare Society\'?',
     answer: 'The NGO took shape to uplift the youth from the village of Gopali, located close to IIT Kharagpur campus. Our Founder- Mr. Mrinal Kanti Bhanja, a localite sowed the seeds of GYWS for the welfare of the people of Gopali along with some socially motivated students from IIT-KGP, back in 2002.',
   },
   {

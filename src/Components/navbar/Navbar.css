@@ -21,9 +21,9 @@ nav>a {
 }
 
 .logo {
-  font-size: 23px;
+  font-size: 25px;
   font-weight: 600;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: 1px;
   display: flex;
   align-items: center;

@@ -7,7 +7,7 @@
   justify-content: center;
   text-align: center;
   padding: 10px;
-  margin: 0 auto;
+  margin: 20px auto 0;
   min-height: calc(100vh - 200px);
 }
 
@@ -40,7 +40,7 @@
   align-items: center;
   justify-content: center;
   margin: 1rem auto;
-  gap: 20px;
+  gap: 50px;
 }
 
 .how-we-started-text {
@@ -85,6 +85,7 @@
 
 @media screen and (max-width: 100px) {
   .how-we-started-container {
+    margin: 12px auto 0;
     text-align: left;
   }
 
@@ -99,10 +100,12 @@
 
 @media screen and (max-width: 768px) {
   .how-we-started-container {
+    margin: 14px auto 0;
     text-align: left;
   }
 
   .how-we-started-about {
+    gap: 30px;
     flex-direction: column-reverse;
   }
 
@@ -116,6 +119,6 @@
   }
 }
 
-b{
+b {
   font-weight: 500 !important;
 }
