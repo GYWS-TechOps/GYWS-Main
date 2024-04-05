@@ -4,6 +4,7 @@
     max-width: 1200px;
     margin: 1rem auto 4rem;
     padding: 0.6rem;
+    
 }
 
 .contactUs .box {
@@ -242,7 +243,9 @@
             "info"
             "map"
     }
-
+    .contact{
+        padding: 10px;
+    }
     .contact.form {
         grid-template-columns: 1fr;
     }
