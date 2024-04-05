@@ -181,7 +181,7 @@
 .lecture-img img {
     height: 100%;
     max-height: 250px;
-    background-color: white;
+    /* background-color: white; */
     padding: 5px;
     border-radius: 10px;
 }
