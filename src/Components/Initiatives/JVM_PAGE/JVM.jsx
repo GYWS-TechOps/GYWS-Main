@@ -181,7 +181,7 @@ export default function JVM() {
               </div>
             </div>
 
-            <div className="lecture-img">
+            <div className="lecture-img light-section">
               <img src={LiGHTImg} alt="#" />
             </div>
           </div>
