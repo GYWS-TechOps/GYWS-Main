@@ -182,7 +182,7 @@ export default function JVM() {
             </div>
 
             <div className="lecture-img">
-              <img src={LiGHTImg} alt="#" />
+              <img style={{backgroundColor: 'white'}} src={LiGHTImg} alt="#" />
             </div>
           </div>
         </div>
