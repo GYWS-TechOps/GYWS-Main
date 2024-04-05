@@ -117,7 +117,7 @@
     height: 160px;
     padding: 10px;
     margin: 10px auto;
-    filter: hue-rotate(1deg);
+    filter: grayscale(1);
 }
 
 .jvm-section-content-card p {

@@ -91,7 +91,7 @@
     outline: none;
     border: 1px solid #202020;
     border-radius: 5px;
-    font-family: 'Open Sans', 'Poppins', sans-serif;
+    /* font-family: 'Open Sans', 'Poppins', sans-serif; */
 }
 
 .inputBox textarea {
@@ -103,7 +103,7 @@
     resize: none;
     min-height: 200px;
     margin-bottom: 10px;
-    font-family: 'Open Sans', 'Poppins', sans-serif;
+    /* font-family: 'Open Sans', 'Poppins', sans-serif; */
 }
 
 

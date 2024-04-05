@@ -25,7 +25,7 @@ export default function TestiMonial() {
     autoplay: true,
     // eslint-disable-next-line no-dupe-keys
     speed: 1000,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 4500,
     cssEase: "linear",
     pauseOnHover: true,
 
@@ -101,7 +101,7 @@ export default function TestiMonial() {
     },
   ];
 
- 
+
 
   const Testimonials = ({ name, img, statement, post }) => {
     return (
