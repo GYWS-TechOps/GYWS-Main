@@ -169,7 +169,7 @@ export default function JVM() {
                 LiGHT is the expansion initiative of GYWS, in which we aim to build a network of autonomous student-run centers across India that help the youth of our country get involved in social problem-solving and promote a positive change mindset, providing them with a platform to ensure the fulfillment of Sustainable Development Goals for the weaker sections of the society. At present, there are 13+ LiGHT centers operating across different parts of India.
               </div>
               <div className="LiGHT-button">
-                <a href="https://light.org.in" target="_blank" className="button">Visit Page</a>
+                <a href="https://light.org.in" target="_blank" rel="noreferrer noopener" className="button">Visit Page</a>
               </div>
             </div>
 
