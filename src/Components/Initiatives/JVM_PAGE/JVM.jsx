@@ -166,18 +166,10 @@ export default function JVM() {
           <div className="lecture-container">
             <div className="lecture-content">
               <div>
-                JVM aspires to be a residential full-fledged school for students
-                of under privileged families offering a variety of courses at +2
-                level, vocational training and career guidance. We seek to take
-                Jagriti Vidya Mandir to beyond its current primary level to
-                complete school cum hostel Catering to the needs of over 500
-                students. The facility will not only provide education up to
-                12th grade, but will also take responsibility for ensuring that
-                its students settle in their professional or educational lives
-                before they leave.
+                LiGHT is the expansion initiative of GYWS, in which we aim to build a network of autonomous student-run centers across India that help the youth of our country get involved in social problem-solving and promote a positive change mindset, providing them with a platform to ensure the fulfillment of Sustainable Development Goals for the weaker sections of the society. At present, there are 13+ LiGHT centers operating across different parts of India.
               </div>
               <div className="LiGHT-button">
-                <a href="https://light.org.in" className="button">Visit Page</a>
+                <a href="https://light.org.in" target="_blank" className="button">Visit Page</a>
               </div>
             </div>
 
