@@ -109,7 +109,7 @@
   overflow: hidden;
   align-items: center;
   max-width: 1000px;
-  min-height: 400px;
+  /* min-height: 400px; */
   margin: auto;
   color: #333;
   /* font-family: "Lato", sans-serif; */
@@ -227,7 +227,7 @@
   .blog-item .linkshere {
     display: block;
     padding: 30px;
-    height: 700px;
+    /* height: 700px; */
   }
 }
 
@@ -235,6 +235,6 @@
   .blog-item .linkshere {
     display: block;
     padding: 30px;
-    height: 750px;
+    /* height: 750px; */
   }
 }
