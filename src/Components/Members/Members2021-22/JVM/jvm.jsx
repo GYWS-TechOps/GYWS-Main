@@ -11,7 +11,7 @@ function jvm() {
   return (
     <>
       <div className="chlna">
-        <h1> JAGRITI VIDHYA MANDIR</h1>
+        <h1> JAGRITI VIDYA MANDIR</h1>
       </div>{" "}
       <br /><hr /><br />
             <Coordie />

@@ -11,10 +11,10 @@ import TextCard from '../../Components/HeaderCard/HCard'
 
 const DonateLinks = [
   {
-    name: "Each ( Educate a Child )",
+    name: "EaCH ( Educate a Child ) + JVMCare",
     imgPath: "./images/each1.jpg",
     discr:
-      "Each ( Educate a Child ) Invite donors to Donate 6000/- per year for a child's education.",
+      "EaCH ( Educate a Child ) Invite donors to Donate 8500/- per year for a child's education. JVMCare Invite donors to Donate 6000/- per year for Transportation cost",
     eventlink: "/donate/each",
     modal: "each"
   },
