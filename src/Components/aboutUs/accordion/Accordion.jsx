@@ -2,6 +2,7 @@ import { DashCircleFill, PlusCircleFill } from 'react-bootstrap-icons';
 import './Accordion.css';
 import { useState } from 'react';
 import HCard from '../../HeaderCard/HCard';
+
 // FAQ Accordion Component
 const FAQAccordion = ({ question, answer, index, expandedIndex, setExpandedIndex }) => {
   const isOpen = index === expandedIndex;
