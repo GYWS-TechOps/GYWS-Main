@@ -3,12 +3,13 @@ import "./GB.css";
 import Card from "../Card/card";
 import HCard from "../../../HeaderCard/HCard.jsx";
 import data from './GB.js'
+
 export default function GB() {
 
 
   return (
     <>
-      <HCard head={"Governing Body Members 2023-24"}></HCard>
+      <HCard head={"Governing Body Members 2024-25"}></HCard>
       <div className="members_container">
         {data.map((data, index) => (
           <Card

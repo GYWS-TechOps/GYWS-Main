@@ -2,7 +2,8 @@
 import { Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home/Home.jsx';
 import Media from './Pages/Media/Media.jsx';
-import Member from './Components/Members/Member2023-24/Members.jsx';
+import Member from './Components/Members/Members2024-25/Members.jsx';
+import Members2324 from './Components/Members/Members2023-24/Members.jsx'
 import Members2223 from './Components/Members/Members2022-23/Members.jsx'
 import Members2122 from './Components/Members/Members2021-22/Members.jsx'
 import Members2021 from './Components/Members/Members2020-21/Members.jsx'
@@ -22,6 +23,7 @@ export default function NavRoutes() {
                 <Route path="/*" element={<Home />} />
                 <Route path="/media" element={<Media />} />
                 <Route path="/member/*" element={<Member />} />
+                <Route path="/member/members2023-24/*" element={<Members2324 />} />
                 <Route path="/member/members2022-23/*" element={<Members2223 />} />
                 <Route path="/member/members2021-22/*" element={<Members2122 />} />
                 <Route path="/member/members2020-21/*" element={<Members2021 />} />

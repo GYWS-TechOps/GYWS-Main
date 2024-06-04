@@ -97,6 +97,17 @@ function Members() {
                     <ul className="dropdown-content">
                       <li>
                         <Link
+                          to="/member/"
+                          onClick={() => {
+                            toggleSidebar();
+                            scrollToTop();
+                          }}
+                        >
+                          Session 2024-25
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
                           to="/member/members2022-23"
                           onClick={() => {
                             toggleSidebar();

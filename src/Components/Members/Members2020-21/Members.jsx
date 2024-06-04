@@ -94,6 +94,17 @@ function Members() {
                           scrollToTop();
                         }}
                       >
+                        Session 2024-25
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/member/members2023-24"
+                        onClick={() => {
+                          toggleSidebar();
+                          scrollToTop();
+                        }}
+                      >
                         Session 2023-24
                       </Link>
                     </li>

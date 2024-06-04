@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../../Member2023-24/GB/GB.css'
+import '../../../Members2023-24/GB/GB.css'
 import Card from '../../Card/card'
 import data from './techops'
 import HCard from '../../../../HeaderCard/HCard'

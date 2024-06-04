@@ -22,6 +22,7 @@ function Members() {
   }
   const [windowSize, setWindowSize] = useState(getWindowSize());
   const [isSessionOpen, setSessionOpen] = useState(false);
+  
   useEffect(() => {
     function handleWindowResize() {
       setWindowSize(getWindowSize());
@@ -88,13 +89,24 @@ function Members() {
                   onMouseLeave={closeSessionDropdown}
                 >
                   <div className="jack" onClick={toggleSessionDropdown}>
-                    <span>Session 2023-24</span>
+                    <span>Session 2024-25</span>
                     <span style={{ fontSize: "10px", marginLeft: '20px' }}>
                       {isSessionOpen ? "▲" : "▼"}
                     </span>
                   </div>
                   {isSessionOpen && (
                     <ul className="dropdown-content">
+                      <li>
+                        <Link
+                          to="/member/members2023-24"
+                          onClick={() => {
+                            toggleSidebar();
+                            scrollToTop();
+                          }}
+                        >
+                          Session 2023-24
+                        </Link>
+                      </li>
                       <li>
                         <Link
                           to="/member/members2022-23"

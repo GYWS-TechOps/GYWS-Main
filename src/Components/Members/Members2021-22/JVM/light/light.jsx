@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../../Member2023-24/GB/GB.css'
+import '../../../Members2023-24/GB/GB.css'
 import Card from '../../Card/card'
 import data from './light'
 import ceo from './ceo'
@@ -16,7 +16,7 @@ export default function page() {
                 ))}
             </div>
             <br /><br />
-         
+
             <HCard head={"LiGHT Heads"}></HCard>
             <div className="members_container">
                 {data.map((data, index) => (

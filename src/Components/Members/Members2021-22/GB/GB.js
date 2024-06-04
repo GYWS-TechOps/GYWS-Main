@@ -9,7 +9,7 @@ const data = [
     {
         name: "Pradyun D",
         position: "GENERAL SECRETARY",
-        imageUrl: "/gyws//assets/img/new_website_img/members/Pradyun D.jpg",
+        imageUrl: "/gyws/assets/img/new_website_img/members/Pradyun D.jpg",
         facebookLink: "https://www.facebook.com/gyws.iitkgp",
         linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/"
     },

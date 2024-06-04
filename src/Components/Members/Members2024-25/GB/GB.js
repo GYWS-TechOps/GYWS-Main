@@ -1,114 +1,115 @@
 const Data = [
     {
-        name: "Nilesh Nagesh",
+        name: "Anshu Goyal",
         position: "President",
         imageUrl: "/assets/images/members/NileshNagesh.png",
-        facebookLink: "https://www.facebook.com/nilesh.nagesh.37?mibextid=ZbWKwL",
-        email: 'nilesh.nagesh@gyws.org',
-        linkedinLink: "https://www.linkedin.com/in/nilesh-nagesh-b1ba4a201?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        facebookLink: "https://www.facebook.com/profile.php?id=100073931382044",
+        linkedinLink: "linkedin.com/in/anshu-goyal-9a4a04222",
+        email: 'anshu.goyal@gyws.org',
     },
     {
-        name: "K Nikhil Sathwik",
+        name: "Shivam Yadav",
+        position: "Vice President",
+        imageUrl: "/assets/images/members/GB23/priyam goenka.jpg",
+        facebookLink: "https://www.facebook.com/Shivam.satmanju",
+        linkedinLink: "www.linkedin.com/in/shivamyadav1710",
+        email: "shivam.yadav@gyws.org"
+    },
+    {
+        name: "Sumit Deora",
         position: "General Secretary",
         imageUrl: "/assets/images/members/GB23/K Nikhil Sathwik.jpg",
-        facebookLink: "https://www.facebook.com/nikhil.sathwik.35",
-        linkedinLink: "https://www.linkedin.com/in/kandregula-nikhil-sathwik-979a571b6/",
+        facebookLink: "https://www.facebook.com/profile.php?id=100006783194680",
+        linkedinLink: "https://www.linkedin.com/in/sumit-deora-0b209921b/",
         email: "k.nikhil@gyws.org"
     },
     {
-        name: "Priyam Goenka",
-        position: "Vice President",
-        imageUrl: "/assets/images/members/GB23/priyam goenka.jpg",
-        facebookLink: "https://www.facebook.com/profile.php?id=100011134831377",
-        linkedinLink: "https://www.linkedin.com/in/priyam-goenka-221b371bb/",
-        email: "priyam.goenka@gyws.org"
-    },
-    {
-        name: "Vinay Siwach",
+        name: "Ajay Paliwal",
         position: "Assistance Secretary ",
         imageUrl: "/assets/images/members/GB23/Vinay Siwach.jpg",
-        facebookLink: "https://www.facebook.com/vinay.siwach.142/",
-        linkedinLink: "https://www.linkedin.com/in/vinaysiwach7/",
-        email: "vinay.siwach@gyws.org"
+        facebookLink: "https://www.facebook.com/profile.php?id=100075660422516",
+        linkedinLink: "https://www.linkedin.com/in/ajay-paliwal-b7a9b8223/",
+        email: "ajay.paliwal@gyws.org"
     },
     {
-        name: "Vageesh Tiwari",
-        position: "Human Resource Manager",
-        imageUrl: "/assets/images/members/GB23/Vageesh Tiwari.jpg",
-        facebookLink: "https://www.facebook.com/vageesh.tiwari.712",
-        linkedinLink: "https://www.linkedin.com/in/vageesh-tiwari-5940711b9/",
-        email: "vageesh.tiwari@gyws.org"
-    },
-    {
-        name: "Debasish Tudu",
+        name: "Ishika Modi",
         position: "Treasurer",
         imageUrl: "/assets/images/members/GB23/Debasish T.jpg",
-        facebookLink: "https://www.facebook.com/debasish.tudu.102",
-        linkedinLink: "https://www.linkedin.com/in/debasishtudufinance/", email: "debasish.tudu@gyws.org"
+        facebookLink: "https://www.facebook.com/profile.php?id=100075462040432",
+        linkedinLink: "https://www.linkedin.com/in/ishika-modi-117354227/", 
+        email: "ishika.modi@gyws.org"
     },
     {
-        name: "Mridula Mathukumalli",
+        name: "Amisha Rathi",
         position: "School Development Officer ",
         imageUrl: "/assets/images/members/Mridula.JPG",
-        facebookLink: "https://www.facebook.com/profile.php?id=100008744386729",
-        linkedinLink: "https://www.linkedin.com/in/mridulasarma",
+        facebookLink: "https://www.facebook.com/amisha.rathi.545",
+        linkedinLink: "https://www.linkedin.com/in/amisha-rathi/",
         email: "mridula.mathukumalli@gyws.org"
     },
     {
-        name: "Rudransh Agrawal",
+        name: "Nitin Rajvanshi",
         position: "Chief Fundraising Officer",
         imageUrl: "/assets/images/members/GB23/Rudransh Agrawal.jpeg",
-        facebookLink: "https://www.facebook.com/rudransh.agrawal.3",
-        linkedinLink: "https://www.linkedin.com/in/rudransh-agrawal-57a136202/",
+        facebookLink: "https://www.facebook.com/nitinraj72",
+        linkedinLink: "https://www.linkedin.com/in/nitinrajvanshi/",
+        email: "nitin.rajvanshi@gyws.org"
+    },
+    {
+        name: "Arpit Singh",
+        position: "Foreign and Corporate Relation Officer",
+        imageUrl: "/assets/images/members/GB23/Tanishq Agrawal.jpg",
+        facebookLink: "https://www.facebook.com/profile.php?id=100073612406522",
+        linkedinLink: "https://www.linkedin.com/in/arpit-singh-a08146224/",
         email: "rudransh.agrawal@gyws.org"
     },
     {
-        name: "Sayali Mahipal Ganvir",
-        position: "Hostel Committee Officer",
-        imageUrl: "/assets/images/members/MahipalGanvir.jpg",
-        facebookLink: "https://www.facebook.com/profile.php?id=100010676352813",
-        linkedinLink: "https://www.linkedin.com/in/sayali-ganvir-160074206/",
-        email: "sayali.mahipal@gyws.org"
-    },
-    {
-        name: "Nikhil Lahane",
-        position: "Chief Executive Officer, LiGHT",
-        imageUrl: "/assets/images/members/NikhilLahane.jpg",
-        facebookLink: "https://www.facebook.com/nikhil.lahane.143",
-        linkedinLink: "https://www.linkedin.com/in/nikhil-lahane-4541641b8?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        email: "nikhil.lahane@gyws.org"
-    },
-    {
-        name: "Ankita",
+        name: "Hrishikesh M V",
         position: "Donor Engagement Officer",
         imageUrl: "/assets/images/members/AnkitaKhakhal.jpg",
-        facebookLink: "https://www.facebook.com/ankita.khakhal?mibextid=JRoKGi",
-        linkedinLink: "https://www.linkedin.com/in/ankita-khakhal-280946205",
+        facebookLink: "https://www.facebook.com/profile.php?id=100004918995599",
+        linkedinLink: "https://www.linkedin.com/in/hrishikesh-m-v-288a62227/",
         email: 'ankita@gyws.org'
     },
     {
-        name: "Swastik Sambhav",
-        position: "Chief Techinical Officer",
-        imageUrl: "/assets/images/members/SwastikSambhav.jpg",
-        facebookLink: "https://www.facebook.com/swastik.sambhav.338",
-        linkedinLink: "https://www.linkedin.com/in/swastik-sambhav-1622111b9/",
-        email: "swastik.sambhav@gyws.org"
+        name: "Virat Dwivedi",
+        position: "Human Resource Manager",
+        imageUrl: "/assets/images/members/GB23/Vageesh Tiwari.jpg",
+        facebookLink: "https://www.facebook.com/profile.php?id=100006798225731",
+        linkedinLink: "https://www.linkedin.com/in/virat-dwivedi-55912a202/",
+        email: "vageesh.tiwari@gyws.org"
     },
     {
-        name: "Nadimpalli Deepthi",
+        name: "Ujjwal kumar Singh",
         position: "Public Relation Officer",
         imageUrl: "/assets/images/members/Deepthi.jpg",
-        facebookLink: "https://www.facebook.com/deepthi.nadimpalli.39",
-        linkedinLink: "https://www.linkedin.com/in/nadimpalli-deepthi-b9925821b/",
-        email: "deepthi.nadimpalli@gyws.org"
+        facebookLink: "http://facebook.com/profile.php?id=100074018137550",
+        linkedinLink: "linkedin.com/in/ujjwalkumarsingh/",
+        email: "ujjwal.singh@gyws.org"
     },
     {
-        name: "Tanishq Agrawal",
-        position: "Foreign and Corporate Relation Officer",
-        imageUrl: "/assets/images/members/GB23/Tanishq Agrawal.jpg",
-        facebookLink: "https://www.facebook.com/profile.php?id=100007165620906",
-        linkedinLink: "https://www.linkedin.com/in/tanishq-agrawal-3921b5205/",
-        email: "rudransh.agrawal@gyws.org"
+        name: "Ujjawal Kumar",
+        position: "Chief Technical Officer",
+        imageUrl: "/assets/images/members/SwastikSambhav.jpg",
+        facebookLink: "https://www.facebook.com/profile.php?id=100012980770787",
+        linkedinLink: "https://www.linkedin.com/in/ujjawal-kumar-45a431228/",
+        email: "swastik.sambhav@gyws.org"
+    },
+    // {
+    //     name: "Sayali Mahipal Ganvir",
+    //     position: "Hostel Committee Officer",
+    //     imageUrl: "/assets/images/members/MahipalGanvir.jpg",
+    //     facebookLink: "https://www.facebook.com/profile.php?id=100010676352813",
+    //     linkedinLink: "https://www.linkedin.com/in/sayali-ganvir-160074206/",
+    //     email: "sayali.mahipal@gyws.org"
+    // },
+    {
+        name: "Advait Gokhale",
+        position: "Chief Executive Officer, LiGHT",
+        imageUrl: "/assets/images/members/NikhilLahane.jpg",
+        facebookLink: "https://www.facebook.com/profile.php?id=100074639880196",
+        linkedinLink: "https://www.linkedin.com/in/advait-gokhale-399a0b236/",
+        email: "advait.gokhale@gyws.org"
     },
 
 ]
