@@ -88,7 +88,7 @@ const Data = [
     },
     {
         name: "Swastik Sambhav",
-        position: "Chief Techinical Officer",
+        position: "Chief Technology Officer",
         imageUrl: "/assets/images/members/SwastikSambhav.jpg",
         facebookLink: "https://www.facebook.com/swastik.sambhav.338",
         linkedinLink: "https://www.linkedin.com/in/swastik-sambhav-1622111b9/",
