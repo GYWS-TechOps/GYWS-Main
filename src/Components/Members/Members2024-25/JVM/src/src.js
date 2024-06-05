@@ -20,7 +20,7 @@ const Data = [
         facebookLink: "https://www.facebook.com/profile.php?id=100017491156001",
         linkedinLink: "https://www.linkedin.com/in/jaydeep-parmar37",
         email: "jaydeep.parmar@gyws.org",
-        imageUrl: "/assets/images/members/Heads24/jaydeep parmar.jpg",
+        imageUrl: "/assets/images/members/Heads24/Jaydeep parmar.jpg",
         position: "SRC Head"
       },
       {
