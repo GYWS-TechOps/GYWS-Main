@@ -10,7 +10,7 @@ const Data = [
         {
             name: "Saurav Kumar Nishant",
             position: "Chief Advisory, Prayas",
-            imageUrl: "/gyws//assets/img/new_website_img/members/Saurav Kumar Nishant.jpg",
+            imageUrl: "/assets/images/members/Heads21/Saurav Kumar Nishant.jpg",
             facebookLink: "https://www.facebook.com/gyws.iitkgp",
             linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
             email: "gywsociety@gmail.com"
@@ -18,7 +18,7 @@ const Data = [
         {
             name: "Yash Raj Gupta",
             position: "Chief Advisory, Prayas",
-            imageUrl: "/gyws//assets/img/new_website_img/members/Yash Raj Gupta.jpg",
+            imageUrl: "/assets/images/members/Heads21/Yash Raj Gupta.jpg",
             facebookLink: "https://www.facebook.com/gyws.iitkgp",
             linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
             email: "gywsociety@gmail.com"

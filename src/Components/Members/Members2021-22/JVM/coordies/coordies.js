@@ -2,7 +2,7 @@ const Data = [
     {
         name: "Saurabh Zanwar",
         position: "UG Coordinator",
-        imageUrl: "/gyws//assets/img/new_website_img/members/Saurabh Zanwar.jpg",
+        imageUrl: "/assets/images/members/Heads21/Saurabh Zanwar.jpg",
         facebookLink: "https://www.facebook.com/gyws.iitkgp",
         linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
         email: "gywsociety@gmail.com"
@@ -10,7 +10,7 @@ const Data = [
     {
         name: "Gopi Sravani",
         position: "UG Coordinator",
-        imageUrl: "/gyws//assets/img/new_website_img/members/Sravani Gopi.jpg",
+        imageUrl: "/images/profile.png",
         facebookLink: "https://www.facebook.com/gyws.iitkgp",
         linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
         email: "gywsociety@gmail.com"
@@ -18,7 +18,7 @@ const Data = [
     {
         name: "Avyaya Bejawada",
         position: "UG Coordinator",
-        imageUrl: "/gyws//assets/img/new_website_img/members/Avyaya Bejawada.jpg",
+        imageUrl: "/assets/images/members/Heads21/Avyaya Bejawada.jpg",
         facebookLink: "https://www.facebook.com/gyws.iitkgp",
         linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
         email: "gywsociety@gmail.com"

@@ -14,13 +14,12 @@ function jvm() {
         <h1> JAGRITI VIDYA MANDIR</h1>
       </div>{" "}
       <br /><hr /><br />
-            <Coordie />
-            <br /><br />
-            <Src/><br /><br />
-            <Finance/><br /><br />
-            <Spons/><br /><br />
-            <Tech/> <br /><br />
-            <Design></Design> <br /><br />
+      <Coordie />
+      <br /><br />
+      <Src /><br /><br />
+      <Finance /><br /><br />
+      <Spons /><br /><br />
+      <Tech /> <br /><br />
       <Design /> <br /><br />
       <Media /> <br /><br />
     </>

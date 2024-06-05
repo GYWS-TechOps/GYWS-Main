@@ -2,7 +2,7 @@ const Data = [
     {
         name: "Chinmay Jain",
         position: "TechOps Head",
-        imageUrl: "/gyws//assets/img/new_website_img/members/dummy.png",
+        imageUrl: "/images/profile.png",
         facebookLink: "https://www.facebook.com/gyws.iitkgp",
         linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
         email: "gywsociety@gmail.com"
@@ -10,7 +10,7 @@ const Data = [
     {
         name: "Debabrata Bhakat",
         position: "TechOps Head",
-        imageUrl: "/gyws//assets/img/new_website_img/members/Debabrata Bhakat.jpg",
+        imageUrl: "/assets/images/members/Heads21/Debabrata Bhakat.jpg",
         facebookLink: "https://www.facebook.com/gyws.iitkgp",
         linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
         email: "gywsociety@gmail.com"
@@ -18,7 +18,7 @@ const Data = [
     {
         name: "Naman Goel",
         position: "TechOps Head",
-        imageUrl: "/gyws//assets/img/new_website_img/members/dummy.png",
+        imageUrl: "/images/profile.png",
         facebookLink: "https://www.facebook.com/gyws.iitkgp",
         linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
         email: "gywsociety@gmail.com"

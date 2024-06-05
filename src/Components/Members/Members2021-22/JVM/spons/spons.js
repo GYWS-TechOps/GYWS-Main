@@ -2,7 +2,7 @@ const Data = [
     {
         name: "Anish Sofat",
         position: "Sponsorship Head",
-        imageUrl: "/gyws//assets/img/new_website_img/members/dummy.png",
+        imageUrl: "/images/profile.png",
         facebookLink: "https://www.facebook.com/gyws.iitkgp",
         linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
         email: "gywsociety@gmail.com"
@@ -10,7 +10,7 @@ const Data = [
     {
         name: "Akshitha Surkanti",
         position: "Sponsorship Head",
-        imageUrl: "/gyws//assets/img/new_website_img/members/Akshitha Surkanti.jpg",
+        imageUrl: "/assets/images/members/Heads21/Akshitha Surkanti.jpg",
         facebookLink: "https://www.facebook.com/gyws.iitkgp",
         linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
         email: "gywsociety@gmail.com"
@@ -18,7 +18,7 @@ const Data = [
     {
         name: "Eshita Chandwani",
         position: "Sponsorship Head",
-        imageUrl: "/gyws//assets/img/new_website_img/members/Eshita Chandwani.jpg",
+        imageUrl: "/assets/images/members/Heads21/Eshita Chandwani.jpg",
         facebookLink: "https://www.facebook.com/gyws.iitkgp",
         linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
         email: "gywsociety@gmail.com"
@@ -26,7 +26,7 @@ const Data = [
     {
         name: "Parv Maheshwari",
         position: "Sponsorship Head",
-        imageUrl: "/gyws//assets/img/new_website_img/members/Parv Maheshwari.jpg",
+        imageUrl: "/assets/images/members/Heads21/Parv Maheshwari.jpg",
         facebookLink: "https://www.facebook.com/gyws.iitkgp",
         linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
         email: "gywsociety@gmail.com"
@@ -34,7 +34,7 @@ const Data = [
     {
         name: "Yogesh Chawla ",
         position: "Sponsorship Head",
-        imageUrl: "/gyws//assets/img/new_website_img/members/Yogesh Chawla.jpeg",
+        imageUrl: "/assets/images/members/Heads21/Yogesh Chawla.jpeg",
         facebookLink: "https://www.facebook.com/gyws.iitkgp",
         linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
         email: "gywsociety@gmail.com"
