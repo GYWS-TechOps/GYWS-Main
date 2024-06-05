@@ -17,9 +17,9 @@ function jvm() {
             <Coordie />
             <br /><br />
             <Src/><br /><br />
-            <Finance/><br /><br />
-            <Spons/><br /><br />
             <Tech/> <br /><br />
+            <Spons/><br /><br />
+            <Finance/><br /><br />
             <Design></Design> <br /><br />
             <Media /> <br />
         </>
