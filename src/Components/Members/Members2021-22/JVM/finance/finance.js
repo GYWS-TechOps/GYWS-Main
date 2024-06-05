@@ -2,7 +2,7 @@ const Data = [
     {
         name: "Shubham Agrawal",
         position: "Finance Head",
-        imageUrl: "/gyws//assets/img/new_website_img/members/Shubham Agrawal.jpg",
+        imageUrl: "/assets/images/members/Heads21/Shubham Agrawal.jpg",
         facebookLink: "https://www.facebook.com/gyws.iitkgp",
         linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
         email: "gywsociety@gmail.com"
@@ -10,7 +10,7 @@ const Data = [
     {
         name: "Mayank Agrawal",
         position: "Finance Head",
-        imageUrl: "/gyws//assets/img/new_website_img/members/Mayank Agrawal.jpg",
+        imageUrl: "/assets/images/members/Heads21/Mayank Agrawal.jpg",
         facebookLink: "https://www.facebook.com/gyws.iitkgp",
         linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
         email: "gywsociety@gmail.com"
@@ -18,7 +18,7 @@ const Data = [
     {
         name: "Aditya Mallick",
         position: "Finance Head",
-        imageUrl: "/gyws//assets/img/new_website_img/members/Aditya Mallick.jpg",
+        imageUrl: "/assets/images/members/Heads21/Aditya Mallick.jpg",
         facebookLink: "https://www.facebook.com/gyws.iitkgp",
         linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
         email: "gywsociety@gmail.com"

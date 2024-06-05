@@ -2,7 +2,7 @@ const Data = [
     {
         name: "Keerthi Reddy Samreddy",
         position: "SRC Head",
-        imageUrl: "/gyws//assets/img/new_website_img/members/Keerthi Reddy Samreddy.jpg",
+        imageUrl: "/assets/images/members/Heads21/Keerthi Reddy Samreddy.jpg",
         facebookLink: "https://www.facebook.com/gyws.iitkgp",
         linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
         email: "gywsociety@gmail.com"
@@ -10,7 +10,7 @@ const Data = [
     {
         name: "Mridul Gupta",
         position: "SRC Head",
-        imageUrl: "/gyws//assets/img/new_website_img/members/Mridul Gupta.jpeg",
+        imageUrl: "/assets/images/members/Heads21/Mridul Gupta.jpeg",
         facebookLink: "https://www.facebook.com/gyws.iitkgp",
         linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
         email: "gywsociety@gmail.com"
@@ -18,7 +18,7 @@ const Data = [
     {   
         name: "Vishal Kumar Mishra",
         position: "SRC Head",
-        imageUrl: "/gyws//assets/img/new_website_img/members/Vishal Kumar Mishra.png",
+        imageUrl: "/assets/images/members/Heads21/Vishal Kumar Mishra.png",
         facebookLink: "https://www.facebook.com/gyws.iitkgp",
         linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
         email: "gywsociety@gmail.com"
@@ -26,7 +26,7 @@ const Data = [
     {
         name: "Biswashree Roy",
         position: "SRC Head",
-        imageUrl: "/gyws//assets/img/new_website_img/members/Biswashree Roy.jpg",
+        imageUrl: "/assets/images/members/Heads21/Biswashree Roy.jpg",
         facebookLink: "https://www.facebook.com/gyws.iitkgp",
         linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
         email: "gywsociety@gmail.com"
@@ -34,7 +34,7 @@ const Data = [
     {
         name: "Ayushi Sharma",
         position: "SRC Head",
-        imageUrl: "/gyws//assets/img/new_website_img/members/Ayushi Sharma.jpg",
+        imageUrl: "/images/profile.png",
         facebookLink: "https://www.facebook.com/gyws.iitkgp",
         linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
         email: "gywsociety@gmail.com"

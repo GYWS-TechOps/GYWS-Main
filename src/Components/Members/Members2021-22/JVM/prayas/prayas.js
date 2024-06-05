@@ -2,7 +2,7 @@ const Data = [
     {
         name: "Praneeth Reddy Kolanu",
         position: "Coordinator, PRAYAS ",
-        imageUrl: "/gyws//assets/img/new_website_img/members/Praneeth Reddy Kolanu.jpg",
+        imageUrl: "/assets/images/members/Heads21/Praneeth Reddy Kolanu.jpg",
         facebookLink: "https://www.facebook.com/gyws.iitkgp",
         linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
         email: "gywsociety@gmail.com"
@@ -10,7 +10,7 @@ const Data = [
     {
         name: "Manusani Vaishnavi",
         position: "Coordinator, PRAYAS and Head, RISE",
-        imageUrl: "/gyws//assets/img/new_website_img/members/Manusani Vaishnavi.jpeg",
+        imageUrl: "/assets/images/members/Heads21/Manusani Vaishnavi.jpeg",
         facebookLink: "https://www.facebook.com/gyws.iitkgp",
         linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
         email: "gywsociety@gmail.com"
@@ -18,7 +18,7 @@ const Data = [
     {
         name: "Rajavardhini Bethala",
         position: "Head, PRAYAS and RISE",
-        imageUrl: "/gyws//assets/img/new_website_img/members/Rajavardhini Bethala.png",
+        imageUrl: "/assets/images/members/Heads21/Rajavardhini Bethala.png",
         facebookLink: "https://www.facebook.com/gyws.iitkgp",
         linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
         email: "gywsociety@gmail.com"
@@ -26,7 +26,7 @@ const Data = [
     {
         name: "Ratnesh Khandelwal",
         position: "Head, RISE",
-        imageUrl: "/gyws//assets/img/new_website_img/members/Ratnesh Khandelwal.jpg",
+        imageUrl: "/assets/images/members/Heads21/Ratnesh Khandelwal.jpg",
         facebookLink: "https://www.facebook.com/gyws.iitkgp",
         linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
         email: "gywsociety@gmail.com"
@@ -34,7 +34,7 @@ const Data = [
     {
         name: "Surya Manikanta Tankala",
         position: "Head, PRAYAS",
-        imageUrl: "/gyws//assets/img/new_website_img/members/Surya Tankala.jpeg",
+        imageUrl: "/assets/images/members/Heads21/Surya Tankala.jpeg",
         facebookLink: "https://www.facebook.com/gyws.iitkgp",
         linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
         email: "gywsociety@gmail.com"
