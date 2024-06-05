@@ -155,7 +155,7 @@ function Members() {
                 </li>
 
                 <Link
-                  to="/member"
+                  to="/member/members2023-24"
                   onClick={() => {
                     toggleSidebar();
                     scrollToTop();
@@ -164,7 +164,7 @@ function Members() {
                   <li>Governing Body 2023-24</li>
                 </Link>
                 <Link
-                  to="/member/Advisory"
+                  to="/member/members2023-24/Advisory"
                   onClick={() => {
                     toggleSidebar();
                     scrollToTop();
@@ -179,7 +179,7 @@ function Members() {
               <h2>Intiatives</h2>
               <ul>
                 <Link
-                  to="/member/jvm"
+                  to="/member/members2023-24/jvm"
                   onClick={() => {
                     toggleSidebar();
                     scrollToTop();
@@ -191,7 +191,7 @@ function Members() {
                   </li>
                 </Link>
                 <Link
-                  to="/member/Rise"
+                  to="/member/members2023-24/Rise"
                   onClick={() => {
                     toggleSidebar();
                     scrollToTop();
@@ -203,7 +203,7 @@ function Members() {
                   </li>
                 </Link>
                 <Link
-                  to="/member/LiGHT"
+                  to="/member/members2023-24/LiGHT"
                   onClick={() => {
                     toggleSidebar();
                     scrollToTop();
