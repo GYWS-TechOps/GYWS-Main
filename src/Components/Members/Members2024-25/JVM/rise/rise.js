@@ -1,19 +1,27 @@
 const Data = [
     {
-        name: "Amisha Rathi",
+        name: "Tvisha Khakhar",
         position: "Rise Head",
-        imageUrl: "/assets/images/members/Heads23/Amisha Rathi.jpeg",
-        facebookLink: "https://www.facebook.com/amisha.rathi.545?mibextid=ZbWKwL",
-        linkedinLink: "https://www.linkedin.com/in/amisha-rathi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        email: "amisha.r@gyws.org"
+        imageUrl: "/assets/images/members/Heads24/Tvisha Khakhar.jpg",
+        facebookLink: "https://www.facebook.com/profile.php?id=100087648426543&mibextid=ZbWKwL",
+        linkedinLink: "https://www.linkedin.com/in/tvisha-khakhar-a71547250",
+        email: "tvisha@gyws.org"
     },
     {
-        name: "K Janaki Ratna Lakshmi ",
+        name: "Lokesh Saran",
         position: "Rise Head",
-        imageUrl: "/assets/images/members/Heads23/Janaki Kusumanchi.jpg",
-        facebookLink: "https://www.facebook.com/JaanuJanaki8710/",
-        linkedinLink: "https://www.linkedin.com/in/janaki-kusumanchi-161388250?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        email: "k.lakshmi@gyws.org"
+        imageUrl: "/assets/images/members/Heads24/Lokesh Saran.jpg",
+        facebookLink: "https://www.facebook.com/profile.php?id=100087515113955&mibextid=ZbWKwL",
+        linkedinLink: "https://www.linkedin.com/in/lokesh-saran-b0535925",
+        email: "lokesh.saran@gyws.org"
+    },
+    {
+        name: "Swaralipi Datta",
+        position: "",
+        imageUrl: "/assets/images/members/Heads24/Swaralipi Datta.jpeg",
+        facebookLink: "https://www.facebook.com/profile.php?id=100087185364901",
+        linkedinLink: "https://www.linkedin.com/in/swaralipi-datta04/",
+        email: "swaralipi.datta@gyws.org"
     },
 ]
 

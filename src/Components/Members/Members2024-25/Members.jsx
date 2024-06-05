@@ -162,7 +162,7 @@ function Members() {
                     scrollToTop();
                   }}
                 >
-                  <li>Governing Body 2023-24</li>
+                  <li>Governing Body 2024-25</li>
                 </Link>
                 <Link
                   to="/member/Advisory"

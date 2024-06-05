@@ -7,7 +7,7 @@ export default function page() {
     return (
 
         <>
-            <HCard head={"Sponsorship Heads 2023-24"}></HCard>
+            <HCard head={"Sponsorship Heads 2024-25"}></HCard>
             <div className="members_container">
                 {data.map((data, index) => (
                     <Card key={index} name={data.name} position={data.position} imageUrl={data.imageUrl} facebookLink={data.facebookLink}

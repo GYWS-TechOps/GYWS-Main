@@ -1,20 +1,29 @@
 const Data = [
     {
-        name: "Jitendra Kumar",
+        name: "Ashutosh Kr Singh",
         position: "TechOps Head",
-        imageUrl: "/assets/images/members/Heads23/Jitendra Kumar.jpg",
-        facebookLink: "https://www.facebook.com/profile.php?id=100075395236728",
-        linkedinLink: "https://www.linkedin.com/in/jitendra-bunkar-547223232/",
-        email: "jitendra.bunkar@gyws.org"
+        imageUrl: "/assets/images/members/Heads24/Ashutosh Kr Singh.jpg",
+        facebookLink: "https://www.facebook.com/profile.php?id=100085671729571",
+        linkedinLink: "https://www.linkedin.com/in/22ee10015ashutoshkrsingh/",
+        email: "ashutosh.singh@gyws.org"
     },
     {
-        name: "Ujjawal Kumar",
+        name: "Jatin Mahawar",
         position: "TechOps Head",
-        imageUrl: "/assets/images/members/Heads23/UjjawalKumar.png",
-        facebookLink: "https://www.facebook.com/profile.php?id=100012980770787",
-        linkedinLink: "https://www.linkedin.com/in/ujjawal-kumar-45a431228/",
-        email: "ujjawal.kumar@gyws.org"
+        imageUrl: "/images/profile.png",
+        facebookLink: "",
+        linkedinLink: "",
+        email: "jatin.mahawar@gyws.org"
     },
+    {
+        name: "Harshit Agarwal",
+        position:"TechOps Head",
+        imageUrl:"/images/profile.png",
+        facebookLink:"",
+        linkedinLink:"",
+        email:"harshit.agarwal@gyws.org"
+
+    }
 ]
 
 export default Data;
