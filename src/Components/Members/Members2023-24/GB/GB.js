@@ -25,7 +25,7 @@ const Data = [
     },
     {
         name: "Vinay Siwach",
-        position: "Assistance Secretary ",
+        position: "Assistant Secretary ",
         imageUrl: "/assets/images/members/GB23/Vinay Siwach.jpg",
         facebookLink: "https://www.facebook.com/vinay.siwach.142/",
         linkedinLink: "https://www.linkedin.com/in/vinaysiwach7/",
@@ -88,7 +88,7 @@ const Data = [
     },
     {
         name: "Swastik Sambhav",
-        position: "Chief Technology Officer",
+        position: "Chief Technical Officer",
         imageUrl: "/assets/images/members/SwastikSambhav.jpg",
         facebookLink: "https://www.facebook.com/swastik.sambhav.338",
         linkedinLink: "https://www.linkedin.com/in/swastik-sambhav-1622111b9/",

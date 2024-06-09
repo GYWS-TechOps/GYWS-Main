@@ -106,7 +106,7 @@ const data = [
     },
     {
         name: "Shivam Pandey",
-        position: "Chief Technology Officer",
+        position: "Chief Technical Officer",
         imageUrl: "/assets/images/members/GB21/Shivam Pandey.jpeg",
         facebookLink: "https://www.facebook.com/gyws.iitkgp",
         linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/"

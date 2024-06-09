@@ -25,7 +25,7 @@ const Data = [
     },
     {
         name: "Ajay Paliwal",
-        position: "Assistance Secretary ",
+        position: "Assistant Secretary ",
         imageUrl: "/assets/images/members/GB24/Ajay Paliwal.jpg",
         facebookLink: "https://www.facebook.com/profile.php?id=100075660422516",
         linkedinLink: "https://www.linkedin.com/in/ajay-paliwal-b7a9b8223/",
