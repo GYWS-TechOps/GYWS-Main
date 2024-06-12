@@ -1,7 +1,7 @@
 const Data = [
     {
         name: "Tvisha Khakhar",
-        position: "Rise Head",
+        position: "RISE Head",
         imageUrl: "/assets/images/members/Heads24/Tvisha Khakhar.jpg",
         facebookLink: "https://www.facebook.com/profile.php?id=100087648426543&mibextid=ZbWKwL",
         linkedinLink: "https://www.linkedin.com/in/tvisha-khakhar-a71547250",
@@ -9,7 +9,7 @@ const Data = [
     },
     {
         name: "Lokesh Saran",
-        position: "Rise Head",
+        position: "RISE Head",
         imageUrl: "/assets/images/members/Heads24/Lokesh Saran.jpg",
         facebookLink: "https://www.facebook.com/profile.php?id=100087515113955&mibextid=ZbWKwL",
         linkedinLink: "https://www.linkedin.com/in/lokesh-saran-b0535925",
@@ -17,7 +17,7 @@ const Data = [
     },
     {
         name: "Swaralipi Datta",
-        position: "",
+        position: "RISE Head",
         imageUrl: "/assets/images/members/Heads24/Swaralipi Datta.jpeg",
         facebookLink: "https://www.facebook.com/profile.php?id=100087185364901",
         linkedinLink: "https://www.linkedin.com/in/swaralipi-datta04/",

@@ -25,7 +25,7 @@ const Data = [
       },
       {
         name: "Simran Jangral",
-        position: "",
+        position: "SRC Head",
         imageUrl: "/assets/images/members/Heads24/Simran Jangral.png",
         facebookLink: "https://www.facebook.com/profile.php?id=100087633905026",
         linkedinLink: "https://www.linkedin.com/in/simran-jangral",
