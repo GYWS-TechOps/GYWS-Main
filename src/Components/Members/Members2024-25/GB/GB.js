@@ -4,7 +4,7 @@ const Data = [
         position: "President",
         imageUrl: "/assets/images/members/GB24/Anshu Goyal.jpg",
         facebookLink: "https://www.facebook.com/profile.php?id=100073931382044",
-        linkedinLink: "linkedin.com/in/anshu-goyal-9a4a04222",
+        linkedinLink: "https://www.linkedin.com/in/anshu-goyal-9a4a04222",
         email: 'anshu.goyal@gyws.org',
     },
     {
@@ -12,7 +12,7 @@ const Data = [
         position: "Vice President",
         imageUrl: "/assets/images/members/GB24/Shivam Yadav.png",
         facebookLink: "https://www.facebook.com/Shivam.satmanju",
-        linkedinLink: "www.linkedin.com/in/shivamyadav1710",
+        linkedinLink: "https://www.linkedin.com/in/shivamyadav1710",
         email: "shivam.yadav@gyws.org"
     },
     {
@@ -25,7 +25,7 @@ const Data = [
     },
     {
         name: "Ajay Paliwal",
-        position: "Assistance Secretary ",
+        position: "Assistant Secretary ",
         imageUrl: "/assets/images/members/GB24/Ajay Paliwal.jpg",
         facebookLink: "https://www.facebook.com/profile.php?id=100075660422516",
         linkedinLink: "https://www.linkedin.com/in/ajay-paliwal-b7a9b8223/",
@@ -100,7 +100,7 @@ const Data = [
         position: "Public Relation Officer",
         imageUrl: "/assets/images/members/GB24/Ujjwal Kumar Singh.jpeg",
         facebookLink: "http://facebook.com/profile.php?id=100074018137550",
-        linkedinLink: "linkedin.com/in/ujjwalkumarsingh/",
+        linkedinLink: "https://www.linkedin.com/in/ujjwalkumarsingh/",
         email: "ujjwal.singh@gyws.org"
     },
     // {
