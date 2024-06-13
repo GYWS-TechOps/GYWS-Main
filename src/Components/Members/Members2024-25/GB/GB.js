@@ -21,7 +21,7 @@ const Data = [
         imageUrl: "/assets/images/members/GB24/Sumit Deora.jpg",
         facebookLink: "https://www.facebook.com/profile.php?id=100006783194680",
         linkedinLink: "https://www.linkedin.com/in/sumit-deora-0b209921b/",
-        email: "k.nikhil@gyws.org"
+        email: "sumit.deora@gyws.org"
     },
     {
         name: "Ajay Paliwal",
@@ -34,10 +34,10 @@ const Data = [
     {
         name: "Virat Dwivedi",
         position: "Human Resource Manager",
-        imageUrl: "/assets/images/members/GB24/Virat Dwivedi.png",
+        imageUrl: "/assets/images/members/GB24/ViratD.jpg",
         facebookLink: "https://www.facebook.com/profile.php?id=100006798225731",
         linkedinLink: "https://www.linkedin.com/in/virat-dwivedi-55912a202/",
-        email: "vageesh.tiwari@gyws.org"
+        email: "virat.dwivedi@gyws.org"
     },
     {
         name: "Advait Gokhale",
@@ -53,7 +53,7 @@ const Data = [
         imageUrl: "/assets/images/members/GB24/Ujjawal Kumar.png",
         facebookLink: "https://www.facebook.com/profile.php?id=100012980770787",
         linkedinLink: "https://www.linkedin.com/in/ujjawal-kumar-45a431228/",
-        email: "swastik.sambhav@gyws.org"
+        email: "ujjawal.kumar@gyws.org"
     },
     {
         name: "Ishika Modi",
@@ -69,7 +69,7 @@ const Data = [
         imageUrl: "/assets/images/members/GB24/Amisha Rathi.jpg",
         facebookLink: "https://www.facebook.com/amisha.rathi.545",
         linkedinLink: "https://www.linkedin.com/in/amisha-rathi/",
-        email: "mridula.mathukumalli@gyws.org"
+        email: "amisha.r@gyws.org"
     },
     {
         name: "Nitin Rajvanshi",
@@ -85,7 +85,7 @@ const Data = [
         imageUrl: "/assets/images/members/GB24/Arpit Singh.jpg",
         facebookLink: "https://www.facebook.com/profile.php?id=100073612406522",
         linkedinLink: "https://www.linkedin.com/in/arpit-singh-a08146224/",
-        email: "rudransh.agrawal@gyws.org"
+        email: "arpit.singh@gyws.org"
     },
     {
         name: "Hrishikesh M V",
@@ -93,7 +93,7 @@ const Data = [
         imageUrl: "/assets/images/members/GB24/Hrishikesh M V.jpg",
         facebookLink: "https://www.facebook.com/profile.php?id=100004918995599",
         linkedinLink: "https://www.linkedin.com/in/hrishikesh-m-v-288a62227/",
-        email: 'ankita@gyws.org'
+        email: 'hrishikesh.mv@gyws.org'
     },
     {
         name: "Ujjwal Kumar Singh",
@@ -102,15 +102,7 @@ const Data = [
         facebookLink: "http://facebook.com/profile.php?id=100074018137550",
         linkedinLink: "https://www.linkedin.com/in/ujjwalkumarsingh/",
         email: "ujjwal.singh@gyws.org"
-    },
-    // {
-    //     name: "Sayali Mahipal Ganvir",
-    //     position: "Hostel Committee Officer",
-    //     imageUrl: "/assets/images/members/GB24/.png",
-    //     facebookLink: "https://www.facebook.com/profile.php?id=100010676352813",
-    //     linkedinLink: "https://www.linkedin.com/in/sayali-ganvir-160074206/",
-    //     email: "sayali.mahipal@gyws.org"
-    // },
+    }
 
 ]
 
