@@ -12,6 +12,8 @@
     "node-modules": "^1.0.1",
     "papaparse": "^5.4.1",
     "postcss": "^8.4.35",
+    "quill": "^2.0.2",
+    "quilljs": "^0.18.1",
     "react": "^18.2.0",
     "react-bootstrap-icons": "^1.10.3",
     "react-dom": "^18.2.0",
