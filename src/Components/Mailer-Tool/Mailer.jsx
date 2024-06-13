@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Papa from "papaparse";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import { useQuill } from "react-quilljs";
 import "quill/dist/quill.snow.css";
 
@@ -37,6 +37,7 @@ function Sender() {
     const EMAIL = document.getElementById("email").value;
     const EMAIL_APP_PASSWORD = document.getElementById("apppassword").value;
     const message = quill.root.innerHTML;
+
     if (!name || !subject || !EMAIL || !EMAIL_APP_PASSWORD || !message) {
       toast.error("Please fill in all fields");
       return;
@@ -93,7 +94,6 @@ function Sender() {
 
   return (
     <>
-      <Toaster />
       <div className="isolate bg-white px-6 py-6 sm:py-6 lg:px-8">
         <div
           className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
@@ -108,7 +108,7 @@ function Sender() {
         </div>
         <div className="text-center">
           {isSendingEmails ? (
-              <p>We are sending your request, WAIT for {remainingTime} Seconds..</p>
+            <p>We are sending your request, WAIT for {remainingTime} Seconds..</p>
           ) : (
             ""
           )}
@@ -215,7 +215,7 @@ function Sender() {
               </label>
               <div className="mt-2.5">
                 <div
-                  ref={quillRef} style={{minHeight: '150px'}}
+                  ref={quillRef} style={{ minHeight: '150px' }}
                   name="message"
                   id="message"
                   rows="4"
