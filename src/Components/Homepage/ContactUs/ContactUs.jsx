@@ -26,13 +26,39 @@ function ContactUs() {
 
   }
 
+  const validateEmail = (email) => {
+    const re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  }
+
+  const validatePhone = (phone) => {
+    const re = /^[0-9\b]+$/;
+    return re.test(phone) && phone.length === 10;
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (formData.firstName === "" || formData.lastName === "" || formData.email === "" || formData.phone === "" || formData.message === "") {
+      toast.error("Please fill all the fields");
+      return;
+    }
+    if (!validateEmail(formData.email)) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+    if (!validatePhone(formData.phone)) {
+      toast.error("Please enter a valid phone number");
+      return;
+    }
+    if (formData.message.length < 30) {
+      toast.error("Message should be atleast 30 characters long");
+      return;
+    }
 
     setLoading(true);
 
     try {
-
       let url = "https://gyws-backend-ptg5.onrender.com/api/contactUs";
       // url = "http://localhost:5000/api/contactUs";
 
@@ -58,13 +84,13 @@ function ContactUs() {
         });
         setLoading(false);
         toast.success("Message Sent");
+        window.scrollTo(0, 0);
       } else {
         setLoading(false);
         toast.error("Error sending message");
       }
 
     } catch (error) {
-      console.log(error);
       setLoading(false);
       toast.error("Error sending message");
     }
