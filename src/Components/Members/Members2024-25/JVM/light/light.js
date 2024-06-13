@@ -1,36 +1,49 @@
 const Data = [
     {
-        name: "Advait Gokhale ",
-        position: "LiGHT Head",
-        imageUrl: "/assets/images/members/Heads23/Advait.jpg",
-        facebookLink: "https://www.facebook.com/gyws.iitkgp",
-        linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
-        email: "gywsociety@gmail.com"
+        "name": "Megha Singhal",
+        "position":"Light Head",
+        "imageUrl": "/assets/images/members/Heads24/MeghaSinghal.jpg",
+        "facebookLink": "https://www.facebook.com/megha.singhal.35325/",
+        "linkedinLink": "https://www.linkedin.com/in/megha-singhal-7a9a3926a/",
+        "email": "megha.singhal@gyws.org"
     },
     {
-        name: "Amandeep Randa",
-        position: "LiGHT Head",
-        imageUrl: "/assets/images/members/Heads23/Amandeep.jpg",
-        facebookLink: "https://www.facebook.com/gyws.iitkgp",
-        linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
-        email: "gywsociety@gmail.com"
+        "name": "Ayush Gurjar",
+        "position":"Light Head",
+        "imageUrl": "/assets/images/members/Heads24/AyushGurjar.jpg",
+        "facebookLink": "",
+        "linkedinLink": "https://www.linkedin.com/in/ayush0206",
+        "email": "ayush.gurjar@gyws.org"
     },
     {
-        name: "Saswat Dash",
-        position: "LiGHT Head",
-        imageUrl: "/assets/images/members/Heads23/Saswat Dash.jpg",
-        facebookLink: "https://www.facebook.com/gyws.iitkgp",
-        linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
-        email: "gywsociety@gmail.com"
+        "name": "Samshritha Bura",
+        "position":"Light Head",
+        "imageUrl": "/assets/images/members/Heads24/SamshrithaBura.jpeg",
+        "facebookLink": "https://m.facebook.com/profile.php?id=100087910621138",
+        "linkedinLink": "https://www.linkedin.com/in/samshritha-bura-116136258/",
+        "email": "samshritha.bura@gyws.org"
     },
     {
-        name: "Sumedh Deshkar",
-        position: "LiGHT Head",
-        imageUrl: "/assets/images/members/Heads23/Sumedh Deshkar.jpg",
-        facebookLink: "https://www.facebook.com/gyws.iitkgp",
-        linkedinLink: "https://www.linkedin.com/company/gopali-youth-welfare-society/mycompany/",
-        email: "gywsociety@gmail.com"
+        "name": "Ahmad Raza Khan",
+        "position":"Light Head",
+        "imageUrl": "/assets/images/members/Heads24/AhmadKhan.jpeg",
+        "facebookLink": "https://www.facebook.com/profile.php?id=100086032638585",
+        "linkedinLink": "www.linkedin.com/in/ahmadrazakhan92",
+        "email": "ahmad.khan@gyws.org"
     },
+    {
+        "name": "Vidit Om",
+        "position":"Light Head",
+        "imageUrl": "/assets/images/members/Heads24/ViditOm.jpg",
+        "facebookLink": "https://www.facebook.com/people/Vidit-Om/pfbid02C29CxeZZA6F135ehhaPZjKZWUnEY2zwPi4uRhhFeEtpg7e8PBGCaAynvsEb8N4GYl/?sk=about",
+        "linkedinLink": "https://www.linkedin.com/in/vidit-om-b11885256/",
+        "email": "vidit.om@gyws.org"
+    },
+    {
+        "name": "Saryu Gosika",
+        "position":"Light Head",
+        "imageUrl": "/images/profile.png",
+    }
    
 ]
 

@@ -2,11 +2,9 @@ import "./Contact.css";
 import { useState } from "react";
 import { GeoAltFill, EnvelopeFill, TelephoneFill } from "react-bootstrap-icons";
 import HCard from "../../HeaderCard/HCard";
-import { useSnackbar } from "react-simple-snackbar";
+import toast from "react-hot-toast";
 
 function ContactUs() {
-
-  const [openSnackbar] = useSnackbar();
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -28,13 +26,39 @@ function ContactUs() {
 
   }
 
+  const validateEmail = (email) => {
+    const re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  }
+
+  const validatePhone = (phone) => {
+    const re = /^[0-9\b]+$/;
+    return re.test(phone) && phone.length === 10;
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (formData.firstName === "" || formData.lastName === "" || formData.email === "" || formData.phone === "" || formData.message === "") {
+      toast.error("Please fill all the fields");
+      return;
+    }
+    if (!validateEmail(formData.email)) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+    if (!validatePhone(formData.phone)) {
+      toast.error("Please enter a valid phone number");
+      return;
+    }
+    if (formData.message.length < 30) {
+      toast.error("Message should be atleast 30 characters long");
+      return;
+    }
 
     setLoading(true);
 
     try {
-
       let url = "https://gyws-backend-ptg5.onrender.com/api/contactUs";
       // url = "http://localhost:5000/api/contactUs";
 
@@ -59,17 +83,16 @@ function ContactUs() {
           message: ""
         });
         setLoading(false);
-        openSnackbar("Message Sent");
+        toast.success("Message Sent");
+        window.scrollTo(0, 0);
       } else {
-        console.log("In error", data.message);
         setLoading(false);
-        openSnackbar(data.message);
+        toast.error("Error sending message");
       }
 
     } catch (error) {
-      console.log(error);
       setLoading(false);
-      openSnackbar("Error sending message");
+      toast.error("Error sending message");
     }
   }
 
