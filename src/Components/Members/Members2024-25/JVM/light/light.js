@@ -1,7 +1,7 @@
 const Data = [
     {
         "name": "Megha Singhal",
-        "position":"Light Head",
+        "position":"LiGHT Head",
         "imageUrl": "/assets/images/members/Heads24/MeghaSinghal.jpg",
         "facebookLink": "https://www.facebook.com/megha.singhal.35325/",
         "linkedinLink": "https://www.linkedin.com/in/megha-singhal-7a9a3926a/",
@@ -9,7 +9,7 @@ const Data = [
     },
     {
         "name": "Ayush Gurjar",
-        "position":"Light Head",
+        "position":"LiGHT Head",
         "imageUrl": "/assets/images/members/Heads24/AyushGurjar.jpg",
         "facebookLink": "",
         "linkedinLink": "https://www.linkedin.com/in/ayush0206",
@@ -17,7 +17,7 @@ const Data = [
     },
     {
         "name": "Samshritha Bura",
-        "position":"Light Head",
+        "position":"LiGHT Head",
         "imageUrl": "/assets/images/members/Heads24/SamshrithaBura.jpeg",
         "facebookLink": "https://m.facebook.com/profile.php?id=100087910621138",
         "linkedinLink": "https://www.linkedin.com/in/samshritha-bura-116136258/",
@@ -25,7 +25,7 @@ const Data = [
     },
     {
         "name": "Ahmad Raza Khan",
-        "position":"Light Head",
+        "position":"LiGHT Head",
         "imageUrl": "/assets/images/members/Heads24/AhmadKhan.jpeg",
         "facebookLink": "https://www.facebook.com/profile.php?id=100086032638585",
         "linkedinLink": "www.linkedin.com/in/ahmadrazakhan92",
@@ -33,7 +33,7 @@ const Data = [
     },
     {
         "name": "Vidit Om",
-        "position":"Light Head",
+        "position":"LiGHT Head",
         "imageUrl": "/assets/images/members/Heads24/ViditOm.jpg",
         "facebookLink": "https://www.facebook.com/people/Vidit-Om/pfbid02C29CxeZZA6F135ehhaPZjKZWUnEY2zwPi4uRhhFeEtpg7e8PBGCaAynvsEb8N4GYl/?sk=about",
         "linkedinLink": "https://www.linkedin.com/in/vidit-om-b11885256/",
@@ -41,7 +41,7 @@ const Data = [
     },
     {
         "name": "Saryu Gosika",
-        "position":"Light Head",
+        "position":"LiGHT Head",
         "imageUrl": "/images/profile.png",
     }
    
