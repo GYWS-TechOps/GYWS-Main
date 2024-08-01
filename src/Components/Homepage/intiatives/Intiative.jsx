@@ -104,18 +104,17 @@ export default function intiative() {
               </div>
               <div className={inticss.discr}>
                 {/* p
-                 */}
-                Based on National Education Policy 2020</div>
+                 */}                Based on National Education Policy 2020</div>
               <button
                 style={{
                   backgroundColor: "#73c48f",
                 }}>
-                <a
-                  style={{ textDecoration: "none", color: "#070707" }}
-                  href="https://light.org.in/"
-                >
-                  Visit Now{" "}
-                </a>{" "}
+                <Link
+                  style={{ textDecoration: "none", color: "#000000" }}
+                  to="/rise">
+                  Visit Now
+                </Link>
+                  
               </button></div>
           </div>
         </div>
