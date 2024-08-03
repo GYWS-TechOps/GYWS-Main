@@ -9,6 +9,7 @@ export default function Back() {
             <div className="back_button">
                 <ArrowLeft />
             </div>
+            
         </Link>
     )
 }
