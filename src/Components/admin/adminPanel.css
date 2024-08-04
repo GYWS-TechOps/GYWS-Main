@@ -1,0 +1,11 @@
+.admin-pg-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    padding: 20px;
+}
+.admin-pg-cont-hding{
+    background-color: black;
+}
