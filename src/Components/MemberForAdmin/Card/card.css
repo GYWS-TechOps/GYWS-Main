@@ -1,0 +1,95 @@
+.members_card {
+  width: 300px;
+  min-height: 400px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgb(0, 0, 0, 0.5);
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  /* background-color: green; */
+}
+
+.members_card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.members_card_image {
+  width: 80%;
+  /* height: 80%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: blue; */
+}
+
+.members_card_image img {
+  width: 100%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 200px;
+  margin-bottom: 20px;
+}
+
+.members_card_info {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.members_card_info p,h3{
+  /* text-transform: capitalize !important; */
+  text-align: center;
+
+}
+
+.members_card_info .members_name {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.members_card_info .members_designation {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555;
+  /* margin-bottom: 20px; */
+}
+
+.members_card_info .members_social_links {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.members_card_info .members_social_links a {
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+  margin-top: 2px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  opacity: 0.9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #555;
+  /* box-shadow: 0 0 7px rgb(0, 0, 0, 0.5); */
+  transition: all 0.3s ease-in-out;
+}
+
+.members_card_info .members_social_links a:hover {
+  transform: scale(1.1);
+  opacity: 1;
+  color: #fff;
+  background-color: #555;
+}

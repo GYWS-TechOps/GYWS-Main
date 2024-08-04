@@ -1,0 +1,50 @@
+.admin-mem-hding{
+    background-color: black;
+    color: white;
+}
+.admin-mem-cont1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding: 10px;
+}
+.admin-mem-cont1 button{
+    background-color: #fed136;
+    font-size: 18px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 4px;
+    color: black;
+    height: 40px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.admin-mem-cont1 button:hover{
+    background-color: #ffc800;
+}
+.admin-mem-cont1-subcont1{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.admin-mem-cont1-subcont1 input{
+ width: 40%;
+ padding: 3px;
+}
+.admin-mem-cont1 input{
+    font-size: 20px;
+    margin-right: 10px;
+    height: 40px;
+    border-radius: 3px;
+}
+#add-mem-admin-btn{
+    width: 400px;
+}
+.admin-members-show-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px 0px;
+}
