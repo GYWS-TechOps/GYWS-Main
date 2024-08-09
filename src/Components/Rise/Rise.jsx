@@ -8,12 +8,8 @@ import Mainimage from "./Rise/Bigimage.jpg"
 
 export default function Rise() {
     const items = useContext(MyContext);
-    //console.log(MyContext)
-    
-
     return (
         <div className="content">
-
             <div className="riseheader" >
                 <div class="rise-bg">
                 <img className="mainimage" src={Mainimage} alt="" />
@@ -21,7 +17,6 @@ export default function Rise() {
                 <div className="rise_header_content">
                     <div className="risename">
                         <p className='Risenamew'> R</p>
-
                         <svg height="70" width="100" viewBox="0 0 10 32" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#e6c525" transform="rotate(160)">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -45,9 +40,8 @@ export default function Rise() {
                         <p>Gopali Youth Welfare Society</p>
                     </div>
                 </div>
-
             </div>
-
+            
             <div className="aim">
                 <img className='image1' src="https://light.org.in/img/1.png" alt="" />
                 <div className='text'>
@@ -70,11 +64,9 @@ export default function Rise() {
                         color={item.color}
                         direction={item.direction}
                         titlecolor={item.titlecolor}
-
                     />
                 ))}
             </div>
-
         </div >
     );
 }
