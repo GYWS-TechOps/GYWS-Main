@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.content{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    overflow: clip;
+}
+.riseheader{
+    position: relative;
+}
+
+.rise-bg{
+    width: 100%;
+    height: 85vh;
+    overflow: hidden;
+    filter: brightness(70%);
+}
+.rise_header_content{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    font-family:"Libre Baskerville", serif; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.mainimage{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.risename{
+    font-weight: bold;
+    color: white;
+    font-size: 3rem;
+    margin-top:6%;
+    margin-bottom: 2.5rem;
+    text-shadow: 2px 2px 4px #000000;
+    display: flex;
+}
+.heading {
+    position: absolute;
+    top: 10px;
+    align-items: center;
+}
+.risefullform{
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 260%;
+    font-family: "Libre Baskerville", serif;
+    margin-top: 20px;
+    margin-bottom: 2.5rem;
+    text-shadow: 2px 2px 4px #000000;
+}
+.risefullform>p{
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+.Risenamew {
+    margin-right: -30px;
+    /* Tailwind: mr-[-15px] */
+}
+
+.S{
+    margin-right: 1rem;
+    /* Tailwind: mr-4 */
+    margin-left: -15px;
+    /* Tailwind: ml-[-15px] */
+}
+
+.E {
+    margin-right: 1rem;
+    /* Tailwind: mr-4 */
+}
+
+.aim {
+    margin-top: 40px;
+    display: flex;
+    /* border: 6px solid #0000FF; */
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    align-items: center;
+    gap: 2%;
+    /* box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); */
+    /* transition: transform 0.5s, box-shadow 0.5s;
+    margin-bottom: 2rem; */
+  
+}
+
+.image1 {
+    width: 150px;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; 
+}
+.head {
+    font-weight: bold;
+    font-size: 1.875rem;
+    color: rgba(242,106,54,255);
+}
+
+.content {
+    font-weight: 600;
+}
+
+.image2 {
+    width: 50%;
+    height: 300px;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 0.5rem;
+}
+
+.heading2 {
+    color: rgba(242,106,54,255);
+    font-weight: bold;
+    font-size: 1.875rem;
+    font-family: serif;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.initiatives {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.card {
+    display: flex;
+    gap: 20px;
+    border-width: 4px;
+    padding: 32px;
+    border-radius: 24px;
+    margin: 16px auto;
+    cursor: pointer;
+    width: 60%;
+    transition: transform 500 ease-in-out;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+    transform: scale(1.01);
+}
+
+.cardimage {
+    border-radius: 8px;
+    border-color: black;
+    height: 250px;
+    width: 50%;
+}
+
+.cardtext {
+    margin-left: 2%;
+}
+
+.cardtitle {
+    margin-top: 36px;
+    font-family: "Libre Baskerville", serif;
+    font-weight: bold;
+    font-size: 1.875rem;
+}
+
+.carddescription {
+    margin-top: 20px;
+    font-weight: 600;
+    text-align: justify;
+}
+
+.blue {
+    border-color: #05a1c7;
+    transition: box-shadow 0.5s;
+}
+.blue:hover{
+    box-shadow: 0 0 25px #05a1c7;
+}
+
+.orange{
+        border-color: #f26a36;
+        transition: box-shadow 0.5s;
+     
+}
+.orange:hover{
+    box-shadow: 0 0 25px #f26a36; 
+}
+.green{
+    border-color:#73c48f; 
+    transition: box-shadow 0.5s;
+  
+}
+.green:hover{
+box-shadow: 0 0 25px #73c48f; 
+}
+
+.yellow{
+    transition: box-shadow 0.5s;
+ border-color: #f9ee34; 
+}
+.yellow:hover{
+    box-shadow: 0 0 25px #f9ee34; 
+    }
+.titleblue{
+    color: #05a1c7;
+}
+.titleyellow{
+    color: #f9ee34;
+}
+.titlegreen{
+    color: #73c48f;
+}
+.titleorange{
+    color:#f26a36;
+}
+.col{
+    flex-direction: row;
+}
+.colreverse{
+    flex-direction: row-reverse;
+}
+@media screen and (max-width:850px) {
+    .card{
+        width: 90%;
+        flex-direction: column;
+    }
+    .cardimage{
+        margin: auto;
+        width: 98%;
+    }
+    .cardtext{
+        text-align: center;
+    }
+    .aim{
+     flex-direction: column;
+     width: 95%;
+    }
+    .image1 {
+        width: 100px;
+    }
+    .image2 {
+        width: 98%;
+        height: 200px;
+        margin:auto
+    }
+    .text{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .rise_header_content,.risefullform{
+        font-size: 120%;
+    }
+}
