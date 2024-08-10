@@ -16,6 +16,7 @@ import HostelCons from './Components/Donation/Hostel_Contruction.jsx'
 import HostelSus from './Components/Donation/Hostel_Sustainability.jsx'
 import Donate from './Pages/Donate/Donate.jsx'
 import Mailer from './Components/Mailer-Tool/Mailer.jsx'
+import Rise from './Components/Rise/Rise.jsx';
 export default function NavRoutes() {
     return (
         <>
@@ -37,6 +38,7 @@ export default function NavRoutes() {
                 <Route path="/donate/LiGHT" element={<LightDonate />} />
                 <Route path="/Yoadmin/Mailer" element={<Mailer />} />
                 <Route path="*" element={<h1 style={{ height: "100vh" }} >404: Page Not Found</h1>} />
+                <Route path="/rise" element={<Rise/>} />
             </Routes>
         </>
     )
