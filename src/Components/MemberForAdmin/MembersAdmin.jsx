@@ -17,15 +17,24 @@ const MembersAdmin = () => {
     useEffect(()=>{
         getData();
     },[])
+    const handleSearch=(e)=>{
+        console.log("Searching");
+    }
+    const handleMembers=(e)=>{
+        console.log("Add members Button");
+    }
+    const handleSearchInput=(e)=>{
+        console.log(e.target.value);
+    }
   return (
     <>
     <section>
         <h1 className='admin-mem-hding'>Admin Panel</h1>
         <div className="admin-mem-cont1">
-            <button id='add-mem-admin-btn'>+ Add Members</button>
+            <button onClick={handleMembers} id='add-mem-admin-btn'>+ Add Members</button>
             <div className='admin-mem-cont1-subcont1'>
-            <input type="text" placeholder='Search Members Name'/>
-            <button>Search</button>
+            <input onChange={handleSearchInput} type="text" placeholder='Search Members Name'/>
+            <button onClick={handleSearch}>Search</button>
             </div>
         </div>
         <div className="admin-members-show-list">
@@ -33,7 +42,7 @@ const MembersAdmin = () => {
                     Membersdata.map((props)=>{
                         return (<>
                         <div key={props.srNo}>
-                            <Card key={props.srNo} name={props.name} position={props.position} facebookLink={props.facebook} email={props.email} linkedinLink={props.linkedIn}/>
+                            <Card name={props.name} position={props.position} facebookLink={props.facebook} email={props.email} linkedinLink={props.linkedIn}/>
                         </div>
                         </>
                     )

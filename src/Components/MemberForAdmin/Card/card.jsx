@@ -1,7 +1,14 @@
 import "./card.css";
 import { Linkedin, Facebook, EnvelopeFill } from 'react-bootstrap-icons'
 
-function card({ imageUrl, name, position, facebookLink, email, linkedinLink, data }) {
+function card({imageUrl, name, position, facebookLink, email, linkedinLink, data }) {
+  const handleEdit=(e)=>{
+    console.log("Edit clicked")
+    console.log(e.target);
+}
+const handleDelete=(e)=>{
+    console.log("Delete clicked")
+}
   return (
     <>
       <div className="members_card">
@@ -36,6 +43,10 @@ function card({ imageUrl, name, position, facebookLink, email, linkedinLink, dat
             >
               <Linkedin />
             </a>
+          </div>
+          <div>
+            <button onClick={handleEdit} className="admin-edit-member-btn">Edit</button>
+            <button onClick={handleDelete} className="admin-edit-member-btn">Delete</button>
           </div>
         </div>
       </div>

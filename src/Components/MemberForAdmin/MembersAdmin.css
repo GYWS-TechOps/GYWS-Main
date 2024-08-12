@@ -1,13 +1,14 @@
 .admin-mem-hding{
     background-color: black;
     color: white;
+    padding: 7px;
 }
 .admin-mem-cont1{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 4px;
+    gap: 10px;
     padding: 10px;
 }
 .admin-mem-cont1 button{
@@ -47,4 +48,17 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: 10px 0px;
+}
+@media only screen and (max-width:1000px){
+    .admin-mem-cont1 input{
+        width: 70%;
+    }
+}
+@media only screen and (max-width:600px){
+    .admin-mem-cont1 input{
+        width: 80%;
+    }
+    #add-mem-admin-btn{
+        width: 60%;
+    }
 }
