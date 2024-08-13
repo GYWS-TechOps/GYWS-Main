@@ -1,0 +1,120 @@
+.admin-pg-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 430px;
+    /* margin: 50px auto; */
+    margin: 0px auto;
+    min-height: 430px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    border-radius: 10px;
+    margin-top: 10px;
+    /* background-color: rgba(255, 255, 255, 0.1); */
+    background-color: white;
+    border: 1px solid grey;
+    border-top: 7px solid #f26a36;
+}
+.admin-panel-cont-section{
+    /* background-color: black; */
+    background-color: rgb(246, 246, 246);
+    padding-bottom: 50px;
+}
+.admin-panel-cont2{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    color: black;
+    font-weight: 600;
+    font-size: 38px;
+    padding-bottom: 10px;
+}
+.admin-panel-img{
+    width: 60px;
+    height: 60px;
+    margin: 0px auto;
+}
+.admin-pg-cont-hding {
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    width: 100%;
+    text-align: center;
+    color: black;
+    font-weight: 600;
+    padding: 10px;
+    font-size: 35px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-pg-input-div{
+    color: rgba(93, 93, 93, 0.9);
+    display: flex;
+    flex-direction: column;
+    padding: 0px 10px;
+    width: 90%;
+    gap: 5px;
+}
+.admin-pg-input-div label{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.admin-pg-cont input {
+    height: 40px;
+    width: 100%;
+    /* background-color: rgba(255, 255, 255, 0.2); */
+    border-radius: 5px;
+    border: none;
+    border: 1px solid rgba(165, 165, 165, 0.9);
+    font-size: 17px;
+    outline: none;
+    padding: 0px 5px;
+    color: rgb(63, 63, 63);
+    margin-bottom: 20px;
+}
+.admin-pg-cont input::placeholder {
+    color: rgba(191, 191, 191, 0.9);
+}
+
+#admin-submit-input-btn {
+    font-size: 19px;
+    border: none;
+    border-radius:5px;
+    /* background-image: linear-gradient(45deg,rgba(11, 0, 130, 0.8), rgba(228, 2, 228, 0.7)); */
+    background: linear-gradient(45deg,rgba(255, 119, 0, 0.8), rgba(255, 0, 0, 0.7));
+    width: 50%;
+    height: 40px;
+    color: white;
+    transition: 0.8s all;
+    font-weight: 600;
+    outline: none;
+}
+#admin-submit-input-btn:hover {
+    transform: scale(1.03);
+}
+
+@media only screen and (max-width:600px) {
+    .admin-panel-cont2{
+        font-size: 30px;
+        text-align: center;
+    }
+    .admin-pg-cont {
+        width: 80%;
+    }
+    .admin-pg-cont-hding {font-size: 28px;}
+    
+    .admin-pg-cont input,
+    #admin-submit-input-btn {
+        font-size: 20px;
+    }
+}
+        @media only screen and (max-width:480px) {
+            .admin-panel-cont2{
+                font-size: 25px;
+            }
+        }

@@ -1,0 +1,72 @@
+.admin-mem-hding{
+    background-color: black;
+    color: white;
+    padding: 7px;
+}
+.admin-mem-cont1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+.admin-mem-cont1 button{
+    background-color: #fed136;
+    font-size: 18px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 4px;
+    color: black;
+    height: 40px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.admin-mem-cont1 button:hover{
+    background-color: #ffc800;
+}
+.admin-mem-cont1-subcont1{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.admin-mem-cont1-subcont1 input{
+ width: 40%;
+ padding: 3px;
+}
+.admin-mem-cont1 input{
+    font-size: 20px;
+    margin-right: 10px;
+    height: 40px;
+    border-radius: 3px;
+}
+#add-mem-admin-btn{
+    width: 400px;
+}
+.admin-members-show-list{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    overflow: scroll;
+}
+.admin-mem-pg-margin-left{
+    margin-left: 112px;
+}
+.admin-mem-pg-row-head{
+    font-weight: 600;
+    color: black;
+}
+@media only screen and (max-width:1000px){
+    .admin-mem-cont1 input{
+        width: 70%;
+    }
+}
+@media only screen and (max-width:600px){
+    .admin-mem-cont1 input{
+        width: 80%;
+    }
+    #add-mem-admin-btn{
+        width: 60%;
+    }
+}
