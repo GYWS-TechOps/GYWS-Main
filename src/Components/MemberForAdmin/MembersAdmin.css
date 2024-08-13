@@ -45,9 +45,8 @@
 }
 .admin-members-show-list{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 10px 0px;
+    flex-direction: column;
+    margin-bottom: 40px;
 }
 @media only screen and (max-width:1000px){
     .admin-mem-cont1 input{

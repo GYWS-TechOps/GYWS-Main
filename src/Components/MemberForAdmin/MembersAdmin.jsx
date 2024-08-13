@@ -1,7 +1,7 @@
 import React, { useEffect,useState } from 'react'
 import { getMembersData } from '../MembersData/membersData'
 import "./MembersAdmin.css"
-import Card from "./Card/card.jsx"
+import MemData from "./MemData/MemData.jsx"
 const MembersAdmin = () => {
     const [Membersdata, setMembersdata] = useState([]);
     const getData=async()=>{
@@ -38,11 +38,14 @@ const MembersAdmin = () => {
             </div>
         </div>
         <div className="admin-members-show-list">
-            {       
+            {       //multiple-phonenumber
+            //roll number
+            //City ,State
                     Membersdata.map((props)=>{
                         return (<>
                         <div key={props.srNo}>
-                            <Card name={props.name} position={props.position} facebookLink={props.facebook} email={props.email} linkedinLink={props.linkedIn}/>
+                            <MemData name={props.name} Imgurl={props.image} rollno={props.rollno} year={props.year} city={props.city} state={props.state} phnum={props.phnum} position={props.position} facebookLink={props.facebook} email={props.email} linkedinLink={props.linkedIn}/>
+                            
                         </div>
                         </>
                     )
