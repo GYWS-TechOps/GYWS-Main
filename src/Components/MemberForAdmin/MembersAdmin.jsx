@@ -38,6 +38,21 @@ const MembersAdmin = () => {
             </div>
         </div>
         <div className="admin-members-show-list">
+            <div>
+                <div className="admin-mem-pg-row admin-mem-pg-row-head">
+                <div className="admin-mem-pg-data-box admin-mem-pg-margin-left">Name</div>
+                <div className="admin-mem-pg-data-box">Image</div>
+                <div className="admin-mem-pg-data-box">Position</div>
+                <div className="admin-mem-pg-data-box">Email</div>
+                <div className="admin-mem-pg-data-box">Roll no.</div>
+                <div className="admin-mem-pg-data-box">City</div>
+                <div className="admin-mem-pg-data-box">State</div>
+                <div className="admin-mem-pg-data-box">Year</div>
+                <div className="admin-mem-pg-data-box">Facebook</div>
+                <div className="admin-mem-pg-data-box">LinkedIn</div>
+                <div className="admin-mem-pg-data-box">Phone Numbers</div>
+                </div>
+            </div>
             {       //multiple-phonenumber
             //roll number
             //City ,State

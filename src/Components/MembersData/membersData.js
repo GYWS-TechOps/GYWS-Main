@@ -11,6 +11,7 @@ export const getMembersData=async ()=>{
                 linkedIn: "link",
                 facebook: "link",
                 email: "link",
+                phnum:[1234567890,123,1324]
             },
             {
                 srNo: 2,
@@ -20,6 +21,7 @@ export const getMembersData=async ()=>{
                 linkedIn: "link",
                 facebook: "link",
                 email: "link",
+                phnum:[1234567890,123,1324123412],
 
             },
             {

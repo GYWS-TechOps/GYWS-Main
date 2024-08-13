@@ -47,6 +47,15 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 40px;
+    flex-wrap: wrap;
+    overflow: scroll;
+}
+.admin-mem-pg-margin-left{
+    margin-left: 112px;
+}
+.admin-mem-pg-row-head{
+    font-weight: 600;
+    color: black;
 }
 @media only screen and (max-width:1000px){
     .admin-mem-cont1 input{
