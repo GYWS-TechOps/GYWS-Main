@@ -27,11 +27,11 @@
   text-decoration: none;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  border: 1px solid blue;
+  border: 3px solid #73c48f;
 }
 
 .blog-item a:hover {
-  box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 20px #73c48f;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -92,7 +92,7 @@
 
 .blog-item a:hover>.item-arrow {
   /*padding-left: 40px;*/
-  color: #f26a36;
+  color: #73c48f;
   left: 30px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;

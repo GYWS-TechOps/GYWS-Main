@@ -68,7 +68,7 @@ export default function intiative() {
           <div className={inticss.name}>
             <div style={{ color: "#fed136 " }}>LiGHT </div>
           </div>
-          <div className={inticss.mainbox} id={inticss.middle}>
+          <div className={inticss.mainbox} id={inticss.second}>
             <div className={inticss.image}>
               <img src={lightlogo} alt="" />
             </div>

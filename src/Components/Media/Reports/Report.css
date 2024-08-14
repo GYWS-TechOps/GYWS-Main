@@ -41,10 +41,12 @@
 
 .card .card_header {
     font-size: 1.2rem;
+    font-weight: 600;
     margin: 1rem 0;
     text-align: center;
     color: #f26a36;
     letter-spacing: 0.5px;
+    text-shadow:none;
 }
 
 .card .card_body {
