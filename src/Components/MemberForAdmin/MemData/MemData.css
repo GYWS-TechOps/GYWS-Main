@@ -1,0 +1,27 @@
+.admin-mem-pg-row{
+    display:flex;
+    margin: 0px 10px;
+    border: 1px solid black;
+}
+.admin-mem-pg-data-box{
+    padding: 3px;
+    min-height: 25px;
+    min-width: 300px;
+}
+.admin-mem-pg-edit-btn{
+    background-color: #fed136;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 3px;
+    min-width: 50px;
+    margin: 3px 3px;
+    cursor: pointer;
+}
+.admin-mem-pg-edit-btn:hover{
+    transform: scale(1.02);
+}
+.admin-mem-pg-data-box-phnum{
+    min-width: 100px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}

@@ -14,6 +14,8 @@ import Each from './Components/Donation/Each_JVMCare.jsx'
 import HostelCons from './Components/Donation/Hostel_Contruction.jsx'
 import HostelSus from './Components/Donation/Hostel_Sustainability.jsx'
 import Donate from './Pages/Donate/Donate.jsx'
+import AdminPanel from './Components/admin/adminPanel.jsx';
+import MembersAdmin from './Components/MemberForAdmin/MembersAdmin.jsx';
 
 export default function NavRoutes() {
     return (
@@ -34,6 +36,8 @@ export default function NavRoutes() {
                 <Route path="/donate/hostel_sustainability" element={<HostelSus />} />
                 <Route path="/donate/LiGHT" element={<LightDonate />} />
                 <Route path="*" element={<h1 style={{ height: "100vh" }} >404: Page Not Found</h1>} />
+                <Route path="/secret/adminpanel" element={<AdminPanel />}/>
+                <Route path="/secret/membersadmin" element={<MembersAdmin />}/>
             </Routes>
         </>
     )
