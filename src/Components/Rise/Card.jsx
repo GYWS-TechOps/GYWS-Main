@@ -7,7 +7,7 @@ const Card = ({ src, title, description, color,direction,titlecolor,btncolor,lin
       <div className="rise-cardtext">
         <div className={`rise-cardtitle ${titlecolor}`}>{title}</div>
         <div className="rise-card_desc">{description}</div>
-        <button className={`rise-btn ${btncolor}`}><a href ={link}>Event Report</a></button>
+        <button className={`rise-btn ${btncolor}`}><a target ="_blank" href ={link}>Event Report</a></button>
       </div>
     </div>
   );
