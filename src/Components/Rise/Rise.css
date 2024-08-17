@@ -28,7 +28,7 @@
     justify-content: center;
     text-align: center;
 }
-.rise-mainimage{
+.rise-bg img{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -141,17 +141,16 @@
     justify-content: center;
     gap: 20px;
     border-width: 4px;
-    padding: 32px;
+    padding: 24px;
     border-radius: 24px;
     margin: 24px auto;
     cursor: pointer;
     width: 60%;
-    transition: transform 500 ease-in-out;
+    transition: transform 0.2s ease-in-out;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
 }
 
 .rise-card:hover {
-    transform: translateY(-8px);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     transform: scale(1.01);
 }
