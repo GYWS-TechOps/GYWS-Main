@@ -14,7 +14,7 @@ export const MyContext = createContext([
         description: "Daksha is a 3-day online workshop on AI and ML for Grade 8-12 students, bridging the gap between theory and application to equip them with essential career skills.",
         title: "DAKSHA",
         color:"rise-blue",
-        direction:'rise-rise-col',
+        direction:'rise-col',
         titlecolor:"rise-titleblue",
         btncolor:"rise-blue-btn",
         link: Daksha_pdf

@@ -1,5 +1,5 @@
 import "./Rise.css"
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Aim from "./Rise_assets/Aim.jpg";
 import { MyContext } from "./Context";
 import './Rise.css';
@@ -8,6 +8,12 @@ import Mainimage from "./Rise_assets/Bigimage.jpg"
 
 export default function Rise() {
     const items = useContext(MyContext);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        document.title = "Rise | GYWS"
+    
+      }, [])
 
     return (
         <div className="rise-content">

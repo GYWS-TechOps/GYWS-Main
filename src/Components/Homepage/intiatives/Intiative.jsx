@@ -18,7 +18,7 @@ export default function intiative() {
           </div>
           <div className={inticss.mainbox} id={inticss.first}>
             <div className={inticss.image}>
-              <img src={jvmlogo} alt="" />
+              <img src= {jvmlogo} alt="" />
             </div>
             <div className={inticss.info}>
               <div className={inticss.discr} style={{ fontStyle: "italic" }}>

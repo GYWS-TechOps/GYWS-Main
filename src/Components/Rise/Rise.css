@@ -7,6 +7,7 @@
     overflow: clip;
     font-weight: 600;
 }
+
 .rise-header{
     position: relative;
 }
@@ -134,26 +135,26 @@
     justify-content: space-around;
 }
 
+.rise-card:hover {
+    box-shadow: 5px 5px  25px rgba(0, 0, 0, 0.3);
+    transform: scale(1.01);
+}
 
 .rise-card {
     display: flex;
     align-items:center;
     justify-content: center;
     gap: 20px;
-    border-width: 4px;
+    border-width: 3px;
     padding: 24px;
     border-radius: 24px;
     margin: 24px auto;
     cursor: pointer;
     width: 60%;
-    transition: transform 0.2s ease-in-out;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
 }
 
-.rise-card:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    transform: scale(1.01);
-}
+
 
 .rise-cardimage {
     border-radius: 8px;
@@ -182,48 +183,43 @@
 
 .rise-blue {
     border-color: #05a1c7;
-    transition: box-shadow 0.5s;
 }
 .rise-blue:hover{
-    box-shadow: 0 0 25px #05a1c7;
+    box-shadow: 0 0 10px #05a0c749;
 }
 
 .rise-orange{
-        border-color: #f26a36;
-        transition: box-shadow 0.5s;
+        border-color: #f26b36;
      
 }
 .rise-orange:hover{
-    box-shadow: 0 0 25px #f26a36; 
+    box-shadow: 0 0 10px #f75b1dd6; 
 }
 .rise-green{
     border-color:#73c48f; 
-    transition: box-shadow 0.5s;
-  
+  font: fallback;
 }
 .rise-green:hover{
-box-shadow: 0 0 25px #73c48f; 
+box-shadow: 0 0 10px #41a363; 
 }
 
 .rise-yellow{
-    transition: box-shadow 0.5s;
- border-color: #f9ee34; 
+ border-color: #fed136; 
 }
 .rise-yellow:hover{
-    box-shadow: 0 0 25px #f9ee34; 
+    box-shadow: 0 0 10px #ffcd1a; 
     }
 .rise-purple{
-    transition: box-shadow 0.5s;
     border-color: #695e91;
 }
 .rise-purple:hover{
-    box-shadow: 0 0 25px #695e91; 
+    box-shadow: 0 0 10px #695e91; 
     }
 .rise-titleblue{
     color: #05a1c7;
 }
 .rise-titleyellow{
-    color: #f9ee34;
+    color: #fed136;
 }
 .rise-titlegreen{
     color: #73c48f;
@@ -235,13 +231,14 @@ box-shadow: 0 0 25px #73c48f;
     color:#695e91;
 }
 .rise-btn{
-    padding: 16px;
-    border-radius: 32px;
-    color: white;
-    margin: 10px;
+    padding: 10px;
+    border-radius:15px;
+    margin: 10px 0px;
+    font-size: 16px;
+    transition: transform 0.2s ease-in-out;
 }
 .rise-btn:hover{
-    box-shadow: 2px 2px 10px rgb(160, 160, 160);
+    transform: scale(1.08);
 }
 .rise-blue-btn{
     background-color: #05a1c7;
@@ -250,7 +247,7 @@ box-shadow: 0 0 25px #73c48f;
     background-color: #73c48f;
 }
 .rise-yellow-btn{
-    background-color: #f9ee34;
+    background-color: #fed136;
 }
 .rise-orange-btn{
     background-color: #f26a36;
@@ -262,6 +259,10 @@ box-shadow: 0 0 25px #73c48f;
 }
 .rise-card_desccol{
     flex-direction: row;
+}
+
+.rise-colreverse{
+    flex-direction: row-reverse
 }
 .rise-card_desc{
     flex-direction: row-reverse;

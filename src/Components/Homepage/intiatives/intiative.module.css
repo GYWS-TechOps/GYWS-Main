@@ -55,11 +55,12 @@
 
 .mainbox button {
     padding: 0.7rem 2.2rem;
+    width: 170px;
     font-size: 1rem;
     font-weight: 500;
-    margin-top: 0.8rem;
+    margin: 0.8rem auto;
     background-color: #fed136;
-    border-radius: 2rem;
+    border-radius: 20px;
     border: none;
     outline: none;
     box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.4);
@@ -80,7 +81,7 @@
 }
 
 .mainbox img {
-    width: 80%;
+    width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 1rem;
@@ -88,13 +89,13 @@
 
 
 .mainbox .discr {
-    font-size: 1.08rem;
-    margin: 1rem 0 0;
-    text-align: justify;
+    /* font-size: 1.08rem; */
+    /* margin: 1rem; */
+    padding: 0px 20px;
+    text-align: left;
 }
 
 .mainbox .number {
-    text-align: center;
     font-size: 1.2rem;
     font-weight: 700;
 }
@@ -127,8 +128,8 @@
 .info{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content:flex-start;
+    /* align-items: center; */
 }
 @media (max-width:580px) {
     .container {
@@ -181,9 +182,9 @@
         width: 300px !important;
     } */
  
-    .mainbox img {
+    /* .mainbox img {
         width: 90% !important;
-    }
+    } */
 
     .mainbox #image {
         display: flex;
@@ -206,5 +207,14 @@
 @media (max-width: 400px) {
     .mainbox {
         width: 300px !important;
+    }
+}
+
+@media(max-width: 800px){
+    .mainbox{
+        flex-direction: column;
+    }
+    .info{
+        padding-top: 20px;
     }
 }
