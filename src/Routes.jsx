@@ -17,7 +17,7 @@ import HostelSus from './Components/Donation/Hostel_Sustainability.jsx'
 import Donate from './Pages/Donate/Donate.jsx'
 import Mailer from './Components/Mailer-Tool/Mailer.jsx'
 import AdminPanel from './Components/admin/adminPanel.jsx';
-import MembersAdmin from './Components/MemberForAdmin/MembersAdmin.jsx';
+import MembersAdmin from './Components/admin/MemberForAdmin/MembersAdmin.jsx';
 
 export default function NavRoutes() {
     return (

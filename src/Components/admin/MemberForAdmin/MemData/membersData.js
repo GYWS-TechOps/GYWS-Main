@@ -10,7 +10,8 @@ export const getMembersData=async ()=>{
                 image: "imgLink",
                 linkedIn: "link",
                 facebook: "link",
-                email:"link"
+                emails: ["adsfadsfasgasfa@gmail.com","b@gmail.com","c@gmail.com","a@gmail.com","b@gmail.com","c@gmail.com","a@gmail.com","b@gmail.com","c@gmail.com"],
+                phnum:[1234567890,1234567890,1324123412, 1238800932,1234567890,1324123412, 1238800932]
             },
             {
                 srNo: 2,
@@ -20,6 +21,7 @@ export const getMembersData=async ()=>{
                 linkedIn: "link",
                 facebook: "link",
                 email: "link",
+                phnum:[1234567890,123,1324123412],
 
             },
             {
