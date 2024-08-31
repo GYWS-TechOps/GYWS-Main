@@ -1,25 +1,28 @@
 import React, { useEffect, useState } from 'react'
-import { getMembersData } from './MemData/membersData.js'
 import "./MembersAdmin.css"
+import axios from 'axios';
 import MemData from "./MemData/MemData.jsx"
 const MembersAdmin = () => {
     const [Membersdata, setMembersdata] = useState([]);
-    const getData = async () => {
-        let data;
-        try {
-            data = await getMembersData();
-            console.log(data);
-            setMembersdata(data);
-        } catch (error) {
-            throw error;
-        }
-    }
+    const getData = () => {
+        let data=axios.get('/api/data')
+        .then(response => {
+            setMembersdata(response.data);
+        })
+        .catch(error => {
+            console.error('There was an error fetching the data!', error);
+        });
+        setMembersdata(data);
+    };
     useEffect(() => {
         getData();
     }, [])
     const handleSearch = (e) => {
         console.log("Searching");
     }
+  const handleDeleteSuccess = (deletedId) => {
+    setMembersdata(prevData => prevData.filter(item => item._id !== deletedId));
+  };
     const handleMembers = (e) => {
         console.log("Add members Button");
     }
@@ -33,7 +36,7 @@ const MembersAdmin = () => {
                 <div className="admin-mem-cont1">
                     <button onClick={handleMembers} id='add-mem-admin-btn'>+ Add Members</button>
                     <div className='admin-mem-cont1-subcont1'>
-                        <input onChange={handleSearchInput} type="text" placeholder='Search Members Name' />
+                        <input required onChange={handleSearchInput} type="text" placeholder='Search Members Name' />
                         <button onClick={handleSearch}>Search</button>
                     </div>
                 </div>
@@ -43,6 +46,7 @@ const MembersAdmin = () => {
                             <div className="admin-mem-pg-data-box admin-mem-pg-margin-left">Name</div>
                             <div className="admin-mem-pg-data-box">Image</div>
                             <div className="admin-mem-pg-data-box">Position</div>
+                            <div className="admin-mem-pg-data-box">Team</div>
                             <div className="admin-mem-pg-data-box">Roll no.</div>
                             <div className="admin-mem-pg-data-box">Date of Birth</div>
                             <div className="admin-mem-pg-data-box">City</div>
@@ -60,7 +64,7 @@ const MembersAdmin = () => {
                         Membersdata.map((props) => {
                             return (<>
                                 <div key={props.srNo}>
-                                    <MemData name={props.name} Imgurl={props.image} dob={props.dob} rollno={props.rollno} year={props.year} city={props.city} state={props.state} phnum={props.phnum} position={props.position} facebookLink={props.facebook} emails={props.emails} linkedinLink={props.linkedIn} />
+                                    <MemData id={props.id} onDeleteSuccess={() => handleDeleteSuccess(props.id)} pos={props.pos} name={props.name} Imgurl={props.image} team={props.team} dob={props.dob} rollno={props.rollno} year={props.year} city={props.city} state={props.state} phnum={props.phnum} position={props.position} facebookLink={props.facebook} emails={props.emails} linkedinLink={props.linkedIn} />
 
                                 </div>
                             </>
