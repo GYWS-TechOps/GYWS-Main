@@ -26,25 +26,25 @@ const AdminPanel = () => {
   
         // Extract JWT token from the response
         const token = response.data.token;
+        const decoded = jwtDecode(token);
         if (token) {
             // Store the token in localStorage or cookies
             localStorage.setItem('token', token);
             
-            // Decode the token to get admin status and user ID
-            const decoded = jwtDecode(token);
-            const expiryTime = decoded.exp; // Expiry time in UNIX timestamp
-        
+            const expiryTime = new Date().getTime() + 7 * 24 * 60 * 60 * 1000;
+            // Store the expiry time in localStorage
+            localStorage.setItem('sessionExpiry', expiryTime);
             // Calculate when the token will expire
             const currentTime = Math.floor(Date.now() / 1000); // Current time in UNIX timestamp
             const timeRemaining = expiryTime - currentTime;
         
             // Store the expiry time in localStorage or state
             localStorage.setItem('tokenExpiry', expiryTime);
-        
             if (timeRemaining > 0) {
               // Set a timeout to automatically handle token expiry
               setTimeout(() => {
                 // Handle token expiry
+                localStorage.removeItem(token);
                 navigate("/secret/adminpanel")
               }, timeRemaining * 1000); // Convert to milliseconds
             }

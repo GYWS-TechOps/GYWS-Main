@@ -3,8 +3,31 @@ import {config} from "dotenv"
 import "./MembersAdmin.css"
 import axios from 'axios';
 import MemData from "./MemData/MemData.jsx"
+import { useNavigate } from 'react-router-dom';
 config();
 const MembersAdmin = () => {
+  const navigate = useNavigate();
+  const checkSessionExpiry = () => {
+    const token = localStorage.getItem('token');
+    const expiryTime = localStorage.getItem('sessionExpiry');
+  
+    if (token && expiryTime) {
+      const currentTime = new Date().getTime();
+  
+      if (currentTime > expiryTime) {
+        // Session has expired, clear the token and redirect to login
+        localStorage.removeItem('token');
+        localStorage.removeItem('sessionExpiry');
+        navigate("/secret/adminpanel");
+      } else {
+        // Continue with the user's session
+      }
+    } else {
+      // No token or expiry set, redirect to login
+    navigate("/secret/adminpanel");
+    }
+  };
+checkSessionExpiry();
     const [Membersdata, setMembersdata] = useState([]);
     const getData = () => {
         let data = axios.get(process.env.API_URL)
