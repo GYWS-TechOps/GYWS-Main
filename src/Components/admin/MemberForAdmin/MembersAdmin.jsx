@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react'
+import {config} from "dotenv"
 import "./MembersAdmin.css"
 import axios from 'axios';
 import MemData from "./MemData/MemData.jsx"
+config();
 const MembersAdmin = () => {
     const [Membersdata, setMembersdata] = useState([]);
     const getData = () => {
-        let data=axios.get('/api/data')
-        .then(response => {
-            setMembersdata(response.data);
-        })
-        .catch(error => {
-            console.error('There was an error fetching the data!', error);
-        });
+        let data = axios.get(process.env.API_URL)
+            .then(response => {
+                setMembersdata(response.data);
+            })
+            .catch(error => {
+                console.error('There was an error fetching the data!', error);
+            });
         setMembersdata(data);
     };
     useEffect(() => {
@@ -20,9 +22,9 @@ const MembersAdmin = () => {
     const handleSearch = (e) => {
         console.log("Searching");
     }
-  const handleDeleteSuccess = (deletedId) => {
-    setMembersdata(prevData => prevData.filter(item => item._id !== deletedId));
-  };
+    const handleDeleteSuccess = (deletedId) => {
+        setMembersdata(prevData => prevData.filter(item => item._id !== deletedId));
+    };
     const handleMembers = (e) => {
         console.log("Add members Button");
     }
@@ -64,8 +66,15 @@ const MembersAdmin = () => {
                         Membersdata.map((props) => {
                             return (<>
                                 <div key={props.srNo}>
-                                    <MemData id={props.id} onDeleteSuccess={() => handleDeleteSuccess(props.id)} pos={props.pos} name={props.name} Imgurl={props.image} team={props.team} dob={props.dob} rollno={props.rollno} year={props.year} city={props.city} state={props.state} phnum={props.phnum} position={props.position} facebookLink={props.facebook} emails={props.emails} linkedinLink={props.linkedIn} />
-
+                                    <MemData id={props._id}
+                                    onDeleteSuccess={() => handleDeleteSuccess(props._id)}
+                                    pos={props.teams[0].teamAndpos[0].pos}
+                                    name={props.name} Imgurl={props.image[0]} team={props.teams[0].teamAndpos[0].team}
+                                    dob={props.dob} rollno={props.rollno} year={props.teams[0].year}
+                                    city={props.city} state={props.state} phnum={props.phnum}
+                                    position={props.teams[0].teamAndpos[0].position} 
+                                    facebookLink={props.facebook} emails={props.emails} 
+                                    linkedinLink={props.linkedIn} />
                                 </div>
                             </>
                             )

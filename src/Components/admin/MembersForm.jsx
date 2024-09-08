@@ -1,4 +1,7 @@
 import { useState } from "react";
+import axios from "axios"
+
+
 
 function MembersForm() {
   const positionTyp = [
@@ -24,28 +27,28 @@ function MembersForm() {
     "Media Head",
   ];
 
-  const POS = [
-    "president",
-    "VP",
-    "GSec",
-    "AssSec",
-    "HR",
-    "CEO-LiGHT",
-    "CTO",
-    "treasure",
-    "SDO",
-    "CFO",
-    "FACR",
-    "Donor Officer",
-    "Public Officer",
-    "UG",
-    "TechOps",
-    "SRC",
-    "Spons",
-    "Finance",
-    "Design",
-    "Media",
-  ];
+  // const POS = [
+  //   "president",
+  //   "VP",
+  //   "GSec",
+  //   "AssSec",
+  //   "HR",
+  //   "CEO-LiGHT",
+  //   "CTO",
+  //   "treasure",
+  //   "SDO",
+  //   "CFO",
+  //   "FACR",
+  //   "Donor Officer",
+  //   "Public Officer",
+  //   "UG",
+  //   "TechOps",
+  //   "SRC",
+  //   "Spons",
+  //   "Finance",
+  //   "Design",
+  //   "Media",
+  // ];
 
   const State = [
     "Andhra Pradesh",
@@ -92,29 +95,120 @@ function MembersForm() {
 
   const [member, setMember] = useState({
     name: "",
-    dob: "",
-    rollnum: "",
-    position: "",
-    pos: "",
-    img: null,
-    otherEmail: "",
-    phoneNum: "",
-    fbLink: "",
+    emails: [''],
+    imageUrls: [],
+    phoneNumbers: [''],
+    facebookLink: "",
+    linkedinLink: "",
     state: "",
     city: "",
-    linkedinLink: "",
-    email: "",
-    team: "",
-    year: "",
+    dateOfBirth: "",
+    rollNo: "",
+    teams: [
+      {
+        teamAndpos: [
+          {
+            team: "",
+            pos: "",
+            position: "",
+          },
+        ],
+        year: ""
+      }
+    ],
   });
 
-  const onChange = (e) => {
-    setMember({ ...member, [e.target.name]: e.target.value });
-  };
+  function emailClickHandler(i){
+    const mails=[...member.emails]
+    mails[i+1]=''
+    setMember({...member,emails:mails})
+  }
 
+  function emailHandler(i,e){
+    const {value}=e.target
+    const mails=[...member.emails]
+    mails[i]=value
+    setMember({...member,emails:mails})
+  }
+  function phoneClickHandler(i){
+    const num=[...member.phoneNumbers]
+    num[i+1]=''
+    setMember({...member,phoneNumbers:num})
+  }
+
+  function phoneNumHandler(i,e){
+    const {value}=e.target
+    const num=[...member.phoneNumbers]
+    num[i]=value
+    setMember({...member,phoneNumbers:num})
+  }
+
+  const onChange = (e) => {
+    const { name, value } = e.target;
+  
+    // Handle dateOfBirth formatting
+    if (name === "dateOfBirth") {
+      const inputDate = new Date(value);
+      const formattedDate = `${inputDate.getFullYear()}/${(inputDate.getMonth() + 1)
+        .toString()
+        .padStart(2, '0')}/${inputDate
+        .getDate()
+        .toString()
+        .padStart(2, '0')}`;
+      setMember({ ...member, dateOfBirth: formattedDate });
+    } 
+
+    
+    else if (name === "teams[0].year") {
+      const updatedTeams = [...member.teams];
+      updatedTeams[0].year = value; 
+      setMember({ ...member, teams: updatedTeams });
+    } 
+    
+    else if (name === "teams[0].teamAndpos[0].team") {
+      const updatedTeams = [...member.teams];
+      updatedTeams[0].teamAndpos[0].team = value; 
+    } 
+
+    else if (name === "teams[0].teamAndpos[0].position") {
+      const updatedTeams = [...member.teams];
+      updatedTeams[0].teamAndpos[0].position = value; 
+      if(value==="President") updatedTeams[0].teamAndpos[0].pos ="p";
+      if(value==="Vice President") updatedTeams[0].teamAndpos[0].pos = "vp";
+      if(value==="General Seceratory") updatedTeams[0].teamAndpos[0].pos = "gsec";
+      if(value==="Assistant Secretary") updatedTeams[0].teamAndpos[0].pos = "asec";
+      if(value==="Human Resource Manager") updatedTeams[0].teamAndpos[0].pos = "hr";
+      if(value==="Chief Executive Officer, LiGHT") updatedTeams[0].teamAndpos[0].pos = "ceo";
+      if(value==="Chief Technical Officer") updatedTeams[0].teamAndpos[0].pos = "cto";
+      if(value==="Treasurer") updatedTeams[0].teamAndpos[0].pos = "treas";
+      if(value==="School Development Officer") updatedTeams[0].teamAndpos[0].pos = "sdo";
+      if(value==="Chief Fundraising Officer") updatedTeams[0].teamAndpos[0].pos ="cfo";
+      if(value==="Foreign and Corporate Relation Officer") updatedTeams[0].teamAndpos[0].pos = "facro";
+      if(value==="Donor Engagement Officer") updatedTeams[0].teamAndpos[0].pos = "deo";
+      if(value==="Public Relation Officer") updatedTeams[0].teamAndpos[0].pos= "pro";
+      if(value==="UG Coordinator") updatedTeams[0].teamAndpos[0].pos = "ug";
+      if(value==="SRC Head") updatedTeams[0].teamAndpos[0].pos = "srch";
+      if(value==="TechOps Head") updatedTeams[0].teamAndpos[0].pos = "th";
+      if(value==="Sponsorship Head") updatedTeams[0].teamAndpos[0].pos = "sh";
+      if(value==="Finance Head") updatedTeams[0].teamAndpos[0].pos = "fh";
+      if(value=== "Design Head") updatedTeams[0].teamAndpos[0].pos = "dh";
+      if(value=== "Media Head") updatedTeams[0].teamAndpos[0].pos = "mh"; 
+      setMember({ ...member, teams: updatedTeams });
+    } 
+
+    
+    else {
+      setMember({ ...member, [name]: value });
+    }
+  };
+  
+  
   function submitHandler(e) {
     e.preventDefault();
     console.log(member);
+    axios.post("http://localhost:3000/admins/addMember",member)
+    .then(()=>console.log("Succesful"))
+    .catch((err)=>console.log(err))
   }
 
   return (
@@ -134,7 +228,7 @@ function MembersForm() {
           placeholder=" "
           required
         />
-        <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+        <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
           Name
         </label>
       </div>
@@ -142,24 +236,23 @@ function MembersForm() {
         <div className="relative z-0 w-full mb-5 group">
           <input
             type="date"
-            name="dob"
+            name="dateOfBirth"
             onChange={onChange}
             className=" block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer "
           />
-          <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+          <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
             Date Of Birth
           </label>
         </div>
         <div className="relative z-0 w-full mb-5 group">
           <input
             type="text"
-            name="rollnum"
+            name="rollNo"
             onChange={onChange}
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
-            required
           />
-          <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+          <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
             Roll Number
           </label>
         </div>
@@ -171,7 +264,6 @@ function MembersForm() {
             name="state"
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
-            required
           >
             {State.map(function (pos, index) {
               return (
@@ -181,7 +273,7 @@ function MembersForm() {
               );
             })}
           </select>
-          <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+          <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
             State
           </label>
         </div>
@@ -189,20 +281,20 @@ function MembersForm() {
           <input
             type="text"
             name="city"
+            onChange={onChange}
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
-            required
           />
-          <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+          <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
             City
           </label>
         </div>
       </div>
-      <div className="grid md:grid-cols-2 md:gap-6 w-[320px]">
-        <div className="relative z-0 w-full mb-5 group">
+      
+        <div className="relative z-0  mb-5 group w-[320px]">
           <select
             onChange={onChange}
-            name="position"
+            name="teams[0].teamAndpos[0].position"
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
             required
@@ -215,91 +307,91 @@ function MembersForm() {
               );
             })}
           </select>
-          <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+          <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
             Position
           </label>
         </div>
-        <div className="relative z-0 w-full mb-5 group">
-          <select
-            onChange={onChange}
-            name="pos"
-            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            placeholder=" "
-            required
-          >
-            {POS.map(function (pos, index) {
-              return (
-                <option key={index} value={pos}>
-                  {pos}
-                </option>
-              );
-            })}
-          </select>
-          <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-            POS
-          </label>
-        </div>
-      </div>
+
+      
       <div className="relative z-0  mb-5 group w-[320px]">
         <input
           type="file"
-          name="img"
+          name="imageUrls"
           onChange={onChange}
-          className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-          placeholder=" "
-          required
-        />
-        <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-          Upload Image
-        </label>
-      </div>
-      <div className="grid md:grid-cols-2 md:gap-6 w-[320px]">
-        <div className="relative z-0 w-full mb-5 group">
-          <input
-            type="email"
-            name="email"
-            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            placeholder=" "
-            required
-          />
-          <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-            Email
-          </label>
-        </div>
-        <div className="relative z-0 w-full mb-5 group max-w-md">
-          <input
-            type="email"
-            name="otherEmail"
-            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            placeholder=" "
-          />
-          <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-            Any other Email
-          </label>
-        </div>
-      </div>
-      <div className="relative z-0  mb-5 group w-[320px]">
-        <input
-          type="tel"
-          name="phoneNum"
           className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
           placeholder=" "
           required
         />
-        <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-          Phone number (123-456-7890)
+        <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+          Upload Image
         </label>
       </div>
+ 
+      {
+        member.emails.map((email,index)=>{
+          return(
+            <div  key={index} className="relative z-0  mb-5 group w-[320px] flex gap-[4px]">
+            <input
+                  type="email"
+                  name="emails"
+                  onChange={(e)=>emailHandler(index,e)}
+                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" "
+                  required
+                />
+                <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                  Email
+                </label>
+                <button
+                 type="button"
+                 className="text-white transition-all duration-100 bg-[#f26a36] hover:bg-[#d85c31] active:ring-4 active:ring-[#f26a36]/50 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none"
+                 onClick={()=>emailClickHandler(index)}
+                 >
+                 Add
+                </button>
+            </div>
+          )
+        })}
+      {
+        member.phoneNumbers.map((num,index)=>{
+          return(
+            <div key={index} className="relative z-0  mb-5 group w-[320px] flex gap-[4px]">
+            <input
+              type="tel"
+              name="phoneNumbers"
+              pattern="\d{10}"  
+              onChange={(e)=>phoneNumHandler(index,e)}
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              />
+            <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+              Phone number (123-456-7890)
+            </label>
+            <button
+                 type="button"
+                 className="text-white transition-all duration-100 bg-[#f26a36] hover:bg-[#d85c31] active:ring-4 active:ring-[#f26a36]/50 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none"
+                 onClick={()=>phoneClickHandler(index)}
+                 >
+                 Add
+                </button>
+
+            
+          </div>
+          )
+        })
+      }
+
       <div className="grid md:grid-cols-2 md:gap-6 w-[320px]">
         <div className="relative z-0 w-full mb-5 group">
           <input
             type="url"
-            name="fbLink"
+            name="facebookLink"
+            onChange={onChange}
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
             required
           />
-          <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+          <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
             Facebook link:
           </label>
         </div>
@@ -307,11 +399,12 @@ function MembersForm() {
           <input
             type="url"
             name="linkedinLink"
+            onChange={onChange}
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
             required
           />
-          <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+          <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
             Linkedin link:
           </label>
         </div>
@@ -320,7 +413,8 @@ function MembersForm() {
         <div className="relative z-0 w-full mb-5 group">
           <select
             onChange={onChange}
-            name="team"
+            name="teams[0].teamAndpos[0].team"
+            required
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
           >
@@ -332,29 +426,30 @@ function MembersForm() {
               );
             })}
           </select>
-          <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+          <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
             Team
           </label>
         </div>
         <div className="relative z-0 w-full mb-5 group">
           <input
             type="number"
-            name="year"
+            name="teams[0].year"
             min="2020"
             max="2099"
+            onChange={onChange}
             step="1"
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
             required
           />
-          <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+          <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
             Year
           </label>
         </div>
       </div>
       <button
         type="submit"
-        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        className="text-white transition-all duration-100 bg-[#f26a36] hover:bg-[#d85c31] active:ring-4 active:ring-[#f26a36]/50 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none "
       >
         Submit
       </button>

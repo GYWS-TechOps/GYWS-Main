@@ -16,6 +16,9 @@
     border: 1px solid grey;
     border-top: 7px solid #f26a36;
 }
+.admin-pg--invalid-login{
+    color: red;
+}
 .admin-panel-cont-section{
     /* background-color: black; */
     background-color: rgb(246, 246, 246);
