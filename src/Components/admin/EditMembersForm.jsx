@@ -3,31 +3,33 @@ import { useLocation } from "react-router-dom"
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
+const BASE_URL = "https://gyws-backend.onrender.com"
+
 function MembersForm() {
   const navigate = useNavigate();
   const location = useLocation();
   const data = location.state;
-  const checkSessionExpiry = () => {
-    const token = localStorage.getItem('token');
-    const expiryTime = localStorage.getItem('sessionExpiry');
+//   const checkSessionExpiry = () => {
+//     const token = localStorage.getItem('token');
+//     const expiryTime = localStorage.getItem('sessionExpiry');
   
-    if (token && expiryTime) {
-      const currentTime = new Date().getTime();
+//     if (token && expiryTime) {
+//       const currentTime = new Date().getTime();
   
-      if (currentTime > expiryTime) {
-        // Session has expired, clear the token and redirect to login
-        localStorage.removeItem('token');
-        localStorage.removeItem('sessionExpiry');
-        navigate("/secret/adminpanel");
-      } else {
-        // Continue with the user's session
-      }
-    } else {
-      // No token or expiry set, redirect to login
-    navigate("/secret/adminpanel");
-    }
-  };
-checkSessionExpiry();
+//       if (currentTime > expiryTime) {
+//         // Session has expired, clear the token and redirect to login
+//         localStorage.removeItem('token');
+//         localStorage.removeItem('sessionExpiry');
+//         navigate("/secret/adminpanel");
+//       } else {
+//         // Continue with the user's session
+//       }
+//     } else {
+//       // No token or expiry set, redirect to login
+//     navigate("/secret/adminpanel");
+//     }
+//   };
+// checkSessionExpiry();
   const positionTyp = [
     "President",
     "Vice President",
@@ -281,7 +283,7 @@ checkSessionExpiry();
         }
       }
     }
-    await axios.put(process.env.API_URL, member)
+    await axios.put(`${BASE_URL}/admins//addMemberData/:_id`+member.id, member)
       .then(response => {
         console.log('Data updated successfully:', response.data);
       })

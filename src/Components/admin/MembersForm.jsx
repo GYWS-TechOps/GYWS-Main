@@ -2,29 +2,31 @@ import { useState } from "react";
 import axios from "axios"
 import { useNavigate } from 'react-router-dom';
 
+const BASE_URL = "https://gyws-backend.onrender.com"
+
 function MembersForm() {
-  const navigate = useNavigate();
-  const checkSessionExpiry = () => {
-    const token = localStorage.getItem('token');
-    const expiryTime = localStorage.getItem('sessionExpiry');
+//   const navigate = useNavigate();
+//   const checkSessionExpiry = () => {
+//     const token = localStorage.getItem('token');
+//     const expiryTime = localStorage.getItem('sessionExpiry');
   
-    if (token && expiryTime) {
-      const currentTime = new Date().getTime();
+//     if (token && expiryTime) {
+//       const currentTime = new Date().getTime();
   
-      if (currentTime > expiryTime) {
-        // Session has expired, clear the token and redirect to login
-        localStorage.removeItem('token');
-        localStorage.removeItem('sessionExpiry');
-        navigate("/secret/adminpanel");
-      } else {
-        // Continue with the user's session
-      }
-    } else {
-      // No token or expiry set, redirect to login
-    navigate("/secret/adminpanel");
-    }
-  };
-checkSessionExpiry();
+//       if (currentTime > expiryTime) {
+//         // Session has expired, clear the token and redirect to login
+//         localStorage.removeItem('token');
+//         localStorage.removeItem('sessionExpiry');
+//         navigate("/secret/adminpanel");
+//       } else {
+//         // Continue with the user's session
+//       }
+//     } else {
+//       // No token or expiry set, redirect to login
+//     navigate("/secret/adminpanel");
+//     }
+//   };
+// checkSessionExpiry();
 
   const positionTyp = [
     "President",
@@ -259,7 +261,7 @@ checkSessionExpiry();
   
     
     axios
-      .post("http://localhost:3000/admins/addMember", formData, {
+      .post(`${BASE_URL}/admins/addMember`, formData, {
         headers: {
           "Content-Type": "multipart/form-data", // Required for file uploads
         },

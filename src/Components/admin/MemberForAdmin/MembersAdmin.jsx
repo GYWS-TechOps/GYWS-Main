@@ -1,36 +1,37 @@
 import React, { useEffect, useState } from 'react'
-import {config} from "dotenv"
 import "./MembersAdmin.css"
 import axios from 'axios';
 import MemData from "./MemData/MemData.jsx"
 import { useNavigate } from 'react-router-dom';
-config();
+
+const BASE_URL = "https://gyws-backend.onrender.com"
+
 const MembersAdmin = () => {
-  const navigate = useNavigate();
-  const checkSessionExpiry = () => {
-    const token = localStorage.getItem('token');
-    const expiryTime = localStorage.getItem('sessionExpiry');
+//   const navigate = useNavigate();
+//   const checkSessionExpiry = () => {
+//     const token = localStorage.getItem('token');
+//     const expiryTime = localStorage.getItem('sessionExpiry');
   
-    if (token && expiryTime) {
-      const currentTime = new Date().getTime();
+//     if (token && expiryTime) {
+//       const currentTime = new Date().getTime();
   
-      if (currentTime > expiryTime) {
-        // Session has expired, clear the token and redirect to login
-        localStorage.removeItem('token');
-        localStorage.removeItem('sessionExpiry');
-        navigate("/secret/adminpanel");
-      } else {
-        // Continue with the user's session
-      }
-    } else {
-      // No token or expiry set, redirect to login
-    navigate("/secret/adminpanel");
-    }
-  };
-checkSessionExpiry();
+//       if (currentTime > expiryTime) {
+//         // Session has expired, clear the token and redirect to login
+//         localStorage.removeItem('token');
+//         localStorage.removeItem('sessionExpiry');
+//         navigate("/secret/adminpanel");
+//       } else {
+//         // Continue with the user's session
+//       }
+//     } else {
+//       // No token or expiry set, redirect to login
+//     navigate("/secret/adminpanel");
+//     }
+//   };
+// checkSessionExpiry();
     const [Membersdata, setMembersdata] = useState([]);
     const getData = () => {
-        let data = axios.get(process.env.API_URL)
+        let data = axios.get(`${BASE_URL}/admins/members`)
             .then(response => {
                 setMembersdata(response.data);
             })
@@ -83,10 +84,7 @@ checkSessionExpiry();
                             <div className="admin-mem-pg-data-box">Emails</div>
                         </div>
                     </div>
-                    {       //multiple-phonenumber
-                        //roll number
-                        //City ,State
-                        Membersdata.map((props) => {
+                    { Membersdata.length===0?Membersdata.map((props) => {
                             return (<>
                                 <div key={props.srNo}>
                                     <MemData id={props._id}
@@ -101,7 +99,7 @@ checkSessionExpiry();
                                 </div>
                             </>
                             )
-                        })
+                        }):<></>
                     }
                 </div>
             </section>

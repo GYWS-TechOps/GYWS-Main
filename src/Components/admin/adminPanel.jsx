@@ -3,6 +3,9 @@ import axios from 'axios';
 import "./adminPanel.css"
 import {jwtDecode} from "jwt-decode";
 import { useNavigate } from 'react-router-dom';
+
+const BASE_URL = "https://gyws-backend.onrender.com"
+
 const AdminPanel = () => {
     const navigate = useNavigate();
     const [Invalidlogin, setInvalidlogin] = useState(false);
@@ -19,7 +22,7 @@ const AdminPanel = () => {
         e.preventDefault();
 
     try {
-        const response = await axios.post(process.env.API_URL, {
+        const response = await axios.post(`${BASE_URL}/admins/login`, {
           Username,
           Password,
         });
