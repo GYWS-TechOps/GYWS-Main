@@ -1,0 +1,18 @@
+
+.chlna h1{
+    font-size: 2rem !important;
+    font-weight: 1000 !important;
+}
+
+.chlna{
+    background: linear-gradient(to left,#5E74A2, #73c48f,#f16a36,#f9ee36);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-top: 10px;
+}
+@media (max-width:500px) {
+    .chlna h1{
+        font-size: 1.5rem !important;
+    }
+}
