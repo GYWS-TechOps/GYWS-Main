@@ -7,39 +7,39 @@ import { useNavigate } from 'react-router-dom';
 const BASE_URL = "https://gyws-backend.onrender.com"
 
 const MembersAdmin = () => {
-//   const navigate = useNavigate();
-//   const checkSessionExpiry = () => {
-//     const token = localStorage.getItem('token');
-//     const expiryTime = localStorage.getItem('sessionExpiry');
-  
-//     if (token && expiryTime) {
-//       const currentTime = new Date().getTime();
-  
-//       if (currentTime > expiryTime) {
-//         // Session has expired, clear the token and redirect to login
-//         localStorage.removeItem('token');
-//         localStorage.removeItem('sessionExpiry');
-//         navigate("/secret/adminpanel");
-//       } else {
-//         // Continue with the user's session
-//       }
-//     } else {
-//       // No token or expiry set, redirect to login
-//     navigate("/secret/adminpanel");
-//     }
-//   };
-// checkSessionExpiry();
-    const [Membersdata, setMembersdata] = useState([]);
-    const getData = () => {
-        let data = axios.get(`${BASE_URL}/admins/members`)
-            .then(response => {
-                setMembersdata(response.data);
-            })
-            .catch(error => {
-                console.error('There was an error fetching the data!', error);
-            });
-        setMembersdata(data);
-    };
+    //   const navigate = useNavigate();
+    //   const checkSessionExpiry = () => {
+    //     const token = localStorage.getItem('token');
+    //     const expiryTime = localStorage.getItem('sessionExpiry');
+
+    //     if (token && expiryTime) {
+    //       const currentTime = new Date().getTime();
+
+    //       if (currentTime > expiryTime) {
+    //         // Session has expired, clear the token and redirect to login
+    //         localStorage.removeItem('token');
+    //         localStorage.removeItem('sessionExpiry');
+    //         navigate("/secret/adminpanel");
+    //       } else {
+    //         // Continue with the user's session
+    //       }
+    //     } else {
+    //       // No token or expiry set, redirect to login
+    //     navigate("/secret/adminpanel");
+    //     }
+    //   };
+    // checkSessionExpiry();
+    const [Membersdata, setMembersdata] = useState();
+    const getData = async () => {
+        try {
+            const response = await axios.get(`${BASE_URL}/admins/members`);
+            setMembersdata(response.data.members); // Directly set the membersdata
+            console.log(response.data.members)
+            
+        } catch (error) {
+            console.error('There was an error fetching the data!', error);
+        }
+    }
     useEffect(() => {
         getData();
     }, [])
@@ -84,23 +84,27 @@ const MembersAdmin = () => {
                             <div className="admin-mem-pg-data-box">Emails</div>
                         </div>
                     </div>
-                    { Membersdata.length===0?Membersdata.map((props) => {
-                            return (<>
-                                <div key={props.srNo}>
-                                    <MemData id={props._id}
-                                    onDeleteSuccess={() => handleDeleteSuccess(props._id)}
-                                    pos={props.teams[0].teamAndpos[0].pos}
-                                    name={props.name} Imgurl={props.image[0]} team={props.teams[0].teamAndpos[0].team}
-                                    dob={props.dob} rollno={props.rollno} year={props.teams[0].year}
-                                    city={props.city} state={props.state} phnum={props.phnum}
-                                    position={props.teams[0].teamAndpos[0].position} 
-                                    facebookLink={props.facebook} emails={props.emails} 
-                                    linkedinLink={props.linkedIn} />
-                                </div>
-                            </>
+                    {
+                        Membersdata && Membersdata.map((props, index) => {
+                            return (
+                                <>
+                                    <div key={index}>
+                                        <MemData _id={props._id}
+                                            onDeleteSuccess={() => handleDeleteSuccess(props._id)}
+                                            pos={props.teams[0].teamAndpos[0].pos || ""}
+                                            name={props.name || ""} Imgurl={props.imageUrls[0] || ""} 
+                                            team={props.teams[0].teamAndpos[0].team || ""}
+                                            dob={props.dateOfBirth || ""} rollno={props.rollNo || ""} 
+                                            year={props.teams[0].year || ""}
+                                            city={props.city || ""} state={props.state} phnum={props.phoneNumbers || ""}
+                                            position={props.teams[0].teamAndpos[0].position || ""}
+                                            facebookLink={props.facebookLink || ""} emails={props.emails || ""}
+                                            linkedinLink={props.linkedinLink || ""}
+                                            />
+                                    </div>
+                                </>
                             )
-                        }):<></>
-                    }
+                        })}
                 </div>
             </section>
         </>

@@ -12,6 +12,13 @@
     align-items: center;
     gap: 3px;
 }
+.admin-mem-pg-data-box-social{
+    max-width: 300px;
+    
+}
+.admin-mem-pg-data-box-social a{
+    overflow-x:scroll;
+}
 .admin-mem-pg-data-box a{
     text-decoration: underline;
     color: blue;
@@ -34,7 +41,7 @@
 .admin-mem-pg-data-box-multi{
     padding: 5px;
     box-sizing: border-box;
-    max-width: 300px;
+    width: 300px;
     display: flex;
     flex-wrap: wrap;
     gap: 3px;

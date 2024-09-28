@@ -2,6 +2,8 @@ import React from 'react'
 import "./MemData.css"
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+
+const BASE_URL = "https://gyws-backend.onrender.com";
 const MemData = (props) => {
     const navigate = useNavigate();
     const handlephnum = () => {
@@ -23,13 +25,15 @@ const MemData = (props) => {
         }
     }
     const handleEdit=(e)=>{
-        navigate("/secret/editmembersform",{state:props});
+        const {onDeleteSuccess, ...rest}=props;
+        console.log(rest);
+        navigate("/secret/editmembersform",{state:rest});
     }
-    const handleDelete=(e)=>{
-        axios.delete(`/api/data/${props.id}`)
-    .then(response => {
-      console.log('Data deleted successfully:', response.data);
-      props.onDeleteSuccess(props.id);
+    const handleDelete=async (e)=>{
+        await axios.delete(`${BASE_URL}/member/${props._id}`)
+        .then(response => {
+            console.log('Data deleted successfully:', response.data);
+
     })
     .catch(error => {
       console.error('There was an error deleting the data!', error);
@@ -48,8 +52,8 @@ const MemData = (props) => {
             <div className='admin-mem-pg-data-box'>{props.city}</div>
             <div className='admin-mem-pg-data-box'>{props.state}</div>
             <div className='admin-mem-pg-data-box'>{props.year}</div>
-            <div className='admin-mem-pg-data-box'><a href={props.facebookLink}>{props.facebookLink}</a></div>
-            <div className='admin-mem-pg-data-box'><a href={props.linkedinLink}>{props.linkedinLink}</a></div>
+            <div className='admin-mem-pg-data-box admin-mem-pg-data-box-social'><a href={props.facebookLink}>{props.facebookLink}</a></div>
+            <div className='admin-mem-pg-data-box admin-mem-pg-data-box-social'><a href={props.linkedinLink}>{props.linkedinLink}</a></div>
             <div className='admin-mem-pg-data-box-multi'>{handlephnum()}</div>
             <div className='admin-mem-pg-data-box-multi'>{handleEmails()}</div>
         </div>

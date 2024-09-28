@@ -9,27 +9,27 @@ function MembersForm() {
   const navigate = useNavigate();
   const location = useLocation();
   const data = location.state;
-//   const checkSessionExpiry = () => {
-//     const token = localStorage.getItem('token');
-//     const expiryTime = localStorage.getItem('sessionExpiry');
-  
-//     if (token && expiryTime) {
-//       const currentTime = new Date().getTime();
-  
-//       if (currentTime > expiryTime) {
-//         // Session has expired, clear the token and redirect to login
-//         localStorage.removeItem('token');
-//         localStorage.removeItem('sessionExpiry');
-//         navigate("/secret/adminpanel");
-//       } else {
-//         // Continue with the user's session
-//       }
-//     } else {
-//       // No token or expiry set, redirect to login
-//     navigate("/secret/adminpanel");
-//     }
-//   };
-// checkSessionExpiry();
+  //   const checkSessionExpiry = () => {
+  //     const token = localStorage.getItem('token');
+  //     const expiryTime = localStorage.getItem('sessionExpiry');
+
+  //     if (token && expiryTime) {
+  //       const currentTime = new Date().getTime();
+
+  //       if (currentTime > expiryTime) {
+  //         // Session has expired, clear the token and redirect to login
+  //         localStorage.removeItem('token');
+  //         localStorage.removeItem('sessionExpiry');
+  //         navigate("/secret/adminpanel");
+  //       } else {
+  //         // Continue with the user's session
+  //       }
+  //     } else {
+  //       // No token or expiry set, redirect to login
+  //     navigate("/secret/adminpanel");
+  //     }
+  //   };
+  // checkSessionExpiry();
   const positionTyp = [
     "President",
     "Vice President",
@@ -96,10 +96,10 @@ function MembersForm() {
   ];
 
   const [member, setMember] = useState({
-    id:"",
+    id: "",
     name: "",
     emails: [''],
-    imageUrls: [],
+    imageUrls: [''],
     phoneNumbers: [''],
     facebookLink: "",
     linkedinLink: "",
@@ -122,9 +122,9 @@ function MembersForm() {
   });
 
   function emailClickHandler(i) {
-    const mails = [...member.emails]
-    mails[i + 1] = ''
-    setMember({ ...member, emails: mails })
+    const mails = [...member.emails];
+    mails.push("");
+    setMember({ ...member, emails: mails });
   }
 
   function emailHandler(i, e) {
@@ -134,9 +134,9 @@ function MembersForm() {
     setMember({ ...member, emails: mails })
   }
   function phoneClickHandler(i) {
-    const num = [...member.phoneNumbers]
-    num[i + 1] = ''
-    setMember({ ...member, phoneNumbers: num })
+    const num = [...member.phoneNumbers];
+    num.push("");
+    setMember({ ...member, phoneNumbers: num });
   }
 
   function phoneNumHandler(i, e) {
@@ -147,78 +147,88 @@ function MembersForm() {
   }
   const onChange = (e) => {
     const { name, value } = e.target;
-
-    // Handle dateOfBirth formatting
-    if (name === "dateOfBirth") {
-      const inputDate = new Date(value);
-      const formattedDate = `${inputDate.getFullYear()}/${(inputDate.getMonth() + 1)
-        .toString()
-        .padStart(2, '0')}/${inputDate
+    if (name !== "imageUrls") {
+      if (name === "dateOfBirth") {
+        const inputDate = new Date(value);
+        const formattedDate = `${inputDate.getFullYear()}/${(
+          inputDate.getMonth() + 1
+        )
+          .toString()
+          .padStart(2, "0")}/${inputDate
           .getDate()
           .toString()
-          .padStart(2, '0')}`;
-      setMember({ ...member, dateOfBirth: formattedDate });
-    }
-    else if (name === "teams[0].year") {
-      const updatedTeams = [...member.teams];
-      updatedTeams[0].year = value;
-      setMember({ ...member, teams: updatedTeams });
-    }
-
-    else if (name === "teams[0].teamAndpos[0].team") {
-      const updatedTeams = [...member.teams];
-      if(value==="UG Coordinator") updatedTeams[0].teamAndpos[0].team ="coordinators";
-      if(value==="SRC") updatedTeams[0].teamAndpos[0].team ="src";
-      if(value==="Techops") updatedTeams[0].teamAndpos[0].team ="techops";
-      if(value==="Sponsorship") updatedTeams[0].teamAndpos[0].team ="sponse";
-      if(value==="Finance") updatedTeams[0].teamAndpos[0].team ="finance";
-      if(value==="RISE") updatedTeams[0].teamAndpos[0].team ="rise";
-      if(value==="LiGHT") updatedTeams[0].teamAndpos[0].team ="light";
-      if(value==="Design") updatedTeams[0].teamAndpos[0].team ="design";
-      if(value==="Media & Publicity") updatedTeams[0].teamAndpos[0].team ="media";
-      if(value==="Governing Body") updatedTeams[0].teamAndpos[0].team ="gbs";
-      updatedTeams[0].teamAndpos[0].team = value;
-    }
-
-    else if (name === "teams[0].teamAndpos[0].position") {
-      const updatedTeams = [...member.teams];
-      updatedTeams[0].teamAndpos[0].position = value;
-      if (value === "President") updatedTeams[0].teamAndpos[0].pos = "p";
-      if (value === "Vice President") updatedTeams[0].teamAndpos[0].pos = "vp";
-      if (value === "General Seceratory") updatedTeams[0].teamAndpos[0].pos = "gsec";
-      if (value === "Assistant Secretary") updatedTeams[0].teamAndpos[0].pos = "asec";
-      if (value === "Human Resource Manager") updatedTeams[0].teamAndpos[0].pos = "hr";
-      if (value === "Chief Executive Officer, LiGHT") updatedTeams[0].teamAndpos[0].pos = "ceo";
-      if (value === "Chief Technical Officer") updatedTeams[0].teamAndpos[0].pos = "cto";
-      if (value === "Treasurer") updatedTeams[0].teamAndpos[0].pos = "treas";
-      if (value === "School Development Officer") updatedTeams[0].teamAndpos[0].pos = "sdo";
-      if (value === "Chief Fundraising Officer") updatedTeams[0].teamAndpos[0].pos = "cfo";
-      if (value === "Foreign and Corporate Relation Officer") updatedTeams[0].teamAndpos[0].pos = "facro";
-      if (value === "Donor Engagement Officer") updatedTeams[0].teamAndpos[0].pos = "deo";
-      if (value === "Public Relation Officer") updatedTeams[0].teamAndpos[0].pos = "pro";
-      if (value === "UG Coordinator") updatedTeams[0].teamAndpos[0].pos = "ug";
-      if (value === "SRC Head") updatedTeams[0].teamAndpos[0].pos = "srch";
-      if (value === "TechOps Head") updatedTeams[0].teamAndpos[0].pos = "th";
-      if (value === "Sponsorship Head") updatedTeams[0].teamAndpos[0].pos = "sh";
-      if (value === "Finance Head") updatedTeams[0].teamAndpos[0].pos = "fh";
-      if (value === "Design Head") updatedTeams[0].teamAndpos[0].pos = "dh";
-      if (value === "Media Head") updatedTeams[0].teamAndpos[0].pos = "mh";
-      setMember({ ...member, teams: updatedTeams });
-    }
-
-
-    else {
-      setMember({ ...member, [name]: value });
+          .padStart(2, "0")}`;
+        setMember({ ...member, dateOfBirth: formattedDate });
+      } else if (name === "teams[0].year") {
+        const updatedTeams = [...member.teams];
+        updatedTeams[0].year = Number(value);
+        setMember({ ...member, teams: updatedTeams });
+      } else if (name === "teams[0].teamAndpos[0].team") {
+        const updatedTeams = [...member.teams];
+        if (value === "UG Coordinator")
+          updatedTeams[0].teamAndpos[0].team = "coordinators";
+        if (value === "SRC") updatedTeams[0].teamAndpos[0].team = "src";
+        if (value === "Techops") updatedTeams[0].teamAndpos[0].team = "techops";
+        if (value === "Sponsorship")
+          updatedTeams[0].teamAndpos[0].team = "sponse";
+        if (value === "Finance") updatedTeams[0].teamAndpos[0].team = "finance";
+        if (value === "RISE") updatedTeams[0].teamAndpos[0].team = "rise";
+        if (value === "LiGHT") updatedTeams[0].teamAndpos[0].team = "light";
+        if (value === "Design") updatedTeams[0].teamAndpos[0].team = "design";
+        if (value === "Media & Publicity")
+          updatedTeams[0].teamAndpos[0].team = "media";
+        if (value === "Governing Body")
+          updatedTeams[0].teamAndpos[0].team = "gbs";
+        updatedTeams[0].teamAndpos[0].team = value;
+      } else if (name === "teams[0].teamAndpos[0].position") {
+        const updatedTeams = [...member.teams];
+        updatedTeams[0].teamAndpos[0].position = value;
+        if (value === "President") updatedTeams[0].teamAndpos[0].pos = "p";
+        if (value === "Vice President")
+          updatedTeams[0].teamAndpos[0].pos = "vp";
+        if (value === "General Seceratory")
+          updatedTeams[0].teamAndpos[0].pos = "gsec";
+        if (value === "Assistant Secretary")
+          updatedTeams[0].teamAndpos[0].pos = "asec";
+        if (value === "Human Resource Manager")
+          updatedTeams[0].teamAndpos[0].pos = "hr";
+        if (value === "Chief Executive Officer, LiGHT")
+          updatedTeams[0].teamAndpos[0].pos = "ceo";
+        if (value === "Chief Technical Officer")
+          updatedTeams[0].teamAndpos[0].pos = "cto";
+        if (value === "Treasurer") updatedTeams[0].teamAndpos[0].pos = "treas";
+        if (value === "School Development Officer")
+          updatedTeams[0].teamAndpos[0].pos = "sdo";
+        if (value === "Chief Fundraising Officer")
+          updatedTeams[0].teamAndpos[0].pos = "cfo";
+        if (value === "Foreign and Corporate Relation Officer")
+          updatedTeams[0].teamAndpos[0].pos = "facro";
+        if (value === "Donor Engagement Officer")
+          updatedTeams[0].teamAndpos[0].pos = "deo";
+        if (value === "Public Relation Officer")
+          updatedTeams[0].teamAndpos[0].pos = "pro";
+        if (value === "UG Coordinator")
+          updatedTeams[0].teamAndpos[0].pos = "ug";
+        if (value === "SRC Head") updatedTeams[0].teamAndpos[0].pos = "srch";
+        if (value === "TechOps Head") updatedTeams[0].teamAndpos[0].pos = "th";
+        if (value === "Sponsorship Head")
+          updatedTeams[0].teamAndpos[0].pos = "sh";
+        if (value === "Finance Head") updatedTeams[0].teamAndpos[0].pos = "fh";
+        if (value === "Design Head") updatedTeams[0].teamAndpos[0].pos = "dh";
+        if (value === "Media Head") updatedTeams[0].teamAndpos[0].pos = "mh";
+        setMember({ ...member, teams: updatedTeams });
+      } else {
+        setMember({ ...member, [name]: value });
+      }
     }
   };
-
   useEffect(() => {
     setMember({
-      id: data.id,
+      id: data._id,
       name: data.name ? data.name : "",
       dateOfBirth: data.dob ? data.dob : "",
       rollNo: data.rollno ? data.rollno : "",
-      teams:[{
+      teams: [{
         teamAndpos: [
           {
             team: data.team ? data.team : "",
@@ -229,61 +239,66 @@ function MembersForm() {
         year: data.year ? data.year : "",
       }
       ],
-    imageUrls:[data.ImageUrl],
-      phoneNum: data.phnum ? data.phnum : [""],
-      fbLink: data.facebookLink ? data.facebookLink : "",
+      imageUrls: [data.ImageUrl],
+      phoneNumbers:data.phnum.length?data.phnum:[""],
+      facebookLink: data.facebookLink ? data.facebookLink : "",
       state: data.state ? data.state : "",
       city: data.city ? data.city : "",
       linkedinLink: data.linkedinLink ? data.linkedinLink : "",
-      email: data.emails ? data.emails : [""],
+      emails: data.emails,
       year: data.year ? data.year : "",
     })
-    console.log(data);
   }, [data])
 
-  async function submitHandler(e){
+  async function submitHandler(e) {
     e.preventDefault();
     const formData = new FormData();
-  
+
     if (member.imageUrls) {
-    const imageFile = document.querySelector("#imageUpload").files[0]; // Get the first image file
+      const imageFile = document.querySelector("#imageUpload").files[0]; // Get the first image file
       if (imageFile) {
-        formData.append("image", imageFile)
-      } 
-    }else {
-      setMember({imageUrls:data.ImageUrl})
+        formData.append("image", imageFile);
+      }
     }
-    // Append other fields
+
     for (let key in member) {
       if (key !== "imageUrls") {
         if (key === "dateOfBirth") {
           const inputDate = new Date(member[key]);
-          const formattedDate = `${inputDate.getFullYear()}-${(inputDate.getMonth() + 1)
+          const formattedDate = `${inputDate.getFullYear()}-${(
+            inputDate.getMonth() + 1
+          )
             .toString()
             .padStart(2, "0")}-${inputDate
             .getDate()
             .toString()
             .padStart(2, "0")}`;
-            console.log(formattedDate)
           formData.append(key, formattedDate); // Append formatted date
-        } 
-        else if (key === "teams") {
-
+        } else if (key === "teams") {
           member[key].forEach((team, index) => {
-            formData.append(`teams[${index}][year]`, team.year); 
+            formData.append(`teams[${index}][year]`, team.year);
             team.teamAndpos.forEach((teamPos, posIndex) => {
-              formData.append(`teams[${index}][teamAndpos][${posIndex}][team]`, teamPos.team); 
-              formData.append(`teams[${index}][teamAndpos][${posIndex}][position]`, teamPos.position); 
-              formData.append(`teams[${index}][teamAndpos][${posIndex}][pos]`, teamPos.pos); 
+              formData.append(
+                `teams[${index}][teamAndpos][${posIndex}][team]`,
+                teamPos.team
+              );
+              formData.append(
+                `teams[${index}][teamAndpos][${posIndex}][position]`,
+                teamPos.position
+              );
+              formData.append(
+                `teams[${index}][teamAndpos][${posIndex}][pos]`,
+                teamPos.pos
+              );
             });
           });
-        } 
-        else {
+        } else {
           formData.append(key, member[key]);
         }
       }
     }
-    await axios.put(`${BASE_URL}/admins//addMemberData/:_id`+member.id, member)
+
+    await axios.put(`${BASE_URL}/admins//addMemberData/:_id` + member.id, member)
       .then(response => {
         console.log('Data updated successfully:', response.data);
       })
@@ -403,7 +418,7 @@ function MembersForm() {
 
       <div className="relative z-0  mb-5 group w-[320px]">
         <input
-        id="imageUpload"
+          id="imageUpload"
           type="file"
           name="imageUrls"
           className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
@@ -441,34 +456,34 @@ function MembersForm() {
           )
         })}
       {
-        member.phoneNumbers.map((num, index) => {
-          return (
-            <div key={index} className="relative z-0  mb-5 group w-[320px] flex gap-[4px]">
-              <input
-                type="tel"
-                name="phoneNumbers"
-                pattern="\d{10}"
-                onChange={(e) => phoneNumHandler(index, e)}
-                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                placeholder=" "
-                value={member.phoneNumbers}
-              />
-              <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-                Phone number (123-456-7890)
-              </label>
-              <button
-                type="button"
-                className="text-white transition-all duration-100 bg-[#f26a36] hover:bg-[#d85c31] active:ring-4 active:ring-[#f26a36]/50 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none"
-                onClick={() => phoneClickHandler(index)}
-              >
-                Add
-              </button>
-
-
-            </div>
-          )
-        })
-      }
+      member.phoneNumbers.map((num, index) => {
+        return (
+          <div
+            key={index}
+            className="relative z-0  mb-5 group w-[320px] flex gap-[4px]"
+          >
+            <input
+              type="tel"
+              name="phoneNumbers"
+              pattern="\d{10}"
+              onChange={(e) => phoneNumHandler(index, e)}
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              value={member.phoneNumbers}
+            />
+            <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+              Phone number (123-456-7890)
+            </label>
+            <button
+              type="button"
+              className="text-white transition-all duration-100 bg-[#f26a36] hover:bg-[#d85c31] active:ring-4 active:ring-[#f26a36]/50 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none"
+              onClick={() => phoneClickHandler(index)}
+            >
+              Add
+            </button>
+          </div>
+        );
+      })}
 
       <div className="grid md:grid-cols-2 md:gap-6 w-[320px]">
         <div className="relative z-0 w-full mb-5 group">
