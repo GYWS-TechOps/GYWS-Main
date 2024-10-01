@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "./MembersAdmin.css"
 import axios from 'axios';
 import MemData from "./MemData/MemData.jsx"
-import { useNavigate } from 'react-router-dom';
+
 
 const BASE_URL = "https://gyws-backend.onrender.com"
 
