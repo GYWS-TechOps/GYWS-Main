@@ -11,6 +11,7 @@ import Donate from "./Pages/Donate/Donate.jsx";
 import Mailer from "./Components/Mailer-Tool/Mailer.jsx";
 import AdminPanel from "./Components/admin/adminPanel.jsx";
 import MembersForm from "./Components/admin/MembersForm.jsx";
+import EditMembersForm from "./Components/admin/EditMembersForm.jsx";
 import MembersAdmin from "./Components/admin/MemberForAdmin/MembersAdmin.jsx";
 import MemberPage from "./Components/Members/MembersAlpha/membersPage.jsx"; // Import MemberPage
 
@@ -32,6 +33,7 @@ export default function NavRoutes() {
         <Route path="/secret/adminpanel" element={<AdminPanel />} />
         <Route path="/secret/membersadmin" element={<MembersAdmin />} />
         <Route path="/secret/membersform" element={<MembersForm />} />
+        <Route path="/secret/editmembersform" element={<EditMembersForm />} />
         <Route path="/member/*" element={<MemberPage year={2024} />} />
       </Routes>
     </>

@@ -1,7 +1,35 @@
-import { useState } from "react";
-import axios from "axios";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom"
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
+const BASE_URL = "https://gyws-backend.onrender.com"
 
 function MembersForm() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const data = location.state;
+  //   const checkSessionExpiry = () => {
+  //     const token = localStorage.getItem('token');
+  //     const expiryTime = localStorage.getItem('sessionExpiry');
+
+  //     if (token && expiryTime) {
+  //       const currentTime = new Date().getTime();
+
+  //       if (currentTime > expiryTime) {
+  //         // Session has expired, clear the token and redirect to login
+  //         localStorage.removeItem('token');
+  //         localStorage.removeItem('sessionExpiry');
+  //         navigate("/secret/adminpanel");
+  //       } else {
+  //         // Continue with the user's session
+  //       }
+  //     } else {
+  //       // No token or expiry set, redirect to login
+  //     navigate("/secret/adminpanel");
+  //     }
+  //   };
+  // checkSessionExpiry();
   const positionTyp = [
     "President",
     "Vice President",
@@ -24,7 +52,6 @@ function MembersForm() {
     "Design Head",
     "Media Head",
   ];
-
   const State = [
     "Andhra Pradesh",
     "Arunachal Pradesh",
@@ -66,14 +93,14 @@ function MembersForm() {
     "LiGHT",
     "Design",
     "Media & Publicity",
-    "Governing Body",
   ];
 
   const [member, setMember] = useState({
+    id: "",
     name: "",
-    emails: [""],
-    imageUrls: [],
-    phoneNumbers: [""],
+    emails: [''],
+    imageUrls: [''],
+    phoneNumbers: [''],
     facebookLink: "",
     linkedinLink: "",
     state: "",
@@ -89,15 +116,10 @@ function MembersForm() {
             position: "",
           },
         ],
-        year: "",
-      },
+        year: ""
+      }
     ],
   });
-
-  let [message, setMessage] = useState("");
-  let [isScale, setScale] = useState(false);
-  let [showBtnMess, setShowBtnMess] = useState("");
-
 
   function emailClickHandler(i) {
     const mails = [...member.emails];
@@ -106,12 +128,11 @@ function MembersForm() {
   }
 
   function emailHandler(i, e) {
-    const { value } = e.target;
-    const mails = [...member.emails];
-    mails[i] = value;
-    setMember({ ...member, emails: mails });
+    const { value } = e.target
+    const mails = [...member.emails]
+    mails[i] = value
+    setMember({ ...member, emails: mails })
   }
-
   function phoneClickHandler(i) {
     const num = [...member.phoneNumbers];
     num.push("");
@@ -119,12 +140,11 @@ function MembersForm() {
   }
 
   function phoneNumHandler(i, e) {
-    const { value } = e.target;
-    const num = [...member.phoneNumbers];
-    num[i] = value;
-    setMember({ ...member, phoneNumbers: num });
+    const { value } = e.target
+    const num = [...member.phoneNumbers]
+    num[i] = value
+    setMember({ ...member, phoneNumbers: num })
   }
-
   const onChange = (e) => {
     const { name, value } = e.target;
     if (name !== "imageUrls") {
@@ -202,8 +222,35 @@ function MembersForm() {
       }
     }
   };
+  useEffect(() => {
+    setMember({
+      id: data._id,
+      name: data.name ? data.name : "",
+      dateOfBirth: data.dob ? data.dob : "",
+      rollNo: data.rollno ? data.rollno : "",
+      teams: [{
+        teamAndpos: [
+          {
+            team: data.team ? data.team : "",
+            pos: data.pos ? data.pos : "",
+            position: data.position ? data.position : "",
+          },
+        ],
+        year: data.year ? data.year : "",
+      }
+      ],
+      imageUrls: [data.ImageUrl],
+      phoneNumbers:data.phnum.length?data.phnum:[""],
+      facebookLink: data.facebookLink ? data.facebookLink : "",
+      state: data.state ? data.state : "",
+      city: data.city ? data.city : "",
+      linkedinLink: data.linkedinLink ? data.linkedinLink : "",
+      emails: data.emails,
+      year: data.year ? data.year : "",
+    })
+  }, [data])
 
-  const submitHandler = (e) => {
+  async function submitHandler(e) {
     e.preventDefault();
     const formData = new FormData();
 
@@ -251,35 +298,19 @@ function MembersForm() {
       }
     }
 
-    axios
-      .post("https://gyws-backend.onrender.com/admins/addMember", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        }
+    await axios.put(`${BASE_URL}/admins//addMemberData/:_id` + member.id, member)
+      .then(response => {
+        console.log('Data updated successfully:', response.data);
       })
-      .then(() => {
-        setMessage("Form is Submitted");
-        setScale(true);
-        setShowBtnMess("Done");
-        console.log("Successful");
-      })
-      .catch((err) => {
-        setMessage("There is Error in Submitting Form");
-        setScale(true);
-       setShowBtnMess("Fill Again");
-        console.log(err);
+      .catch(error => {
+        console.error('There was an error updating the data!', error);
       });
-  };
-
-  const btnHandler = () => {
-    window.location.reload();
-  };
+    navigate("/secret/membersadmin");
+  }
 
   return (
     <form
-      className={`flex flex-col items-center justify-center min-h-[100vh] w-[100vw] ${
-        isScale ? "opacity-50" : "opacity-100"
-      }`}
+      className=" flex flex-col items-center justify-center min-h-[100vh] w-[100vw]"
       onSubmit={submitHandler}
     >
       <h1 className=" text-[22px] font-bold text-gray-900 mt-4">
@@ -293,6 +324,7 @@ function MembersForm() {
           className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
           placeholder=" "
           required
+          value={member.name}
         />
         <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
           Name
@@ -304,6 +336,7 @@ function MembersForm() {
             type="date"
             name="dateOfBirth"
             onChange={onChange}
+            value={member.dob}
             className=" block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer "
           />
           <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
@@ -315,6 +348,7 @@ function MembersForm() {
             type="text"
             name="rollNo"
             onChange={onChange}
+            value={member.rollNo}
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
           />
@@ -328,6 +362,7 @@ function MembersForm() {
           <select
             onChange={onChange}
             name="state"
+            value={member.state}
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
           >
@@ -348,6 +383,7 @@ function MembersForm() {
             type="text"
             name="city"
             onChange={onChange}
+            value={member.city}
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
           />
@@ -360,6 +396,7 @@ function MembersForm() {
       <div className="relative z-0  mb-5 group w-[320px]">
         <select
           onChange={onChange}
+          value={member.teams[0].teamAndpos[0].position}
           name="teams[0].teamAndpos[0].position"
           className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
           placeholder=" "
@@ -378,49 +415,48 @@ function MembersForm() {
         </label>
       </div>
 
+
       <div className="relative z-0  mb-5 group w-[320px]">
         <input
           id="imageUpload"
           type="file"
           name="imageUrls"
           className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-          placeholder=" "
-          required
-          multiple
+          placeholder=""
         />
         <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
           Upload Image
         </label>
       </div>
 
-      {member.emails.map((email, index) => {
-        return (
-          <div
-            key={index}
-            className="relative z-0  mb-5 group w-[320px] flex gap-[4px]"
-          >
-            <input
-              type="email"
-              name="emails"
-              onChange={(e) => emailHandler(index, e)}
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-              placeholder=" "
-              required
-            />
-            <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-              Email
-            </label>
-            <button
-              type="button"
-              className="text-white transition-all duration-100 bg-[#f26a36] hover:bg-[#d85c31] active:ring-4 active:ring-[#f26a36]/50 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none"
-              onClick={() => emailClickHandler(index)}
-            >
-              Add
-            </button>
-          </div>
-        );
-      })}
-      {member.phoneNumbers.map((num, index) => {
+      {
+        member.emails.map((email, index) => {
+          return (
+            <div key={index} className="relative z-0  mb-5 group w-[320px] flex gap-[4px]">
+              <input
+                type="email"
+                name="emails"
+                onChange={(e) => emailHandler(index, e)}
+                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                placeholder=" "
+                required
+                value={member.emails}
+              />
+              <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                Email
+              </label>
+              <button
+                type="button"
+                className="text-white transition-all duration-100 bg-[#f26a36] hover:bg-[#d85c31] active:ring-4 active:ring-[#f26a36]/50 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none"
+                onClick={() => emailClickHandler(index)}
+              >
+                Add
+              </button>
+            </div>
+          )
+        })}
+      {
+      member.phoneNumbers.map((num, index) => {
         return (
           <div
             key={index}
@@ -433,6 +469,7 @@ function MembersForm() {
               onChange={(e) => phoneNumHandler(index, e)}
               className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
+              value={member.phoneNumbers}
             />
             <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
               Phone number (123-456-7890)
@@ -454,6 +491,7 @@ function MembersForm() {
             type="url"
             name="facebookLink"
             onChange={onChange}
+            value={member.facebookLink}
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
             required
@@ -467,6 +505,7 @@ function MembersForm() {
             type="url"
             name="linkedinLink"
             onChange={onChange}
+            value={member.linkedinLink}
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
             required
@@ -480,6 +519,7 @@ function MembersForm() {
         <div className="relative z-0 w-full mb-5 group">
           <select
             onChange={onChange}
+            value={member.teams[0].teamAndpos[0].team}
             name="teams[0].teamAndpos[0].team"
             required
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
@@ -504,6 +544,7 @@ function MembersForm() {
             min="2020"
             max="2099"
             onChange={onChange}
+            value={member.teams[0].year}
             step="1"
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
@@ -520,20 +561,6 @@ function MembersForm() {
       >
         Submit
       </button>
-      <div
-        className={`absolute opacity-100 z-100000 top-2px bg-black text-white border-black border-2 p-5 mx-auto  duration-500 ${
-          isScale ? "scale-100" : "scale-0"
-        }`}
-      >
-        <div>{message}</div>
-
-        <button
-          onClick={btnHandler}
-          className="text-white transition-all duration-100 bg-[#f26a36] hover:bg-[#d85c31] active:ring-4 active:ring-[#f26a36]/50 font-medium rounded-lg text-12px px-4  py-2 me-2 mb-2 mx-auto focus:outline-none"
-        >
-          {showBtnMess}
-        </button>
-      </div>
     </form>
   );
 }

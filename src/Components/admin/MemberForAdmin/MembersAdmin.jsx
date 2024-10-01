@@ -1,17 +1,43 @@
 import React, { useEffect, useState } from 'react'
-import { getMembersData } from './MemData/membersData.js'
 import "./MembersAdmin.css"
+import axios from 'axios';
 import MemData from "./MemData/MemData.jsx"
+import { useNavigate } from 'react-router-dom';
+
+const BASE_URL = "https://gyws-backend.onrender.com"
+
 const MembersAdmin = () => {
-    const [Membersdata, setMembersdata] = useState([]);
+    //   const navigate = useNavigate();
+    //   const checkSessionExpiry = () => {
+    //     const token = localStorage.getItem('token');
+    //     const expiryTime = localStorage.getItem('sessionExpiry');
+
+    //     if (token && expiryTime) {
+    //       const currentTime = new Date().getTime();
+
+    //       if (currentTime > expiryTime) {
+    //         // Session has expired, clear the token and redirect to login
+    //         localStorage.removeItem('token');
+    //         localStorage.removeItem('sessionExpiry');
+    //         navigate("/secret/adminpanel");
+    //       } else {
+    //         // Continue with the user's session
+    //       }
+    //     } else {
+    //       // No token or expiry set, redirect to login
+    //     navigate("/secret/adminpanel");
+    //     }
+    //   };
+    // checkSessionExpiry();
+    const [Membersdata, setMembersdata] = useState();
     const getData = async () => {
-        let data;
         try {
-            data = await getMembersData();
-            console.log(data);
-            setMembersdata(data);
+            const response = await axios.get(`${BASE_URL}/admins/members`);
+            setMembersdata(response.data.members); // Directly set the membersdata
+            console.log(response.data.members)
+            
         } catch (error) {
-            throw error;
+            console.error('There was an error fetching the data!', error);
         }
     }
     useEffect(() => {
@@ -20,6 +46,9 @@ const MembersAdmin = () => {
     const handleSearch = (e) => {
         console.log("Searching");
     }
+    const handleDeleteSuccess = (deletedId) => {
+        setMembersdata(prevData => prevData.filter(item => item._id !== deletedId));
+    };
     const handleMembers = (e) => {
         console.log("Add members Button");
     }
@@ -33,7 +62,7 @@ const MembersAdmin = () => {
                 <div className="admin-mem-cont1">
                     <button onClick={handleMembers} id='add-mem-admin-btn'>+ Add Members</button>
                     <div className='admin-mem-cont1-subcont1'>
-                        <input onChange={handleSearchInput} type="text" placeholder='Search Members Name' />
+                        <input required onChange={handleSearchInput} type="text" placeholder='Search Members Name' />
                         <button onClick={handleSearch}>Search</button>
                     </div>
                 </div>
@@ -43,6 +72,7 @@ const MembersAdmin = () => {
                             <div className="admin-mem-pg-data-box admin-mem-pg-margin-left">Name</div>
                             <div className="admin-mem-pg-data-box">Image</div>
                             <div className="admin-mem-pg-data-box">Position</div>
+                            <div className="admin-mem-pg-data-box">Team</div>
                             <div className="admin-mem-pg-data-box">Roll no.</div>
                             <div className="admin-mem-pg-data-box">Date of Birth</div>
                             <div className="admin-mem-pg-data-box">City</div>
@@ -54,19 +84,27 @@ const MembersAdmin = () => {
                             <div className="admin-mem-pg-data-box">Emails</div>
                         </div>
                     </div>
-                    {       //multiple-phonenumber
-                        //roll number
-                        //City ,State
-                        Membersdata.map((props) => {
-                            return (<>
-                                <div key={props.srNo}>
-                                    <MemData name={props.name} Imgurl={props.image} dob={props.dob} rollno={props.rollno} year={props.year} city={props.city} state={props.state} phnum={props.phnum} position={props.position} facebookLink={props.facebook} emails={props.emails} linkedinLink={props.linkedIn} />
-
-                                </div>
-                            </>
+                    {
+                        Membersdata && Membersdata.map((props, index) => {
+                            return (
+                                <>
+                                    <div key={index}>
+                                        <MemData _id={props._id}
+                                            onDeleteSuccess={() => handleDeleteSuccess(props._id)}
+                                            pos={props.teams[0].teamAndpos[0].pos || ""}
+                                            name={props.name || ""} Imgurl={props.imageUrls[0] || ""} 
+                                            team={props.teams[0].teamAndpos[0].team || ""}
+                                            dob={props.dateOfBirth || ""} rollno={props.rollNo || ""} 
+                                            year={props.teams[0].year || ""}
+                                            city={props.city || ""} state={props.state} phnum={props.phoneNumbers || ""}
+                                            position={props.teams[0].teamAndpos[0].position || ""}
+                                            facebookLink={props.facebookLink || ""} emails={props.emails || ""}
+                                            linkedinLink={props.linkedinLink || ""}
+                                            />
+                                    </div>
+                                </>
                             )
-                        })
-                    }
+                        })}
                 </div>
             </section>
         </>
