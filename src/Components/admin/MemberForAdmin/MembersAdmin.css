@@ -59,6 +59,43 @@
     color: black;
     padding-left: 7px;
 }
+.membersadmin-isLoading-getdata{
+    width: 100vw;
+    height: 50vh;
+    /* position: absolute; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.memadmin-del-confirmation-btn{
+    width: 100vw;
+    height: 300px;
+    position: fixed;
+    top: 100px;
+    background-color: black;
+    opacity: 0.9;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 25px;
+}
+.memadmin-del-confirmation-btn .memadmin-conf-del-btn{
+    background-color: rgb(255, 132, 0);
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 22px;
+    width: 100px;
+}
+.memadmin-del-conf{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
 @media only screen and (max-width:1000px){
     .admin-mem-cont1 input{
         width: 70%;

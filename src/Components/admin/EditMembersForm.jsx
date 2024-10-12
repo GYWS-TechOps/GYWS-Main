@@ -8,28 +8,29 @@ const BASE_URL = "https://gyws-backend.onrender.com"
 function MembersForm() {
   const navigate = useNavigate();
   const location = useLocation();
-  const data = location.state;
-  //   const checkSessionExpiry = () => {
-  //     const token = localStorage.getItem('token');
-  //     const expiryTime = localStorage.getItem('sessionExpiry');
+  const data = location.state.rest;
+  const [dob, setdob] = useState(location.state.propdob);
+    const checkSessionExpiry = () => {
+      const token = localStorage.getItem('token');
+      const expiryTime = localStorage.getItem('sessionExpiry');
 
-  //     if (token && expiryTime) {
-  //       const currentTime = new Date().getTime();
+      if (token && expiryTime) {
+        const currentTime = new Date().getTime();
 
-  //       if (currentTime > expiryTime) {
-  //         // Session has expired, clear the token and redirect to login
-  //         localStorage.removeItem('token');
-  //         localStorage.removeItem('sessionExpiry');
-  //         navigate("/secret/adminpanel");
-  //       } else {
-  //         // Continue with the user's session
-  //       }
-  //     } else {
-  //       // No token or expiry set, redirect to login
-  //     navigate("/secret/adminpanel");
-  //     }
-  //   };
-  // checkSessionExpiry();
+        if (currentTime > expiryTime) {
+          // Session has expired, clear the token and redirect to login
+          localStorage.removeItem('token');
+          localStorage.removeItem('sessionExpiry');
+          navigate("/secret/adminpanel");
+        } else {
+          // Continue with the user's session
+        }
+      } else {
+        // No token or expiry set, redirect to login
+      navigate("/secret/adminpanel");
+      }
+    };
+  checkSessionExpiry();
   const positionTyp = [
     "President",
     "Vice President",
@@ -150,6 +151,7 @@ function MembersForm() {
     if (name !== "imageUrls") {
       if (name === "dateOfBirth") {
         const inputDate = new Date(value);
+        setdob(value);                                    //Neel
         const formattedDate = `${inputDate.getFullYear()}/${(
           inputDate.getMonth() + 1
         )
@@ -180,6 +182,16 @@ function MembersForm() {
         if (value === "Governing Body")
           updatedTeams[0].teamAndpos[0].team = "gbs";
         updatedTeams[0].teamAndpos[0].team = value;
+        setMember(prevMember => ({
+          ...prevMember,
+          teams: prevMember.teams.map((teamItem, index) => ({
+            ...teamItem,
+            teamAndpos: teamItem.teamAndpos.map((teamPos, posIndex) => ({
+              ...teamPos,
+              team: value 
+            }))
+          }))
+        }));
       } else if (name === "teams[0].teamAndpos[0].position") {
         const updatedTeams = [...member.teams];
         updatedTeams[0].teamAndpos[0].position = value;
@@ -336,7 +348,7 @@ function MembersForm() {
             type="date"
             name="dateOfBirth"
             onChange={onChange}
-            value={member.dob}
+            value={dob}
             className=" block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer "
           />
           <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">

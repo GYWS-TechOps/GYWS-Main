@@ -96,6 +96,7 @@
     transition: 0.8s all;
     font-weight: 600;
     outline: none;
+    cursor: pointer;
 }
 #admin-submit-input-btn:hover {
     transform: scale(1.03);

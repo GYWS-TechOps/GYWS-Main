@@ -12,19 +12,20 @@
     align-items: center;
     gap: 3px;
 }
+.admin-mem-pg-data-box-image img{
+    height: 30px;
+    width: 30px;
+}
 .admin-mem-pg-data-box-social{
     max-width: 300px;
-    
 }
 .admin-mem-pg-data-box-social a{
-    overflow-x:scroll;
-}
-.admin-mem-pg-data-box a{
     text-decoration: underline;
-    color: blue;
+    color: black;
+    font-size: 25px;
     text-decoration-color:blue;
 }
-.admin-mem-pg-data-box a:hover{
+.admin-mem-pg-data-box-social a:hover{
     color: rgb(0, 0, 154);
 }
 .admin-mem-pg-edit-btn{

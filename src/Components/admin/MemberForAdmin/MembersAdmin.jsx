@@ -3,39 +3,40 @@ import "./MembersAdmin.css"
 import axios from 'axios';
 import MemData from "./MemData/MemData.jsx"
 import { useNavigate } from 'react-router-dom';
-
-const BASE_URL = "https://gyws-backend.onrender.com"
-
+import { InfinitySpin } from 'react-loader-spinner';
+const BASE_URL = "https://gyws-backend.onrender.com";
 const MembersAdmin = () => {
-    //   const navigate = useNavigate();
-    //   const checkSessionExpiry = () => {
-    //     const token = localStorage.getItem('token');
-    //     const expiryTime = localStorage.getItem('sessionExpiry');
+      const navigate = useNavigate();
+      const [isLoading, setisLoading] = useState(true);
+      const [delId, setdelId] = useState("");
+      const [delconfirmationbox, setdelconfirmationbox] = useState(false);
+      const checkSessionExpiry = async () => {
+        const token = localStorage.getItem('token');
+        const expiryTime = localStorage.getItem('sessionExpiry');
 
-    //     if (token && expiryTime) {
-    //       const currentTime = new Date().getTime();
+        if (token && expiryTime) {
+          const currentTime = new Date().getTime();
 
-    //       if (currentTime > expiryTime) {
-    //         // Session has expired, clear the token and redirect to login
-    //         localStorage.removeItem('token');
-    //         localStorage.removeItem('sessionExpiry');
-    //         navigate("/secret/adminpanel");
-    //       } else {
-    //         // Continue with the user's session
-    //       }
-    //     } else {
-    //       // No token or expiry set, redirect to login
-    //     navigate("/secret/adminpanel");
-    //     }
-    //   };
-    // checkSessionExpiry();
+          if (currentTime > expiryTime) {
+            // Session has expired, clear the token and redirect to login
+            localStorage.removeItem('token');
+            localStorage.removeItem('sessionExpiry');
+            navigate("/secret/adminpanel");
+          } else {
+            // Continue with the user's session
+          }
+        } else {
+          // No token or expiry set, redirect to login
+        navigate("/secret/adminpanel");
+        }
+      };
+    checkSessionExpiry();
     const [Membersdata, setMembersdata] = useState();
     const getData = async () => {
         try {
             const response = await axios.get(`${BASE_URL}/admins/members`);
-            setMembersdata(response.data.members); // Directly set the membersdata
-            console.log(response.data.members)
-            
+            setMembersdata(response.data.members);
+            setisLoading(false);
         } catch (error) {
             console.error('There was an error fetching the data!', error);
         }
@@ -46,14 +47,23 @@ const MembersAdmin = () => {
     const handleSearch = (e) => {
         console.log("Searching");
     }
-    const handleDeleteSuccess = (deletedId) => {
-        setMembersdata(prevData => prevData.filter(item => item._id !== deletedId));
+    const handleDeleteSuccess = async () => {
+        setdelconfirmationbox(false);
+        setMembersdata("");
+        setisLoading(true);
+        await axios.delete(`${BASE_URL}/admins/member/${delId}`)
+        .catch(error => {
+          console.error('There was an error deleting the data!', error);
+        });
+        getData();
     };
     const handleMembers = (e) => {
-        console.log("Add members Button");
+        navigate("/secret/membersform");
     }
     const handleSearchInput = (e) => {
-        console.log(e.target.value);
+    }
+    const handledelconfbox=()=>{
+        setdelconfirmationbox(false);
     }
     return (
         <>
@@ -83,14 +93,30 @@ const MembersAdmin = () => {
                             <div className="admin-mem-pg-data-box">Phone Numbers</div>
                             <div className="admin-mem-pg-data-box">Emails</div>
                         </div>
+            {isLoading?<div className='membersadmin-isLoading-getdata'><InfinitySpin visible={true} width="200" color="#fb6e11" ariaLabel="infinity-spin-loading" /></div>:<></>}
                     </div>
+        {delconfirmationbox?<>
+        <div className="memadmin-del-confirmation-btn">
+            <div>
+            <h1>Are you sure to delete?</h1>
+            </div>
+            <div className='memadmin-del-conf'>
+            <button className='memadmin-conf-del-btn' onClick={handledelconfbox}>Back</button>
+            <button className='memadmin-conf-del-btn' onClick={handleDeleteSuccess}>Confirm</button>
+            </div>
+        </div>
+        </>
+        :<></>}
                     {
                         Membersdata && Membersdata.map((props, index) => {
                             return (
                                 <>
                                     <div key={index}>
                                         <MemData _id={props._id}
-                                            onDeleteSuccess={() => handleDeleteSuccess(props._id)}
+                                            onDeleteSuccess={() => {
+                                                setdelconfirmationbox(true);
+                                                setdelId(props._id);
+                                            }}
                                             pos={props.teams[0].teamAndpos[0].pos || ""}
                                             name={props.name || ""} Imgurl={props.imageUrls[0] || ""} 
                                             team={props.teams[0].teamAndpos[0].team || ""}
