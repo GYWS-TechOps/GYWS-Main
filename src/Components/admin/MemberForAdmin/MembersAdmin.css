@@ -11,7 +11,7 @@
     gap: 10px;
     padding: 10px;
 }
-.admin-mem-cont1 button{
+.admin-mem-cont1 .mem-adm-srch-btn{
     background-color: #fed136;
     font-size: 18px;
     border: 1px solid black;
@@ -22,13 +22,14 @@
     cursor: pointer;
     font-weight: 600;
 }
-.admin-mem-cont1 button:hover{
+.admin-mem-cont1 .mem-adm-srch-btn:hover{
     background-color: #ffc800;
 }
 .admin-mem-cont1-subcont1{
     width: 100%;
     display: flex;
     justify-content: center;
+    gap:10px;
 }
 .admin-mem-cont1-subcont1 input{
  width: 40%;
@@ -43,6 +44,15 @@
 }
 #add-mem-admin-btn{
     width: 400px;
+    background-color: #fed136;
+    font-size: 18px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 4px;
+    color: black;
+    height: 40px;
+    cursor: pointer;
+    font-weight: 600;
 }
 .admin-members-show-list{
     display: flex;
@@ -95,6 +105,18 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+}
+.admin-mem-cont1 .admin-mem-cont1-subcont1 .mem-adm-filter-clicked-btn button{
+    background-color: #ffbb00;
+    font-size: 18px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 4px;
+    color: black;
+    height: 40px;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: underline;
 }
 @media only screen and (max-width:1000px){
     .admin-mem-cont1 input{

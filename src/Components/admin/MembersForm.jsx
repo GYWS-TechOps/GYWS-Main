@@ -1,74 +1,16 @@
 import { useState } from "react";
 import axios from "axios";
+import {
+  labelStyle,
+  positionTyp,
+  State,
+  team,
+  selectStyle,
+  btnStyle,
+} from "./constant.jsx";
+import toast from "react-hot-toast";
 
 function MembersForm() {
-  const positionTyp = [
-    "President",
-    "Vice President",
-    "General Seceratory",
-    "Assistant Secretary",
-    "Human Resource Manager",
-    "Chief Executive Officer, LiGHT",
-    "Chief Technical Officer",
-    "Treasurer",
-    "School Development Officer",
-    "Chief Fundraising Officer",
-    "Foreign and Corporate Relation Officer",
-    "Donor Engagement Officer",
-    "Public Relation Officer",
-    "UG Coordinator",
-    "SRC Head",
-    "TechOps Head",
-    "Sponsorship Head",
-    "Finance Head",
-    "Design Head",
-    "Media Head",
-  ];
-
-  const State = [
-    "Andhra Pradesh",
-    "Arunachal Pradesh",
-    "Assam",
-    "Bihar",
-    "Chhattisgarh",
-    "Goa",
-    "Gujarat",
-    "Haryana",
-    "Himachal Pradesh",
-    "Jharkhand",
-    "Karnataka",
-    "Kerala",
-    "Madhya Pradesh",
-    "Maharashtra",
-    "Manipur",
-    "Meghalaya",
-    "Mizoram",
-    "Nagaland",
-    "Odisha",
-    "Punjab",
-    "Rajasthan",
-    "Sikkim",
-    "Tamil Nadu",
-    "Telangana",
-    "Tripura",
-    "Uttar Pradesh",
-    "Uttarakhand",
-    "West Bengal",
-  ];
-
-  const team = [
-    "UG Coordinator",
-    "SRC",
-    "Techops",
-    "Sponsorship",
-    "Finance",
-    "RISE",
-    "LiGHT",
-    "Design",
-    "Media & Publicity",
-    "Governing Body",
-  ];
-
   const [member, setMember] = useState({
     name: "",
     emails: [""],
@@ -94,14 +36,18 @@ function MembersForm() {
     ],
   });
 
-  let [message, setMessage] = useState("");
-  let [isScale, setScale] = useState(false);
-  let [showBtnMess, setShowBtnMess] = useState("");
-
-
-  function emailClickHandler(i) {
+  function emailAddHandler(i) {
     const mails = [...member.emails];
     mails.push("");
+    setMember({ ...member, emails: mails });
+  }
+  function emailRemoveHandler(i) {
+    const mails = [...member.emails];
+    if (mails.length < 2) {
+      toast.error("At least one mail is required.");
+      return;
+    }
+    mails.splice(i, 1);
     setMember({ ...member, emails: mails });
   }
 
@@ -112,9 +58,20 @@ function MembersForm() {
     setMember({ ...member, emails: mails });
   }
 
-  function phoneClickHandler(i) {
+  function phoneAddHandler(i) {
     const num = [...member.phoneNumbers];
     num.push("");
+    console.log(num);
+    setMember({ ...member, phoneNumbers: num });
+  }
+  function phoneRemoveHandler(i) {
+    const num = [...member.phoneNumbers];
+    if (num.length < 2) {
+      toast.error("At least one phone number is required.");
+      return;
+    }
+    num.splice(i, 1);
+    console.log(i, num);
     setMember({ ...member, phoneNumbers: num });
   }
 
@@ -203,7 +160,7 @@ function MembersForm() {
     }
   };
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
     const formData = new FormData();
 
@@ -250,36 +207,36 @@ function MembersForm() {
         }
       }
     }
-
-    axios
-      .post("https://gyws-backend.onrender.com/admins/addMember", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
+    const loadingToast = toast.loading("Submitting form...");
+    try {
+      const response = await axios.post(
+        "https://gyws-backend.onrender.com/admins/addMember",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+          
         }
-      })
-      .then(() => {
-        setMessage("Form is Submitted");
-        setScale(true);
-        setShowBtnMess("Done");
-        console.log("Successful");
-      })
-      .catch((err) => {
-        setMessage("There is Error in Submitting Form");
-        setScale(true);
-       setShowBtnMess("Fill Again");
-        console.log(err);
-      });
-  };
+      );
 
-  const btnHandler = () => {
-    window.location.reload();
+      if (response.data) {
+        toast.success('Form is Submitted',{id:loadingToast})
+        setTimeout(()=>window.location.reload(),2000)
+        
+      }
+    } catch (err) {
+      toast.error('Error in Submitting form',{ id: loadingToast })
+    
+      setTimeout(()=>window.location.reload(),2000)
+    }
   };
 
   return (
     <form
-      className={`flex flex-col items-center justify-center min-h-[100vh] w-[100vw] ${
-        isScale ? "opacity-50" : "opacity-100"
-      }`}
+      className={
+        "flex flex-col items-center justify-center min-h-[100vh] w-[100vw] "
+      }
       onSubmit={submitHandler}
     >
       <h1 className=" text-[22px] font-bold text-gray-900 mt-4">
@@ -290,13 +247,11 @@ function MembersForm() {
           type="text"
           name="name"
           onChange={onChange}
-          className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-          placeholder=" "
+          className={selectStyle}
+          placeholder=""
           required
         />
-        <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-          Name
-        </label>
+        <label className={labelStyle}>Name</label>
       </div>
       <div className="grid md:grid-cols-2 md:gap-6 w-[320px]">
         <div className="relative z-0 w-full mb-5 group">
@@ -304,23 +259,19 @@ function MembersForm() {
             type="date"
             name="dateOfBirth"
             onChange={onChange}
-            className=" block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer "
+            className={selectStyle}
           />
-          <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-            Date Of Birth
-          </label>
+          <label className={labelStyle}>Date Of Birth</label>
         </div>
         <div className="relative z-0 w-full mb-5 group">
           <input
             type="text"
             name="rollNo"
             onChange={onChange}
-            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            className={selectStyle}
             placeholder=" "
           />
-          <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-            Roll Number
-          </label>
+          <label className={labelStyle}>Roll Number</label>
         </div>
       </div>
       <div className="grid md:grid-cols-2 md:gap-6 w-[320px]">
@@ -328,7 +279,7 @@ function MembersForm() {
           <select
             onChange={onChange}
             name="state"
-            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            className={selectStyle}
             placeholder=" "
           >
             {State.map(function (pos, index) {
@@ -339,21 +290,17 @@ function MembersForm() {
               );
             })}
           </select>
-          <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-            State
-          </label>
+          <label className={labelStyle}>State</label>
         </div>
         <div className="relative z-0 w-full mb-5 group">
           <input
             type="text"
             name="city"
             onChange={onChange}
-            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            className={selectStyle}
             placeholder=" "
           />
-          <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-            City
-          </label>
+          <label className={labelStyle}>City</label>
         </div>
       </div>
 
@@ -361,7 +308,7 @@ function MembersForm() {
         <select
           onChange={onChange}
           name="teams[0].teamAndpos[0].position"
-          className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          className={selectStyle}
           placeholder=" "
           required
         >
@@ -373,9 +320,7 @@ function MembersForm() {
             );
           })}
         </select>
-        <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-          Position
-        </label>
+        <label className={labelStyle}>Position</label>
       </div>
 
       <div className="relative z-0  mb-5 group w-[320px]">
@@ -383,40 +328,45 @@ function MembersForm() {
           id="imageUpload"
           type="file"
           name="imageUrls"
-          className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          className={selectStyle}
           placeholder=" "
           required
           multiple
         />
-        <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-          Upload Image
-        </label>
+        <label className={labelStyle}>Upload Image</label>
       </div>
 
       {member.emails.map((email, index) => {
         return (
           <div
             key={index}
-            className="relative z-0  mb-5 group w-[320px] flex gap-[4px]"
+            className="relative z-0  mb-3 group w-[320px] flex flex-col items-center gap-[5px]"
           >
             <input
               type="email"
               name="emails"
               onChange={(e) => emailHandler(index, e)}
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              className={`${selectStyle}`}
               placeholder=" "
               required
             />
-            <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-              Email
-            </label>
-            <button
-              type="button"
-              className="text-white transition-all duration-100 bg-[#f26a36] hover:bg-[#d85c31] active:ring-4 active:ring-[#f26a36]/50 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none"
-              onClick={() => emailClickHandler(index)}
-            >
-              Add
-            </button>
+            <label className={labelStyle}>Email</label>
+            <div className="flex  items-center">
+              <button
+                type="button"
+                className={btnStyle}
+                onClick={() => emailAddHandler(index)}
+              >
+                Add
+              </button>
+              <button
+                type="button"
+                className={` ${btnStyle} bg-red-500  hover:bg-red-600`}
+                onClick={() => emailRemoveHandler(index)}
+              >
+                Remove
+              </button>
+            </div>
           </div>
         );
       })}
@@ -424,26 +374,33 @@ function MembersForm() {
         return (
           <div
             key={index}
-            className="relative z-0  mb-5 group w-[320px] flex gap-[4px]"
+            className="relative z-0  mb-3 group w-[320px] flex flex-col items-center gap-[5px]"
           >
             <input
               type="tel"
               name="phoneNumbers"
               pattern="\d{10}"
               onChange={(e) => phoneNumHandler(index, e)}
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              className={selectStyle}
               placeholder=" "
             />
-            <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-              Phone number (123-456-7890)
-            </label>
-            <button
-              type="button"
-              className="text-white transition-all duration-100 bg-[#f26a36] hover:bg-[#d85c31] active:ring-4 active:ring-[#f26a36]/50 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none"
-              onClick={() => phoneClickHandler(index)}
-            >
-              Add
-            </button>
+            <label className={labelStyle}>Phone number (123-456-7890)</label>
+            <div className="flex  items-center">
+              <button
+                type="button"
+                className={btnStyle}
+                onClick={() => phoneAddHandler(index)}
+              >
+                Add
+              </button>
+              <button
+                type="button"
+                className={` ${btnStyle} bg-red-500  hover:bg-red-600`}
+                onClick={() => phoneRemoveHandler(index)}
+              >
+                Remove
+              </button>
+            </div>
           </div>
         );
       })}
@@ -454,26 +411,22 @@ function MembersForm() {
             type="url"
             name="facebookLink"
             onChange={onChange}
-            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            className={selectStyle}
             placeholder=" "
             required
           />
-          <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-            Facebook link:
-          </label>
+          <label className={labelStyle}>Facebook link:</label>
         </div>
         <div className="relative z-0 w-full mb-5 group">
           <input
             type="url"
             name="linkedinLink"
             onChange={onChange}
-            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            className={selectStyle}
             placeholder=" "
             required
           />
-          <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-            Linkedin link:
-          </label>
+          <label className={labelStyle}>Linkedin link:</label>
         </div>
       </div>
       <div className="grid md:grid-cols-2 md:gap-6 w-[320px]">
@@ -482,7 +435,7 @@ function MembersForm() {
             onChange={onChange}
             name="teams[0].teamAndpos[0].team"
             required
-            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            className={selectStyle}
             placeholder=" "
           >
             {team.map(function (pos, index) {
@@ -493,9 +446,7 @@ function MembersForm() {
               );
             })}
           </select>
-          <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-            Team
-          </label>
+          <label className={labelStyle}>Team</label>
         </div>
         <div className="relative z-0 w-full mb-5 group">
           <input
@@ -505,35 +456,16 @@ function MembersForm() {
             max="2099"
             onChange={onChange}
             step="1"
-            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            className={selectStyle}
             placeholder=" "
             required
           />
-          <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-[6px] -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-            Year
-          </label>
+          <label className={labelStyle}>Year</label>
         </div>
       </div>
-      <button
-        type="submit"
-        className="text-white transition-all duration-100 bg-[#f26a36] hover:bg-[#d85c31] active:ring-4 active:ring-[#f26a36]/50 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none "
-      >
+      <button type="submit" className={btnStyle}>
         Submit
       </button>
-      <div
-        className={`absolute opacity-100 z-100000 top-2px bg-black text-white border-black border-2 p-5 mx-auto  duration-500 ${
-          isScale ? "scale-100" : "scale-0"
-        }`}
-      >
-        <div>{message}</div>
-
-        <button
-          onClick={btnHandler}
-          className="text-white transition-all duration-100 bg-[#f26a36] hover:bg-[#d85c31] active:ring-4 active:ring-[#f26a36]/50 font-medium rounded-lg text-12px px-4  py-2 me-2 mb-2 mx-auto focus:outline-none"
-        >
-          {showBtnMess}
-        </button>
-      </div>
     </form>
   );
 }
