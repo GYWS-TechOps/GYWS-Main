@@ -12,6 +12,9 @@ async function getMember(memberId) {
       params: { _id: memberId },
     });
     console.log('Member:', response.data.member);
+    response.data.members.forEach(member => {
+      if(!member.name) {member.name= member.firstName + ' ' + member.lastName}
+    });
     return response.data.member;
   } catch (error) {
     const errorMessage = error.response?.data?.message || error.message;
@@ -25,6 +28,9 @@ async function getAllMembers() {
   try {
     const response = await axios.get(`${BASE_URL}/members`);
     console.log('All Members:', response.data.members);
+    response.data.members.forEach(member => {
+      if(!member.name) {member.name= member.firstName + ' ' + member.lastName}
+    });
     return response.data.members;
   } catch (error) {
     const errorMessage = error.response?.data?.message || error.message;
@@ -53,6 +59,9 @@ async function getMemberByPosOrYear(options = {}) {
       return noMembersMessage;
     } else {
       // console.log('Members:', response.data.members);
+      response.data.members.forEach(member => {
+        if(!member.name) {member.name= member.firstName + ' ' + member.lastName}
+      });
       return response.data.members;
     }
   } catch (error) {
